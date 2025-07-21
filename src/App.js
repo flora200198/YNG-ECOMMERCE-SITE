@@ -11,6 +11,7 @@ import ShopNow from './Pages/ShopNow/ShopNow';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import JoinUs from './Pages/JoinUs/JoinUs';
 import Cart from './components/Cart/Cart';
+import LoginForm from './components/LoginForm/LoginForm';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 
@@ -34,7 +35,7 @@ function App() {
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/join" element={<JoinUs />} />
         <Route path="/cart" element={<Cart />} />
-        <Route path="/login" element={<Cart />} />
+        <Route path="/login" element={<LoginForm />} />
       </Routes>
       <Footer />
     </Router>
