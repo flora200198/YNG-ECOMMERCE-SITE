@@ -53,7 +53,7 @@ const Footer = () => {
       </div>
 
       <div className="bg-dark text-center text-white py-3 mt-4">
-        © {new Date().getFullYear()} [Your Company Name]. All rights reserved.
+        © {new Date().getFullYear()} YNG Infra. All rights reserved.
       </div>
     </footer>
   );

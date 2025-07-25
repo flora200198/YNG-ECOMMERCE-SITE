@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -34,5 +34,152 @@
   }
   to {
     transform: rotate(360deg);
+  }
+} */
+/* Base Styles */
+
+body {
+  background-color: #ffffff; /* Golden yellow background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* color: #333; */
+  color: #b8860b;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Headings with white background */
+.golden-bg-heading {
+  background-color: white;
+  color: #b8860b;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  border-bottom: 2px solid #a37409;
+}
+
+.navbar-brand,
+.nav-link {
+  color: #b8860b !important;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #a37409 !important;
+}
+
+/* Footer */
+footer {
+  background-color: white;
+  border-top: 2px solid #b8860b;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #b8860b;
+  border-color: #b8860b;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #a37409;
+  border-color: #a37409;
+  color: white;
+}
+
+.btn-outline-primary {
+  color: #b8860b;
+  border-color: #b8860b;
+  font-weight: 500;
+}
+
+.btn-outline-primary:hover {
+  background-color: #b8860b;
+  color: white;
+}
+
+/* Links */
+a {
+  color: #b8860b;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #a37409;
+}
+
+/* Icons */
+.bi {
+  color: #b8860b;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
+}
+
+.bi:hover {
+  color: #a37409;
+}
+
+/* Product Cards / Sections */
+.product-section {
+  background-color: white;
+  border: 1px solid #f1e5c0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Accent Utilities */
+.border-golden {
+  border-color: #b8860b !important;
+}
+
+.text-golden {
+  color: #b8860b !important;
+}
+
+.bg-golden {
+  background-color: #b8860b !important;
+  color: white !important;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .golden-bg-heading {
+    display: block;
+    text-align: center;
   }
 }
