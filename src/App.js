@@ -17,16 +17,15 @@ import ThankYou from './Pages/Thankyou/Thankyou';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import './App.css';
-
-
-
-
+import { CheckoutProvider } from './Pages/Context/Context';
 
 function App() {
   useEffect(() => {
   AOS.init({ duration: 1000 });
 }, []);
+
   return (
+    <CheckoutProvider> 
     <Router>
       <Navbar />
       <Routes>
@@ -44,6 +43,7 @@ function App() {
       </Routes>
       <Footer />
     </Router>
+    </CheckoutProvider>
   );
 }
 

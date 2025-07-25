@@ -1,25 +1,29 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import GenerateInvoice from "../../components/Invoice/Invoice";
 
 const Checkout = () => {
+  const [cartItems, setCartItems] = useState(() => {
+  return JSON.parse(localStorage.getItem("cart")) || [];
+});
   const navigate = useNavigate();
-
+  
   // Sample cart items (replace with your actual state or props)
-  const cartItems = [
-    {
-      id: 1,
-      title: "Product A",
-      image: "https://via.placeholder.com/60",
-      quantity: 2,
-    },
-    {
-      id: 2,
-      title: "Product B",
-      image: "https://via.placeholder.com/60",
-      quantity: 1,
-    },
-  ];
+  // const cartItems = [
+  //   {
+  //     id: 1,
+  //     title: "Product A",
+  //     image: "https://via.placeholder.com/60",
+  //     quantity: 2,
+  //   },
+  //   {
+  //     id: 2,
+  //     title: "Product B",
+  //     image: "https://via.placeholder.com/60",
+  //     quantity: 1,
+  //   },
+  // ];
 
   const [addresses, setAddresses] = useState([]);
   const [currentAddress, setCurrentAddress] = useState({
@@ -65,10 +69,12 @@ const Checkout = () => {
     if (editingIndex !== null) {
       const updated = [...addresses];
       updated[editingIndex] = currentAddress;
+      localStorage.setItem('addresses', JSON.stringify(currentAddress));
       setAddresses(updated);
     } else {
       setAddresses([...addresses, currentAddress]);
     }
+    
     resetForm();
   };
 
@@ -106,6 +112,7 @@ const Checkout = () => {
       alert("Please select a shipping address.");
       return;
     }
+
     navigate("/thankyou");
   };
 
@@ -287,14 +294,14 @@ const Checkout = () => {
               <div key={item.id} className="d-flex align-items-center mb-3">
                 <img src={item.image} alt={item.title} width="60" height="60" className="me-3 rounded" />
                 <div>
-                  <div><strong>{item.title}</strong></div>
+                  <div><strong>{item.name}</strong></div>
                   <div>Qty: {item.quantity}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div>
+        </div>
     </div>
   );
 };

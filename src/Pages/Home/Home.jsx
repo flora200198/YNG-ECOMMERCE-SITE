@@ -7,14 +7,14 @@ const Home = () => {
       <section className="text-center mb-5" data-aos="fade-down">
         <h1 className="display-4">Precision Engineering Instruments</h1>
         <p className="lead">Leading the industry in accurate flow measurement and control systems.</p>
-        <img src="https://placehold.co/1000x400" alt="Hero - Engineering Instruments" className="img-fluid rounded shadow" />
+        <img src="./assets/landing.png" alt="Hero - Engineering Instruments" className="img-fluid rounded shadow" />
       </section>
 
       {/* Introduction Section */}
       <section className="mb-5" data-aos="fade-up">
         <h2><i className="bi bi-building text-primary me-2"></i>Who We Are</h2>
         <p>
-          Welcome to <strong>[Your Company Name]</strong> — a pioneer in advanced engineering solutions for fluid measurement and control.
+          Welcome to <strong>YNG Infra</strong> — a pioneer in advanced engineering solutions for fluid measurement and control.
           We design and deliver cutting-edge instrumentation like flowmeters, sensors, and automation components to help industries achieve unmatched precision and efficiency.
         </p>
         <p>

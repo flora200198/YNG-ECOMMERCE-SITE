@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useCheckout } from '../Context/Context';
+import Cart from '../../components/Cart/Cart';
+import Checkout from '../CheckOut/Checkout';
 
 const ShopNow = () => {
   const navigate = useNavigate();
-
+  const { products } = useCheckout();
   const [cart, setCart] = useState(() => JSON.parse(localStorage.getItem('cart')) || []);
   const [isLoggedIn, setIsLoggedIn] = useState(() => JSON.parse(localStorage.getItem('isLoggedIn')) || false);
 
-  const products = [
-    { id: 1, name: 'Flow Meter A', description: 'High accuracy flow meter.', price: 2999, image: 'https://placehold.co/400x300' },
-    { id: 2, name: 'Flow Meter B', description: 'Digital display and compact size.', price: 2499, image: 'https://placehold.co/400x300' },
-    { id: 3, name: 'Sensor X', description: 'Precision industrial sensor.', price: 1999, image: 'https://placehold.co/400x300' },
-  ];
 
   // Keep cart updated in localStorage
   useEffect(() => {
@@ -102,12 +100,14 @@ const ShopNow = () => {
                       <button className="btn btn-outline-secondary" onClick={() => increment(product.id)}>+</button>
                     </div>
                   )}
+                  
                 </div>
               </div>
             </div>
           );
-        })}
+        })} 
       </div>
+
     </div>
   );
 };
