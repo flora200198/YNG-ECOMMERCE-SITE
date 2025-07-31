@@ -16,7 +16,7 @@ code {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #333;
+  color: #333333;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -59,27 +59,27 @@ footer {
 
 /* Buttons */
 .btn-primary {
-  background-color: #b8860b;
-  border-color: #b8860b;
+  background-color: #17a9ce;
+  border-color: #17a9ce;
   color: white;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #a37409;
-  border-color: #a37409;
+  background-color: #17a9ce;
+  border-color: #17a9ce;
   color: white;
 }
 
 .btn-outline-primary {
-  color: #b8860b;
-  border-color: #b8860b;
+  color: #17a9ce;
+  border-color: #17a9ce;
   font-weight: 500;
 }
 
 .btn-outline-primary:hover {
-  background-color: #b8860b;
+  background-color: #17a9ce;
   color: white;
 }
 
@@ -96,13 +96,13 @@ a:hover {
 
 /* Icons */
 .bi {
-  color: #b8860b;
+  color: #ffffff;
   font-size: 1.3rem;
   transition: color 0.3s ease;
 }
 
 .bi:hover {
-  color: #a37409;
+  color: #ffffff;
 }
 
 /* Product Cards / Sections */
@@ -127,6 +127,7 @@ a:hover {
 
 .text-golden {
   color: #b8860b !important;
+  /* color:black !important; */
 }
 
 .bg-golden {
