@@ -8,7 +8,7 @@ const ShopNow = () => {
   const [cart, setCart] = useState(() => JSON.parse(localStorage.getItem('cart')) || []);
   const [isLoggedIn, setIsLoggedIn] = useState(() => JSON.parse(localStorage.getItem('isLoggedIn')) || false);
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All'); 
+  const [selectedCategory, setSelectedCategory] = useState('All');
 
   const categories = [
     'All',
@@ -21,12 +21,10 @@ const ShopNow = () => {
     'Temperature'
   ];
 
-  // Keep cart updated in localStorage
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cart));
   }, [cart]);
 
-  // Sync isLoggedIn state with localStorage on mount
   useEffect(() => {
     const loggedInStatus = JSON.parse(localStorage.getItem('isLoggedIn')) || false;
     setIsLoggedIn(loggedInStatus);
@@ -79,7 +77,6 @@ const ShopNow = () => {
     }
   };
 
-  // 🔍 Filter products based on search and category
   const filteredProducts = products.filter((product) => {
     const matchesSearch =
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -92,75 +89,115 @@ const ShopNow = () => {
   });
 
   return (
-    <div className="container py-5">
-      <div className="d-flex justify-content-between align-items-center mb-4">
-        <h1>Shop Now</h1>
-        <button className="btn btn-outline-primary" onClick={viewCart}>
-          View Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
-        </button>
+ 
+  <div className="container py-5">
+    {/* Header with Search and Cart */}
+    <div className="d-flex justify-content-between align-items-center mb-4">
+      <h1>Shop Now</h1>
+      <button className="btn btn-outline-primary" onClick={viewCart}>
+        View Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
+      </button>
+    </div>
+
+    {/* Search and Category Filter */}
+    <div className="row mb-4">
+      <div className="col-md-6 mb-2">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="Search products..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
       </div>
+      <div className="col-md-6 mb-2">
+        <select
+          className="form-select"
+          value={selectedCategory}
+          onChange={(e) => setSelectedCategory(e.target.value)}
+        >
+          {categories.map((cat) => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
+        </select>
+      </div>
+    </div>
 
-      {/* 🔍 Search & Category Filter */}
-      <div className="row mb-4">
-        <div className="col-md-6 mb-2">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Search products..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+    {/* Carousel for Offers and Feedback - MOVED HERE */}
+    <div id="offersCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
+      <div className="carousel-inner">
+        <div className="carousel-item active">
+          <img src="./assets/landing.png" className="d-block w-100" alt="Offer 1" style={{ height: '30vh', objectFit: 'cover' }} />
+          <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Special Offer!</h5>
+            <p>Get 20% off on Flow Meters this month.</p>
+          </div>
         </div>
-        <div className="col-md-6 mb-2">
-          <select
-            className="form-select"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-          >
-            {categories.map((cat) => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-          </select>
+        <div className="carousel-item">
+          <img src="./assets/landing.png" className="d-block w-100" alt="Feedback 1"  style={{ height: '30vh', objectFit: 'cover' }}/>
+          <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>Customer Feedback</h5>
+            <p>"Excellent quality instruments and prompt support!" - ABC Industries</p>
+          </div>
+        </div>
+        <div className="carousel-item"> 
+          <img src="./assets/landing.png" className="d-block w-100" alt="Offer 2" style={{ height: '30vh', objectFit: 'cover' }} />
+          <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+            <h5>New Launch!</h5>
+            <p>Introducing our next-gen Smart Level Transmitter.</p>
+          </div>
         </div>
       </div>
+      <button className="carousel-control-prev" type="button" data-bs-target="#offersCarousel" data-bs-slide="prev">
+        <span className="carousel-control-prev-icon"></span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#offersCarousel" data-bs-slide="next">
+        <span className="carousel-control-next-icon"></span>
+      </button>
+    </div>
 
-      {/* Products */}
-      <div className="row">
-        {filteredProducts.length > 0 ? (
-          filteredProducts.map((product) => {
-            const quantity = getQuantity(product.id);
-            return (
-              <div className="col-md-4 mb-4" key={product.id}>
-                <div className="card h-100 shadow-sm">
-                  <img src={product.image} className="card-img-top" alt={product.name} />
-                  <div className="card-body d-flex flex-column">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <p className="fw-bold mb-2">₹{product.price}</p>
-                  
+    {/* Products */}
+    <div className="row">
+      {filteredProducts.length > 0 ? (
+        filteredProducts.map((product) => {
+          const quantity = getQuantity(product.id);
+          return (
+            <div className="col-md-4 mb-4" key={product.id}>
+              <div className="card h-100 shadow-sm">
+                <img src={product.image} className="card-img-top" alt={product.name} />
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title">{product.name}</h5>
+                  <p className="card-text">{product.description}</p>
+                  <p className="fw-bold mb-2">₹{product.price}</p>
 
-                    {quantity === 0 ? (
+                  {quantity === 0 ? (
+                    <div className="d-flex justify-content-between align-items-center mt-auto">
                       <button className="btn btn-primary mt-auto" onClick={() => addToCart(product)}>
                         <i className="bi bi-cart-plus me-2"></i>Add to Cart
                       </button>
-                    ) : (
-                      <div className="d-flex justify-content-between align-items-center mt-auto">
-                        <button className="btn btn-outline-secondary" onClick={() => decrement(product.id)}>-</button>
-                        <span className="mx-3">{quantity}</span>
-                        <button className="btn btn-outline-secondary" onClick={() => increment(product.id)}>+</button>
-                      </div>
-                    )}
-                  </div>
+                      <button className="btn btn-primary mt-auto">Get Quote</button>
+                    </div>
+                  ) : (
+                    <div className="d-flex justify-content-between align-items-center mt-auto">
+                      <button className="btn btn-outline-secondary" onClick={() => decrement(product.id)}>-</button>
+                      <span className="mx-3">{quantity}</span>
+                      <button className="btn btn-outline-secondary" onClick={() => increment(product.id)}>+</button>
+                      <button className="btn btn-primary mt-auto">Get Quote</button>
+                    </div>
+                  )}
                 </div>
               </div>
-            );
-          })
-        ) : (
-          <p className="text-center">No products found.</p>
-        )}
-      </div>
+            </div>
+          );
+        })
+      ) : (
+        <p className="text-center">No products found.</p>
+      )}
     </div>
-  );
+  </div>
+);
+
+ 
 };
 
 export default ShopNow;

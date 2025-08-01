@@ -30,17 +30,17 @@ const Home = () => {
         <h2><i className="bi bi-box-seam text-success me-2"></i>Our Products</h2>
         <div className="row">
           <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <img src="https://placehold.co/300x200" alt="Flowmeter Type A" className="img-fluid rounded" />
+            <img src="./assets/Ultrasonic.png" alt="Flowmeter Type A" className="img-fluid rounded" />
             <h5 className="mt-2"><i className="bi bi-soundwave me-1"></i>Ultrasonic Flowmeters</h5>
             <p>High-accuracy non-intrusive meters for various fluids, featuring real-time monitoring and minimal maintenance.</p>
           </div>
           <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <img src="https://placehold.co/300x200" alt="Flowmeter Type B" className="img-fluid rounded" />
+            <img src="./assets/flow-meter.png" alt="Flowmeter Type B" className="img-fluid rounded" />
             <h5 className="mt-2"><i className="bi bi-lightning-charge me-1"></i>Electromagnetic Flowmeters</h5>
             <p>Ideal for conductive liquids in industrial applications with robust build and digital output compatibility.</p>
           </div>
           <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <img src="https://placehold.co/300x200" alt="Flowmeter Type C" className="img-fluid rounded" />
+            <img src="./assets/Turbine-flow.png" alt="Flowmeter Type C" className="img-fluid rounded" />
             <h5 className="mt-2"><i className="bi bi-wind me-1"></i>Turbine Flowmeters</h5>
             <p>Compact and efficient meters for low-viscosity fluids with high repeatability and wide rangeability.</p>
           </div>
