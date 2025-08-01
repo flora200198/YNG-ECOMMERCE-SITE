@@ -1,0 +1,15 @@
+.carousel-image-container {
+  width: 100%;
+  height: 300px; /* Set desired height for uniform container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8f9fa; /* Optional background for empty space */
+  overflow: hidden;
+}
+
+.carousel-image {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Ensures full image fits inside container */
+}

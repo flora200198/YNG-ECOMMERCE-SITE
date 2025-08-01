@@ -1,12 +1,11 @@
-:root{
- --bs-primary:#b8860b;
+:root {
+  --bs-primary: #ff6600; /* Orange as primary color */
 }
 
 body {
-  background-color: #ffffff; /* Golden yellow background */
+  background-color: #ffffff; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* color: #333; */
-  color: #b8860b;
+  color: #333; /* Keep normal text dark for readability */
   margin: 0;
   padding: 0;
 }
@@ -21,77 +20,68 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-/* Headings with white background */
-.golden-bg-heading {
-  background-color: white;
-  color: #b8860b;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  display: inline-block;
-}
-
-/* Navbar */
+/* Navbar (Orange Background, White Fonts) */
 .navbar {
-  background-color: #fff;
-  border-bottom: 2px solid #a37409;
+  background-color: #ff6600 !important; /* Orange navbar */
+  border-bottom: none;
 }
 
 .navbar-brand,
 .nav-link {
-  color: #b8860b !important;
+  color: white !important; /* White font for navbar */
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #a37409 !important;
+  color: #f1f1f1 !important; /* Slight lighter hover */
 }
 
-/* Footer */
+/* Footer (Optional - Match Theme) */
 footer {
-  background-color: white;
-  border-top: 2px solid #b8860b;
+  background-color: #ff6600;
+  border-top: none;
   padding: 20px 0;
   text-align: center;
   font-size: 0.95rem;
-  color: #333;
+  color: white;
 }
 
 /* Buttons */
 .btn-primary {
-  background-color: #17a9ce;
-  border-color: #17a9ce;
+  background-color: #ff6600;
+  border-color: #ff6600;
   color: white;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #17a9ce;
-  border-color: #17a9ce;
-  color: white;
+  background-color: #e65c00;
+  border-color: #e65c00;
 }
 
+/* Outline Button */
 .btn-outline-primary {
-  color: #17a9ce;
-  border-color: #17a9ce;
+  color: #ff6600;
+  border-color: #ff6600;
   font-weight: 500;
 }
 
 .btn-outline-primary:hover {
-  background-color: #17a9ce;
+  background-color: #ff6600;
   color: white;
 }
 
 /* Links */
 a {
-  color: #b8860b;
+  color: #ff6600;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #a37409;
+  color: #e65c00;
 }
 
 /* Icons */
@@ -102,10 +92,10 @@ a:hover {
 }
 
 .bi:hover {
-  color: #ffffff;
+  color: #f1f1f1;
 }
 
-/* Product Cards / Sections */
+/* Product Cards */
 .product-section {
   background-color: white;
   border: 1px solid #f1e5c0;
@@ -121,17 +111,16 @@ a:hover {
 }
 
 /* Accent Utilities */
-.border-golden {
-  border-color: #b8860b !important;
+.border-orange {
+  border-color: #ff6600 !important;
 }
 
-.text-golden {
-  color: #b8860b !important;
-  /* color:black !important; */
+.text-orange {
+  color: #ff6600 !important;
 }
 
-.bg-golden {
-  background-color: #b8860b !important;
+.bg-orange {
+  background-color: #ff6600 !important;
   color: white !important;
   border-radius: 5px;
   padding: 0.5rem 1rem;
@@ -140,11 +129,6 @@ a:hover {
 /* Responsive Fixes */
 @media (max-width: 768px) {
   .navbar-nav {
-    text-align: center;
-  }
-
-  .golden-bg-heading {
-    display: block;
     text-align: center;
   }
 }

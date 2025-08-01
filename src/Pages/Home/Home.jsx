@@ -1,6 +1,68 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Carousel } from 'react-bootstrap';
+import './Home.css'
 
 const Home = () => {
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const industries = [
+    {
+      title: "Oil & Gas",
+      icon: "bi bi-droplet-half text-primary",
+      content: "We provide advanced solutions for oil extraction, refining, and pipeline monitoring to ensure efficiency and safety in oil & gas operations.",
+      image: "./assets/Oil.png"
+    },
+    {
+      title: "Water and Wastewater",
+      icon: "bi bi-water text-info",
+      content: "Our water and wastewater solutions help industries maintain compliance, reduce waste, and optimize resource utilization.",
+      image: "./assets/Waste-water.png"
+    },
+    {
+      title: "Pharmaceutical Manufacturing",
+      icon: "bi bi-capsule-pill text-danger",
+      content: "We deliver precision instruments for pharmaceutical production, ensuring quality control and regulatory compliance.",
+      image: "./assets/Pharma.png"
+    },
+    {
+      title: "Chemical Processing",
+      icon: "bi bi-beaker text-warning",
+      content: "Our solutions help monitor and control chemical reactions, enhancing safety and operational efficiency.",
+      image: "./assets/Chemical.png"
+    },
+    {
+      title: "Food & Beverage",
+      icon: "bi bi-cup-straw text-success",
+      content: "We provide hygienic and efficient solutions for food and beverage production to ensure safety and quality.",
+      image: "./assets/Food.png"
+    }
+  ];
+   const reasons = [
+    {
+      icon: "bi bi-patch-check-fill text-success",
+      title: "ISO-certified manufacturing",
+      description: "We follow strict ISO-certified processes to ensure the highest quality in our manufacturing standards.",
+      image: "./assets/ISO.png"
+    },
+    {
+      icon: "bi bi-tools text-primary",
+      title: "Customized instrumentation solutions",
+      description: "Tailor-made instrumentation solutions designed to meet your specific industrial needs.",
+      image: "./assets/Customize.png"
+    },
+    {
+      icon: "bi bi-headset text-info",
+      title: "24/7 Technical Support",
+      description: "Our expert team is available round the clock to ensure uninterrupted operations for your business.",
+      image: "./assets/24.png"
+    },
+    {
+      icon: "bi bi-truck text-warning",
+      title: "On-time delivery with global shipping",
+      description: "We guarantee on-time delivery with worldwide shipping options for our clients.",
+      image: "./assets/delivery.png"
+    }
+  ];
   return (
     <div className="container py-5">
       {/* Hero Section */}
@@ -49,34 +111,86 @@ const Home = () => {
 
       {/* Industries Served */}
       <section className="mb-5" data-aos="fade-right">
-        <h2><i className="bi bi-diagram-3 text-warning me-2"></i>Industries We Serve</h2>
-        <ul className="list-unstyled">
-          <li><i className="bi bi-droplet-half me-2 text-primary"></i>Oil & Gas</li>
-          <li><i className="bi bi-water me-2 text-info"></i>Water and Wastewater</li>
-          <li><i className="bi bi-capsule-pill me-2 text-danger"></i>Pharmaceutical Manufacturing</li>
-          <li><i className="bi bi-beaker me-2 text-warning"></i>Chemical Processing</li>
-          <li><i className="bi bi-cup-straw me-2 text-success"></i>Food & Beverage</li>
-        </ul>
-        <img src="https://placehold.co/800x250" alt="Industries Served" className="img-fluid mt-3 rounded" />
-      </section>
+  <div className="container">
+    {/* Centered Heading */}
+    <div className="text-center mb-4">
+      <h2>
+        <i className="bi bi-diagram-3 text-warning me-2"></i>
+        Industries We Serve
+      </h2>
+    </div>
+
+    {/* Content and Image Carousel */}
+    <div className="row align-items-center">
+      {/* LEFT CONTENT */}
+      <div className="col-md-6">
+        <h4>
+          <i className={`${industries[activeIndex].icon} me-2`}></i>
+          {industries[activeIndex].title}
+        </h4>
+        <p>{industries[activeIndex].content}</p>
+      </div>
+
+      {/* RIGHT IMAGE CAROUSEL */}
+      <div className="col-md-6">
+        <Carousel activeIndex={activeIndex} onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}>
+          {industries.map((industry, idx) => (
+            <Carousel.Item key={idx}>
+              <div className="carousel-image-container">
+                <img
+                  src={industry.image}
+                  alt={industry.title}
+                  className="d-block w-100 carousel-image"
+                />
+              </div>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Why Choose Us */}
       <section className="mb-5" data-aos="fade-left">
-        <h2><i className="bi bi-check-circle text-success me-2"></i>Why Choose Us?</h2>
-        <div className="row">
-          <div className="col-md-6">
-            <ul className="list-unstyled">
-              <li><i className="bi bi-patch-check-fill text-success me-2"></i>ISO-certified manufacturing</li>
-              <li><i className="bi bi-tools me-2 text-primary"></i>Customized instrumentation solutions</li>
-              <li><i className="bi bi-headset me-2 text-info"></i>24/7 Technical Support</li>
-              <li><i className="bi bi-truck me-2 text-warning"></i>On-time delivery with global shipping</li>
-            </ul>
-          </div>
-          <div className="col-md-6">
-            <img src="https://placehold.co/400x250" alt="Why Choose Us" className="img-fluid rounded" />
-          </div>
+      <h2 className="text-center mb-4">
+        <i className="bi bi-check-circle text-success me-2"></i>
+        Why Choose Us?
+      </h2>
+
+      <div className="row align-items-center">
+        {/* LEFT CONTENT */}
+        <div className="col-md-6">
+          <h4>
+            <i className={`${reasons[activeIndex].icon} me-2`}></i>
+            {reasons[activeIndex].title}
+          </h4>
+          <p>{reasons[activeIndex].description}</p>
         </div>
-      </section>
+
+        {/* RIGHT IMAGE CAROUSEL */}
+        <div className="col-md-6">
+          <Carousel 
+            activeIndex={activeIndex} 
+            onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
+            interval={3000} // Auto-slide every 3 sec
+          >
+            {reasons.map((reason, idx) => (
+              <Carousel.Item key={idx}>
+                <div className="carousel-image-container">
+                  <img
+                    src={reason.image}
+                    alt={reason.title}
+                    className="d-block w-100 carousel-image"
+                  />
+                </div>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    </section>
 
       {/* Contact CTA */}
       <section className="text-center bg-light py-4 rounded shadow-sm" data-aos="zoom-in">

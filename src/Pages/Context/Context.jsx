@@ -50,6 +50,8 @@ export const products = [
   { id: 30, name: 'Gas Analyzer', description: 'Analyzer for various industrial gases using NDIR, UV, Chemiluminescent methods.', price: 0, image: 'https://placehold.co/400x300', category: 'Air Quality' }
 ];
 
+
+
 // 3. Provider component
 export const CheckoutProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);

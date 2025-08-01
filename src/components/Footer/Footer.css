@@ -1,0 +1,7 @@
+.footer-bottom {
+  background-color: #000; /* Black copyright bar */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 0; /* Remove gap */
+}
