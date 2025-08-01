@@ -33,19 +33,19 @@ const About = () => {
         <h2 className="mb-4 text-center">Management Team</h2>
         <div className="row text-center">
           <div className="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="100">
-            <img src="https://placehold.co/200x200" className="rounded-circle mb-3" alt="John Doe" />
+            <img src="./assets/CEO.png" className="rounded-circle mb-3" alt="John Doe" />
             <h5>John Doe</h5>
-            <p>Managing Director</p>
+            <p>CEO, Founder</p>
           </div>
           <div className="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="200">
-            <img src="https://placehold.co/200x200" className="rounded-circle mb-3" alt="Jane Smith" />
-            <h5>Jane Smith</h5>
-            <p>Administrative Officer</p>
+            <img src="./assets/Director1.png" className="rounded-circle mb-3" alt="Jane Smith" />
+            <h5>Vanamali Ramaswami</h5>
+            <p>Director</p>
           </div>
           <div className="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="300">
-            <img src="https://placehold.co/200x200" className="rounded-circle mb-3" alt="Alex Johnson" />
-            <h5>Alex Johnson</h5>
-            <p>Assistant Managing Director</p>
+            <img src="./assets/Director2.png" className="rounded-circle mb-3" alt="Alex Johnson" />
+            <h5>Karthik T</h5>
+            <p>Director</p>
           </div>
         </div>
       </section>

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import './Navbar.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg" >
       <div className="container">
         <Link className="navbar-brand text-white" to="/">
-          <img src="logo.png" alt="Company Logo" style={{ height: '50px' }} />
+          <img src="./assets/Logo.png" alt="Company Logo" style={{ height: '80px' }} className='company-logo' />
         </Link>
         <button
           className="navbar-toggler"

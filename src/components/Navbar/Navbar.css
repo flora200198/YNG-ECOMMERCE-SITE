@@ -1,0 +1,7 @@
+.company-logo {
+  height: 120px; /* Increased size */
+  background-color: white; /* White background */
+  padding: 10px; /* Optional: padding to add spacing inside background */
+  border-radius: 8px; /* Optional: rounded edges for cleaner look */
+  display: inline-block;
+}

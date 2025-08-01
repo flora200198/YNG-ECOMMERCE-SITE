@@ -47,7 +47,12 @@ export const products = [
   // Air Quality & Gas Analyzers
   { id: 28, name: 'Air Quality Monitoring Station (AQMS)', description: 'Air quality monitoring station for dust and pollutants.', price: 0, image: 'https://placehold.co/400x300', category: 'Air Quality' },
   { id: 29, name: 'Continuous Emission Monitoring System (CEMS)', description: 'Gas emission monitoring for various gases including SOx, NOx, CO, CO2.', price: 0, image: 'https://placehold.co/400x300', category: 'Air Quality' },
-  { id: 30, name: 'Gas Analyzer', description: 'Analyzer for various industrial gases using NDIR, UV, Chemiluminescent methods.', price: 0, image: 'https://placehold.co/400x300', category: 'Air Quality' }
+  { id: 30, name: 'Gas Analyzer', description: 'Analyzer for various industrial gases using NDIR, UV, Chemiluminescent methods.', price: 0, image: 'https://placehold.co/400x300', category: 'Air Quality' },
+   
+  // Water Quality Detector
+  { id: 31, name: 'Air Quality Monitoring Station (AQMS)', description: 'Air quality monitoring station for dust and pollutants.', price: 0, image: 'https://placehold.co/400x300', category: 'Water' },
+  // { id: 29, name: 'Continuous Emission Monitoring System (CEMS)', description: 'Gas emission monitoring for various gases including SOx, NOx, CO, CO2.', price: 0, image: 'https://placehold.co/400x300', category: 'Air Quality' },
+  // { id: 30, name: 'Gas Analyzer', description: 'Analyzer for various industrial gases using NDIR, UV, Chemiluminescent methods.', price: 0, image: 'https://placehold.co/400x300', category: 'Air Quality' }
 ];
 
 
