@@ -82,7 +82,7 @@ const About = () => {
       <section className="text-center bg-light p-4 rounded shadow-sm mt-5" data-aos="zoom-in">
         <h4>Want to know more or partner with us?</h4>
         <p>We’d love to hear from you. Let’s create something exceptional together.</p>
-        <a href="/contact" className="btn btn-primary">Contact Us</a>
+        <a href="/join" className="btn btn-primary">Join Us</a>
       </section>
     </div>
   );

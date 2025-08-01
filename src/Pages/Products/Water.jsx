@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'aos/dist/aos.css';
+import AOS from 'aos';
 import { useCheckout } from '../Context/Context';
 import './Products.css';
 
@@ -8,34 +9,44 @@ const Water = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const { products } = useCheckout();
 
-const waterquality = products.filter((product) => product.category === 'Water');
+  // Filter only Water Quality products
+  const waterquality = products.filter((product) => product.category === 'Water');
+
+  // Initialize AOS for animations
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Trigger only once
+      easing: 'ease-in-out', // Smooth easing
+    });
+  }, []);
 
   return (
     <div className="container py-5">
-      <h1 className="text-center mb-5">Water Quality Detectors</h1>
+      <h1 className="text-left mb-5" data-aos="fade-down">Water Quality Detectors</h1>
 
-      {/* Check if analyzers array has data */}
-      {waterquality&& waterquality.length > 0 ? (
+      {waterquality && waterquality.length > 0 ? (
         <div className="row align-items-center">
-          {/* LEFT CONTENT (Product Details) */}
-          <div className="col-md-6">
-            <h3>
+          {/* LEFT CONTENT (Animated) */}
+          <div className="col-md-6" data-aos="fade-right">
+            <h3 className="animated-heading">
               <i className={`bi ${waterquality[activeIndex]?.icon || 'bi-gear'} me-2 text-primary`}></i>
               {waterquality[activeIndex]?.name || 'Loading...'}
             </h3>
-            <p>{waterquality[activeIndex]?.description || ''}</p>
+            <p className="animated-text">{waterquality[activeIndex]?.description || ''}</p>
           </div>
 
-          {/* RIGHT IMAGE CAROUSEL */}
-          <div className="col-md-6">
+          {/* RIGHT IMAGE CAROUSEL (Animated) */}
+          <div className="col-md-6" data-aos="fade-left">
             <Carousel
               activeIndex={activeIndex}
               onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
               interval={3000} // auto-slide every 3 seconds
+              fade // smooth fade transition between slides
             >
               {waterquality.map((product, idx) => (
                 <Carousel.Item key={idx}>
-                  <div className="carousel-image-container">
+                  <div className="carousel-image-container zoom-effect">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -48,7 +59,7 @@ const waterquality = products.filter((product) => product.category === 'Water');
           </div>
         </div>
       ) : (
-        <p className="text-center text-muted">Loading analysers...</p>
+        <p className="text-center text-muted" data-aos="fade-up">Loading water quality detectors...</p>
       )}
     </div>
   );
