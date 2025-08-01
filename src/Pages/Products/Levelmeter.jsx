@@ -23,7 +23,7 @@ const Levelmeter = () => {
 
   return (
     <div className="container py-5">
-      <h1 className="text-left mb-5" data-aos="fade-down">Level Meter</h1>
+      <h2 className="text-left mb-5" data-aos="fade-down">Level Meter</h2>
 
       {levelmeter && levelmeter.length > 0 ? (
         <div className="row align-items-center">

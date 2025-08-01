@@ -23,7 +23,7 @@ const Temperature = () => {
 
   return (
     <div className="container py-5">
-      <h1 className="text-left mb-5" data-aos="fade-down">Temperature Transmitters</h1>
+      <h2 className="text-left mb-5" data-aos="fade-down">Temperature Transmitters</h2>
 
       {temperature && temperature.length > 0 ? (
         <div className="row align-items-center">

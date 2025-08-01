@@ -24,9 +24,9 @@ const Analysers = () => {
 
   return (
     <div className="container py-5">
-      <h1 className="text-left mb-5" data-aos="fade-down">
+      <h2 className="text-left mb-5" data-aos="fade-down">
         Analysers
-      </h1>
+      </h2>
 
       {analyzers && analyzers.length > 0 ? (
         <div className="row align-items-center">

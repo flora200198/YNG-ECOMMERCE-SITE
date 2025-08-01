@@ -1,0 +1,8 @@
+/* Fixed image container size without cropping */
+.product-image {
+  height: 200px; /* Fixed height for all product images */
+  width: 100%;
+  object-fit: contain; /* Shrinks or fits image without cropping */
+  background-color: #f8f9fa; /* Optional: add light background to fill empty space */
+  padding: 10px; /* Optional: adds some spacing inside container */
+}

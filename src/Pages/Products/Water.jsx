@@ -23,7 +23,7 @@ const Water = () => {
 
   return (
     <div className="container py-5">
-      <h1 className="text-left mb-5" data-aos="fade-down">Water Quality Detectors</h1>
+      <h2 className="text-left mb-5" data-aos="fade-down">Water Quality Detectors</h2>
 
       {waterquality && waterquality.length > 0 ? (
         <div className="row align-items-center">
