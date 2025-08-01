@@ -37,7 +37,7 @@ const Home = () => {
       image: "./assets/Food.png"
     }
   ];
-   const reasons = [
+  const reasons = [
     {
       icon: "bi bi-patch-check-fill text-success",
       title: "ISO-certified manufacturing",
@@ -69,7 +69,7 @@ const Home = () => {
       <section className="text-center mb-5" data-aos="fade-down">
         <h1 className="display-4">Precision Engineering Instruments</h1>
         <p className="lead">Leading the industry in accurate flow measurement and control systems.</p>
-        <img src="./assets/landing.png" alt="Hero - Engineering Instruments" className="img-fluid rounded shadow" />
+        <img src="./assets/Landing.png" alt="Hero - Engineering Instruments" className="img-fluid rounded shadow" />
       </section>
 
       {/* Introduction Section */}
@@ -89,108 +89,116 @@ const Home = () => {
 
       {/* Product Overview */}
       <section className="mb-5" data-aos="zoom-in-up">
-        <h2><i className="bi bi-box-seam text-success me-2"></i>Our Products</h2>
-        <div className="row">
-          <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <img src="./assets/Ultrasonic.png" alt="Flowmeter Type A" className="img-fluid rounded" />
-            <h5 className="mt-2"><i className="bi bi-soundwave me-1"></i>Ultrasonic Flowmeters</h5>
-            <p>High-accuracy non-intrusive meters for various fluids, featuring real-time monitoring and minimal maintenance.</p>
-          </div>
-          <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <img src="./assets/flow-meter.png" alt="Flowmeter Type B" className="img-fluid rounded" />
-            <h5 className="mt-2"><i className="bi bi-lightning-charge me-1"></i>Electromagnetic Flowmeters</h5>
-            <p>Ideal for conductive liquids in industrial applications with robust build and digital output compatibility.</p>
-          </div>
-          <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <img src="./assets/Turbine-flow.png" alt="Flowmeter Type C" className="img-fluid rounded" />
-            <h5 className="mt-2"><i className="bi bi-wind me-1"></i>Turbine Flowmeters</h5>
-            <p>Compact and efficient meters for low-viscosity fluids with high repeatability and wide rangeability.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Served */}
-      <section className="mb-5" data-aos="fade-right">
-  <div className="container">
-    {/* Centered Heading */}
-    <div className="text-center mb-4">
-      <h2>
-        <i className="bi bi-diagram-3 text-warning me-2"></i>
-        Industries We Serve
-      </h2>
+  <h2><i className="bi bi-box-seam text-success me-2"></i>Our Products</h2>
+  <div className="row">
+    <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+      <div className="product-image-container">
+        <img src="./assets/Ultrasonic.png" alt="Flowmeter Type A" className="product-image" />
+      </div>
+      <h5 className="mt-2"><i className="bi bi-soundwave me-1"></i>Ultrasonic Flowmeters</h5>
+      <p>High-accuracy non-intrusive meters for various fluids, featuring real-time monitoring and minimal maintenance.</p>
     </div>
-
-    {/* Content and Image Carousel */}
-    <div className="row align-items-center">
-      {/* LEFT CONTENT */}
-      <div className="col-md-6">
-        <h4>
-          <i className={`${industries[activeIndex].icon} me-2`}></i>
-          {industries[activeIndex].title}
-        </h4>
-        <p>{industries[activeIndex].content}</p>
+    <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+      <div className="product-image-container">
+        <img src="./assets/flow-meter.png" alt="Flowmeter Type B" className="product-image" />
       </div>
-
-      {/* RIGHT IMAGE CAROUSEL */}
-      <div className="col-md-6">
-        <Carousel activeIndex={activeIndex} onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}>
-          {industries.map((industry, idx) => (
-            <Carousel.Item key={idx}>
-              <div className="carousel-image-container">
-                <img
-                  src={industry.image}
-                  alt={industry.title}
-                  className="d-block w-100 carousel-image"
-                />
-              </div>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+      <h5 className="mt-2"><i className="bi bi-lightning-charge me-1"></i>Electromagnetic Flowmeters</h5>
+      <p>Ideal for conductive liquids in industrial applications with robust build and digital output compatibility.</p>
+    </div>
+    <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+      <div className="product-image-container">
+        <img src="./assets/Turbine-flow.png" alt="Flowmeter Type C" className="product-image" />
       </div>
+      <h5 className="mt-2"><i className="bi bi-wind me-1"></i>Turbine Flowmeters</h5>
+      <p>Compact and efficient meters for low-viscosity fluids with high repeatability and wide rangeability.</p>
     </div>
   </div>
 </section>
 
 
+
+      {/* Industries Served */}
+      <section className="mb-5" data-aos="fade-right">
+        <div className="container">
+          {/* Centered Heading */}
+          <div className="text-center mb-4">
+            <h2>
+              <i className="bi bi-diagram-3 text-warning me-2"></i>
+              Industries We Serve
+            </h2>
+          </div>
+
+          {/* Content and Image Carousel */}
+          <div className="row align-items-center">
+            {/* LEFT CONTENT */}
+            <div className="col-md-6">
+              <h4>
+                <i className={`${industries[activeIndex].icon} me-2`}></i>
+                {industries[activeIndex].title}
+              </h4>
+              <p>{industries[activeIndex].content}</p>
+            </div>
+
+            {/* RIGHT IMAGE CAROUSEL */}
+            <div className="col-md-6">
+              <Carousel activeIndex={activeIndex} onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}>
+                {industries.map((industry, idx) => (
+                  <Carousel.Item key={idx}>
+                    <div className="carousel-image-container">
+                      <img
+                        src={industry.image}
+                        alt={industry.title}
+                        className="d-block w-100 carousel-image"
+                      />
+                    </div>
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* Why Choose Us */}
       <section className="mb-5" data-aos="fade-left">
-      <h2 className="text-center mb-4">
-        <i className="bi bi-check-circle text-success me-2"></i>
-        Why Choose Us?
-      </h2>
+        <h2 className="text-center mb-4">
+          <i className="bi bi-check-circle text-success me-2"></i>
+          Why Choose Us?
+        </h2>
 
-      <div className="row align-items-center">
-        {/* LEFT CONTENT */}
-        <div className="col-md-6">
-          <h4>
-            <i className={`${reasons[activeIndex].icon} me-2`}></i>
-            {reasons[activeIndex].title}
-          </h4>
-          <p>{reasons[activeIndex].description}</p>
-        </div>
+        <div className="row align-items-center">
+          {/* LEFT CONTENT */}
+          <div className="col-md-6">
+            <h4>
+              <i className={`${reasons[activeIndex].icon} me-2`}></i>
+              {reasons[activeIndex].title}
+            </h4>
+            <p>{reasons[activeIndex].description}</p>
+          </div>
 
-        {/* RIGHT IMAGE CAROUSEL */}
-        <div className="col-md-6">
-          <Carousel 
-            activeIndex={activeIndex} 
-            onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
-            interval={3000} // Auto-slide every 3 sec
-          >
-            {reasons.map((reason, idx) => (
-              <Carousel.Item key={idx}>
-                <div className="carousel-image-container">
-                  <img
-                    src={reason.image}
-                    alt={reason.title}
-                    className="d-block w-100 carousel-image"
-                  />
-                </div>
-              </Carousel.Item>
-            ))}
-          </Carousel>
+          {/* RIGHT IMAGE CAROUSEL */}
+          <div className="col-md-6">
+            <Carousel
+              activeIndex={activeIndex}
+              onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
+              interval={3000} // Auto-slide every 3 sec
+            >
+              {reasons.map((reason, idx) => (
+                <Carousel.Item key={idx}>
+                  <div className="carousel-image-container">
+                    <img
+                      src={reason.image}
+                      alt={reason.title}
+                      className="d-block w-100 carousel-image"
+                    />
+                  </div>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
       {/* Contact CTA */}
       <section className="text-center bg-light py-4 rounded shadow-sm" data-aos="zoom-in">
