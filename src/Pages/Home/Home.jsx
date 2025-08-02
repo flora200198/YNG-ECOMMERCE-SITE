@@ -120,8 +120,6 @@ const Home = () => {
         </div>
       </section>
 
-
-
       {/* Industries Served */}
       <section className="mb-5" data-aos="fade-right">
         <div className="container">
@@ -163,7 +161,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
 
       {/* Why Choose Us */}
       <section className="mb-5" data-aos="fade-left">

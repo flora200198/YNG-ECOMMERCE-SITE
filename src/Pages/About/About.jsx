@@ -7,7 +7,7 @@ const About = () => {
       <section className="text-center mb-5" data-aos="fade-down">
         <h1 className="display-4">About Our Company</h1>
         <p className="lead">Engineering precision for industries worldwide.</p>
-        <img src="https://placehold.co/1000x300" alt="Company Overview" className="img-fluid rounded shadow-sm mt-3" />
+        <img src="./assets/About.png" alt="Company Overview" className="img-fluid rounded shadow-sm mt-3" />
       </section>
 
       {/* Mission & Vision */}
@@ -34,7 +34,7 @@ const About = () => {
         <div className="row text-center">
           <div className="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="100">
             <img src="./assets/CEO.png" className="rounded-circle mb-3" alt="John Doe" />
-            <h5>John Doe</h5>
+            <h5>Dr. G.P. Thirumurugan</h5>
             <p>CEO, Founder</p>
           </div>
           <div className="col-md-4 mb-4" data-aos="flip-left" data-aos-delay="200">
