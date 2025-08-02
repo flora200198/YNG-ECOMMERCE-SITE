@@ -129,8 +129,7 @@ const Home = () => {
         <img
           src="./assets/Landing.png"
           alt="Hero - Engineering Instruments"
-          className="img-fluid rounded shadow"
-          style={{ width: '100%', display: 'block', margin: '0 auto', height: '70vh' }}
+          className="img-fluid rounded shadow hero-image"
         />
       </section>
 
@@ -262,7 +261,6 @@ const Home = () => {
           {/* LEFT CONTENT */}
           <div className="col-md-6">
             <h4>
-
               {reasons[activeIndex].title}
             </h4>
             <p>{reasons[activeIndex].description}</p>

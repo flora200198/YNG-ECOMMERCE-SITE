@@ -55,7 +55,6 @@
   font-size: 1.2rem;
 }
 
-
 .custom-arrow:focus,
 .custom-arrow:active {
   outline: none !important;
@@ -67,18 +66,18 @@
 
 /* Dots Styles (bottom center) */
 .slick-dots {
-  bottom: -30px; /* Position dots below carousel */
+  bottom: -30px; 
 }
 .slick-dots li button:before {
   font-size: 10px;
-  color: #888; /* Grey dots */
+  color: #888; 
 }
 .slick-dots li.slick-active button:before {
-  color: #007bff; /* Active dot color (blue) */
+  color: #007bff; 
 }
 .slick-prev::before,
 .slick-next::before {
-  content: none !important; /* ✅ Remove Slick's default arrow icons/dots */
+  content: none !important; 
 }
 .card-title{
 text-align: center;
@@ -108,18 +107,18 @@ text-align: center;
 
 .view-all-card {
   display: flex;
-  justify-content: center; /* Horizontal center */
-  align-items: center;     /* Vertical center */
+  justify-content: center; 
+  align-items: center;     
   background: #f8f9fa;
   cursor: pointer;
-  min-height: 250px;       /* Same as product card height */
+  min-height: 250px;       
 }
 
 .view-all-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* Vertical center for text+icon */
+  justify-content: center; 
 }
 .product-image-container {
   height: 200px;
@@ -130,4 +129,26 @@ text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+/*Landing image*/
+.hero-image {
+  width: 100%;
+  display: block;
+  margin: 0 auto; 
+  height: 70vh; /* Default for desktop */
+  object-fit: cover; /* Keep image ratio and crop if needed */
+  border-radius: 8px;
+}
+
+/* ✅ Mobile height adjustment */
+@media (max-width: 768px) {
+  .hero-image {
+    height: 40vh; /* Reduce height for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-image {
+    height: 30vh; /* Further reduce height for mobile */
+  }
 }
