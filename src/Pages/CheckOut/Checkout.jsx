@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GenerateInvoice from "../../components/Invoice/Invoice";
+import { bottom } from "@popperjs/core";
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState(() => {
@@ -121,7 +122,7 @@ const Checkout = () => {
       <div className="row">
         {/* LEFT: Checkout Form */}
         <div className="col-md-8">
-          <h2 className="mb-4">Checkout Page</h2>
+          <h2 className="mb-4">Your Cart</h2>
 
           {/* Address Section */}
           <div className="mb-4">
@@ -287,9 +288,9 @@ const Checkout = () => {
         </div>
 
         {/* RIGHT: Cart Summary */}
-        <div className="col-md-4">
-          <h4 className="mb-3">Your Cart</h4>
-          <div className="border rounded p-3">
+        <div className="col-12 col-md-4 mt-4">
+          <h4 className="mb-3">Cart Items</h4> 
+          <div className="border rounded p-3" style={{ maxHeight: "400px", overflowY: "auto" , margin:"10px"}}>
             {cartItems.map((item) => (
               <div key={item.id} className="d-flex align-items-center mb-3">
                 <img src={item.image} alt={item.title} width="60" height="60" className="me-3 rounded" />
