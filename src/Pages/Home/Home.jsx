@@ -28,23 +28,38 @@ const Home = () => {
   );
 
 
-  const settings = {
-    dots: true,           // ✅ Show bottom dots
-    infinite: false,      // ✅ Stop looping after the last slide
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    arrows: true,         // ✅ Keep arrows visible
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      { breakpoint: 992, settings: { slidesToShow: 2 } },
-      { breakpoint: 576, settings: { slidesToShow: 1 } }
-    ]
-  };
+const settings = {
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+  pauseOnHover: true,
+  arrows: true,
+  nextArrow: <NextArrow />,
+  prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 992,
+      settings: { slidesToShow: 2 }
+    },
+    {
+      breakpoint: 576,
+      settings: {
+        slidesToShow: 1,
+        customPaging: (i) => <button>{i + 1}</button>,  // Custom dot numbering
+        appendDots: (dots) => (
+          <ul className="slick-dots">
+            {dots.slice(0, 4)} {/* ✅ Limit dots to 4 */}
+          </ul>
+        )
+      }
+    }
+  ]
+};
+
 
   const [activeIndex, setActiveIndex] = useState(0);
   const industries = [
@@ -151,45 +166,45 @@ const Home = () => {
 
       {/* Product Overview */}
       <section className="mb-5" data-aos="zoom-in-up">
-  <div className="d-flex justify-content-between align-items-center">
-    <h2>
-      <i className="bi bi-box-seam text-success me-2"></i>Our Products
-    </h2>
-    <button
-      className="btn btn-link text-decoration-none d-flex align-items-center"
-      onClick={() => navigate('/products')}
-    >
-      View All Products <i className="bi bi-arrow-right ms-2"></i>
-    </button>
-  </div>
+        <div className="d-flex justify-content-between align-items-center">
+          <h2>
+            <i className="bi bi-box-seam text-success me-2"></i>Our Products
+          </h2>
+          <button
+            className="btn btn-link text-decoration-none d-flex align-items-center"
+            onClick={() => navigate('/products')}
+          >
+            View All Products <i className="bi bi-arrow-right ms-2"></i>
+          </button>
+        </div>
 
-  <section className="mb-5" data-aos="zoom-in-up">
-    <Slider {...settings} className="mt-4">
-      {products.map((product, index) => (
-        <div key={index} className="p-2">
-          <div className="card shadow-sm border-0 h-100 equal-card">
-            <img src={product.image} className="card-img-top p-3" alt={product.title} />
-            <div className="card-body">
-              <h5 className="card-title">{product.name}</h5>
+        <section className="mb-5" data-aos="zoom-in-up">
+          <Slider {...settings} className="mt-4">
+            {products.map((product, index) => (
+              <div key={index} className="p-2">
+                <div className="card shadow-sm border-0 h-100 equal-card">
+                  <img src={product.image} className="card-img-top p-3" alt={product.title} />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.name}</h5>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div className="p-2">
+              <div
+                className="card shadow-sm border-0 h-100 d-flex align-items-center justify-content-center text-center"
+                style={{ cursor: "pointer", background: "#f8f9fa" }}
+                onClick={() => navigate('/products')}
+              >
+                <div className="view-all-content text-center">
+                  <h5 className="text-primary mb-2">View All Products</h5>
+                  <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      ))}
-      <div className="p-2">
-        <div
-          className="card shadow-sm border-0 h-100 d-flex align-items-center justify-content-center text-center"
-          style={{ cursor: "pointer", background: "#f8f9fa" }}
-          onClick={() => navigate('/products')}
-        >
-          <div className="p-4">
-            <h5 className="text-primary mb-2">View All Products</h5>
-            <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
-          </div>
-        </div>
-      </div>
-    </Slider>
-  </section>
-</section>
+          </Slider>
+        </section>
+      </section>
 
 
 
@@ -246,7 +261,7 @@ const Home = () => {
           {/* LEFT CONTENT */}
           <div className="col-md-6">
             <h4>
-              <i className={`${reasons[activeIndex].icon} me-2`}></i>
+              
               {reasons[activeIndex].title}
             </h4>
             <p>{reasons[activeIndex].description}</p>

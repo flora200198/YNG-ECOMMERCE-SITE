@@ -45,7 +45,7 @@
 
 
 /* Arrow Styles */
-.custom-arrow {
+/* .custom-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -58,17 +58,31 @@
   font-size: 1.5rem;
   color: #555;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */
-  outline: none !important;          /* Remove focus outline */
-  box-shadow: none !important;
+  /* outline: none !important;          /* Remove focus outline */
+  /* box-shadow: none !important; */ 
+/* } */ 
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4); /* Semi-transparent dark background */
+  color: #fff;
+  padding: 8px;
+  border-radius: 50%;
+  z-index: 10; /* Ensure arrows stay above everything */
+  cursor: pointer;
+  font-size: 1.2rem;
 }
+
 
 .custom-arrow:focus,
 .custom-arrow:active {
   outline: none !important;
   box-shadow: none !important;
 }
-.slick-prev { left: -40px !important; }
-.slick-next { right: -40px !important; }
+.slick-prev { left: 10px !important; z-index: 11; }
+.slick-next { right: 10px !important; z-index: 11; }
 .custom-arrow:hover { background: #555; color: #fff; }
 
 /* Dots Styles (bottom center) */
@@ -91,4 +105,39 @@ text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
   margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+  .slick-prev {
+    left: 5px !important;
+  }
+  .slick-next {
+    right: 5px !important;
+  }
+  .custom-arrow {
+    font-size: 1rem;
+    padding: 6px;
+  }
+}
+
+.card.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-all-card {
+  display: flex;
+  justify-content: center; /* Horizontal center */
+  align-items: center;     /* Vertical center */
+  background: #f8f9fa;
+  cursor: pointer;
+  min-height: 250px;       /* Same as product card height */
+}
+
+.view-all-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertical center for text+icon */
 }
