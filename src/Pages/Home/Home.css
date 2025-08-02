@@ -28,3 +28,67 @@
   max-width: 100%;
   object-fit: contain;
 }
+.card-img-top {
+  max-height: 200px; /* Fix container height */
+  width: 100%;
+  object-fit: contain; /* Ensures image is fully visible without cropping */
+  display: block;
+  margin: 0 auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Ensures cards stretch evenly */
+}
+
+
+/* Arrow Styles */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(230, 230, 230, 0.9);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #555;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); */
+  outline: none !important;          /* Remove focus outline */
+  box-shadow: none !important;
+}
+
+.custom-arrow:focus,
+.custom-arrow:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.slick-prev { left: -40px !important; }
+.slick-next { right: -40px !important; }
+.custom-arrow:hover { background: #555; color: #fff; }
+
+/* Dots Styles (bottom center) */
+.slick-dots {
+  bottom: -30px; /* Position dots below carousel */
+}
+.slick-dots li button:before {
+  font-size: 10px;
+  color: #888; /* Grey dots */
+}
+.slick-dots li.slick-active button:before {
+  color: #007bff; /* Active dot color (blue) */
+}
+.slick-prev::before,
+.slick-next::before {
+  content: none !important; /* ✅ Remove Slick's default arrow icons/dots */
+}
+.card-title{
+text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+}

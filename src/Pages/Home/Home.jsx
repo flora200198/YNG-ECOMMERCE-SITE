@@ -1,8 +1,50 @@
 import React, { useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import './Home.css'
+import { useNavigate } from 'react-router-dom';
+import Slider from "react-slick";
+import { useCheckout } from '../Context/Context';
 
 const Home = () => {
+  const navigate = useNavigate();
+  const { products } = useCheckout();
+
+  const NextArrow = ({ onClick }) => (
+    <div
+      className="slick-arrow slick-next "
+      onClick={onClick}
+    >
+      <i className="bi bi-chevron-right custom-arrow"></i>
+    </div>
+  );
+
+  const PrevArrow = ({ onClick }) => (
+    <div
+      className="slick-arrow slick-prev "
+      onClick={onClick}
+    >
+      <i className="bi bi-chevron-left custom-arrow"></i>
+    </div>
+  );
+
+
+  const settings = {
+    dots: true,           // ✅ Show bottom dots
+    infinite: false,      // ✅ Stop looping after the last slide
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    arrows: true,         // ✅ Keep arrows visible
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      { breakpoint: 992, settings: { slidesToShow: 2 } },
+      { breakpoint: 576, settings: { slidesToShow: 1 } }
+    ]
+  };
 
   const [activeIndex, setActiveIndex] = useState(0);
   const industries = [
@@ -73,20 +115,35 @@ const Home = () => {
           src="./assets/Landing.png"
           alt="Hero - Engineering Instruments"
           className="img-fluid rounded shadow"
-          style={{ width: '100%', display: 'block', margin: '0 auto', height:'70vh' }}
+          style={{ width: '100%', display: 'block', margin: '0 auto', height: '70vh' }}
         />
       </section>
 
       {/* Introduction Section */}
       <section className="mb-5" data-aos="fade-up">
-        <h2><i className="bi bi-building text-primary me-2"></i>Who We Are</h2>
+        <h2><i className="bi bi-building text-primary me-2"></i>YNG Infra</h2>
         <p>
-          Welcome to <strong>YNG Infra</strong> — a pioneer in advanced engineering solutions for fluid measurement and control.
-          We design and deliver cutting-edge instrumentation like flowmeters, sensors, and automation components to help industries achieve unmatched precision and efficiency.
+          At <strong>YNG Infra</strong>, our company policy is built on a foundation of excellence, integrity, and innovation.
+          We are committed to delivering high-quality engineering solutions that combine advanced technology with unmatched precision
+          to meet the evolving needs of modern industries.
         </p>
         <p>
-          Our solutions are trusted by professionals across oil & gas, water treatment, chemical, and pharmaceutical sectors. Whether you need a turnkey flow monitoring system or custom-built instruments, we’re here to help.
+          Guided by strict international standards, we ensure every product and service reflects our dedication to quality, reliability,
+          and customer satisfaction. Our approach focuses on fostering long-term partnerships by understanding our clients’ unique
+          requirements and providing customized solutions backed by expert support.
         </p>
+        <p>
+          We continuously invest in research, development, and technological advancements to create future-ready instrumentation and
+          automation systems that improve operational efficiency while adhering to the highest standards of safety, sustainability, and
+          regulatory compliance.
+        </p>
+        <p>
+          At YNG Infra, we believe in empowering our people, nurturing ethical practices, and driving innovation to build a culture of
+          trust and accountability. With a vision to be a global leader in fluid measurement and industrial automation, we strive to
+          deliver solutions that not only enhance performance but also contribute to sustainable growth for our customers and the
+          industries we serve.
+        </p>
+
         <a href="/about" className="btn btn-outline-primary mt-3">
           <i className="bi bi-info-circle me-1"></i>Learn More About Us
         </a>
@@ -94,31 +151,47 @@ const Home = () => {
 
       {/* Product Overview */}
       <section className="mb-5" data-aos="zoom-in-up">
-        <h2><i className="bi bi-box-seam text-success me-2"></i>Our Products</h2>
-        <div className="row">
-          <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div className="product-image-container">
-              <img src="./assets/Ultrasonic.png" alt="Flowmeter Type A" className="product-image" />
+  <div className="d-flex justify-content-between align-items-center">
+    <h2>
+      <i className="bi bi-box-seam text-success me-2"></i>Our Products
+    </h2>
+    <button
+      className="btn btn-link text-decoration-none d-flex align-items-center"
+      onClick={() => navigate('/products')}
+    >
+      View All Products <i className="bi bi-arrow-right ms-2"></i>
+    </button>
+  </div>
+
+  <section className="mb-5" data-aos="zoom-in-up">
+    <Slider {...settings} className="mt-4">
+      {products.map((product, index) => (
+        <div key={index} className="p-2">
+          <div className="card shadow-sm border-0 h-100 equal-card">
+            <img src={product.image} className="card-img-top p-3" alt={product.title} />
+            <div className="card-body">
+              <h5 className="card-title">{product.name}</h5>
             </div>
-            <h5 className="mt-2"><i className="bi bi-soundwave me-1"></i>Ultrasonic Flowmeters</h5>
-            <p>High-accuracy non-intrusive meters for various fluids, featuring real-time monitoring and minimal maintenance.</p>
-          </div>
-          <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div className="product-image-container">
-              <img src="./assets/flow-meter.png" alt="Flowmeter Type B" className="product-image" />
-            </div>
-            <h5 className="mt-2"><i className="bi bi-lightning-charge me-1"></i>Electromagnetic Flowmeters</h5>
-            <p>Ideal for conductive liquids in industrial applications with robust build and digital output compatibility.</p>
-          </div>
-          <div className="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <div className="product-image-container">
-              <img src="./assets/Turbine-flow.png" alt="Flowmeter Type C" className="product-image" />
-            </div>
-            <h5 className="mt-2"><i className="bi bi-wind me-1"></i>Turbine Flowmeters</h5>
-            <p>Compact and efficient meters for low-viscosity fluids with high repeatability and wide rangeability.</p>
           </div>
         </div>
-      </section>
+      ))}
+      <div className="p-2">
+        <div
+          className="card shadow-sm border-0 h-100 d-flex align-items-center justify-content-center text-center"
+          style={{ cursor: "pointer", background: "#f8f9fa" }}
+          onClick={() => navigate('/products')}
+        >
+          <div className="p-4">
+            <h5 className="text-primary mb-2">View All Products</h5>
+            <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
+          </div>
+        </div>
+      </div>
+    </Slider>
+  </section>
+</section>
+
+
 
       {/* Industries Served */}
       <section className="mb-5" data-aos="fade-right">
