@@ -52,7 +52,7 @@ const Home = () => {
           customPaging: (i) => <button>{i + 1}</button>,  // Custom dot numbering
           appendDots: (dots) => (
             <ul className="slick-dots">
-              {dots.slice(0, 4)} {/* ✅ Limit dots to 4 */}
+              {dots.slice(0, 4)}
             </ul>
           )
         }
