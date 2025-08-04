@@ -259,12 +259,12 @@ const Home = () => {
 
         <div className="row align-items-center">
           {/* LEFT CONTENT */}
-          <div className="col-md-6">
-            <h4>
-              {reasons[activeIndex].title}
-            </h4>
-            <p>{reasons[activeIndex].description}</p>
-          </div>
+          {reasons && reasons[activeIndex] && (
+            <div className="col-md-6">
+              <h4>{reasons[activeIndex].title}</h4>
+              <p>{reasons[activeIndex].description}</p>
+            </div>
+          )}
 
           {/* RIGHT IMAGE CAROUSEL */}
           <div className="col-md-6">

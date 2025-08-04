@@ -4,4 +4,13 @@
   text-align: center;
   padding: 10px 0;
   margin-top: 0; /* Remove gap */
+
+}
+/* .custom-footer {
+  background-image: url("../../../public/assets/Logo.png");
+  background-repeat: no-repeat;
+} */
+.custom-footer {
+  background-image: url("../../../public/assets/Logo.png");
+  background-repeat: no-repeat;
 }

@@ -10,9 +10,9 @@ const Footer = () => {
       <div className="row">
         {/* Company Info */}
         <div className="col-md-4 mb-4">
-          <img src="https://placehold.co/150x50" alt="Company Logo" className="mb-3" />
+          <img src="./assets/Logo.png" alt="Company Logo" className="mb-3" style={{ height: '60px', background:'white', borderRadius:'5px' }} />
           <p>
-            [Your Company Name] is a global provider of industrial automation and precision measurement instruments.
+            YNG infra is a global provider of industrial automation and precision measurement instruments.
             Trusted for innovation, accuracy, and reliability.
           </p>
           {/* Social Links */}
@@ -59,8 +59,6 @@ const Footer = () => {
     © {new Date().getFullYear()} YNG Infra. All rights reserved.
   </div>
 </>
-
   );
 };
-
 export default Footer;

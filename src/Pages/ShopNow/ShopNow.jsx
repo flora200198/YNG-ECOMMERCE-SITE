@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCheckout } from '../Context/Context';
 import './ShopNow.css';
+import Getquote from '../../components/Getquote/Getquote';
 
 const ShopNow = () => {
   const navigate = useNavigate();
@@ -10,6 +11,8 @@ const ShopNow = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => JSON.parse(localStorage.getItem('isLoggedIn')) || false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+    const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const categories = [
     'All',
@@ -187,7 +190,7 @@ const ShopNow = () => {
                         <button className="btn btn-outline-secondary" onClick={() => decrement(product.id)}>-</button>
                         <span className="mx-3">{quantity}</span>
                         <button className="btn btn-outline-secondary" onClick={() => increment(product.id)}>+</button>
-                        <button className="btn btn-primary mt-auto">Get Quote</button>
+                        <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }}>Get Quote</button>
                       </div>
                     )}
                   </div>
@@ -199,6 +202,7 @@ const ShopNow = () => {
           <p className="text-center">No products found.</p>
         )}
       </div>
+      {showQuoteForm && <Getquote selectedProduct={selectedProduct} onClose={() => setShowQuoteForm(false)} />}
     </div>
   );
 

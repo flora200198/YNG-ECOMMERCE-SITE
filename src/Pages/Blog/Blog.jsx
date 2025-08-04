@@ -21,7 +21,7 @@ const Blog = () => {
       </p>
 
       {/* Blog Article 1 */}
-      <div className="row mb-5 align-items-center">
+      <div className="row mb-5 align-items-center"> 
         <div className="col-md-6" data-aos="fade-right">
           <img 
             src="https://placehold.co/600x400" 
@@ -33,9 +33,9 @@ const Blog = () => {
           <h3>Understanding Flow Meters: Types and Applications</h3>
           <p>
             Flow meters are essential instruments used across industries like water treatment, oil & gas, 
-            pharmaceuticals, and food processing to measure fluid flow accurately. From 
-            <strong>Electromagnetic Flow Meters</strong> for conductive liquids to 
-            <strong>Ultrasonic Clamp-On Flow Meters</strong> for large pipelines, selecting the right 
+            pharmaceuticals, and food processing to measure fluid flow accurately. From  
+            <strong> Electromagnetic Flow Meters</strong> for conductive liquids to 
+            <strong> Ultrasonic Clamp-On Flow Meters</strong> for large pipelines, selecting the right 
             flow meter ensures precise monitoring, reduced wastage, and operational efficiency.
           </p>
           <a href="#read-more-flow" className="btn btn-outline-primary mt-2">
