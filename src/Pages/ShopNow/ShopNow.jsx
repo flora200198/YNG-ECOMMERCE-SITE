@@ -119,21 +119,21 @@ const ShopNow = () => {
       <div id="offersCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="./assets/landing.png" className="d-block w-100" alt="Offer 1" style={{ height: '30vh', objectFit: 'cover' }} />
+            <img src="./assets/banner1.png" className="d-block w-100" alt="Offer 1" style={{ height: '30vh', objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
               <h5>Special Offer!</h5>
               <p>Get 20% off on Flow Meters this month.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="./assets/landing.png" className="d-block w-100" alt="Feedback 1" style={{ height: '30vh', objectFit: 'cover' }} />
+            <img src="./assets/banner2.png" className="d-block w-100" alt="Feedback 1" style={{ height: '30vh', objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
               <h5>Customer Feedback</h5>
               <p>"Excellent quality instruments and prompt support!" - ABC Industries</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="./assets/landing.png" className="d-block w-100" alt="Offer 2" style={{ height: '30vh', objectFit: 'cover' }} />
+            <img src="./assets/banner3.png" className="d-block w-100" alt="Offer 2" style={{ height: '30vh', objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
               <h5>New Launch!</h5>
               <p>Introducing our next-gen Smart Level Transmitter.</p>
