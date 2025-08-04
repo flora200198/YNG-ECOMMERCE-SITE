@@ -127,7 +127,7 @@ const Home = () => {
         <h1 className="display-4">Precision Engineering Instruments</h1>
         <p className="lead">Leading the industry in accurate flow measurement and control systems.</p>
         <img
-          src="./assets/Landing.png"
+          src="/assets/Landing.png"
           alt="Hero - Engineering Instruments"
           className="img-fluid rounded shadow hero-image"
         />
