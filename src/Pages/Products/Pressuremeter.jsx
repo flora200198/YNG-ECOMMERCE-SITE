@@ -15,9 +15,9 @@ const Pressuremeter = () => {
   // Initialize AOS for animations
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Run animation only once
-      easing: 'ease-in-out', // Smooth easing
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
     });
   }, []);
 
@@ -41,8 +41,10 @@ const Pressuremeter = () => {
             <Carousel
               activeIndex={activeIndex}
               onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
-              interval={3000} // auto-slide every 3 seconds
-              fade // smooth fade effect for transitions
+              interval={3000}
+              fade
+              nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" style={{ filter: 'invert(50%)' }} />}
+              prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" style={{ filter: 'invert(50%)' }} />}
             >
               {pressuremeter.map((product, idx) => (
                 <Carousel.Item key={idx}>

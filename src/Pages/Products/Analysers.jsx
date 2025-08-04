@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Carousel } from 'react-bootstrap';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
-import { useEffect } from 'react';
 import { useCheckout } from '../Context/Context';
 import './Products.css';
 
@@ -16,9 +15,9 @@ const Analysers = () => {
   // Initialize AOS animations
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Run animation only once
-      easing: 'ease-in-out', // Smooth easing
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
     });
   }, []);
 
@@ -44,8 +43,10 @@ const Analysers = () => {
             <Carousel
               activeIndex={activeIndex}
               onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
-              interval={3000} // auto-slide every 3 seconds
-              fade // Smooth fade effect
+              interval={3000}
+              fade
+              nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" style={{ filter: 'invert(50%)' }} />}
+              prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" style={{ filter: 'invert(50%)' }} />}
             >
               {analyzers.map((product, idx) => (
                 <Carousel.Item key={idx}>

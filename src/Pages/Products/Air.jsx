@@ -14,9 +14,9 @@ const Air = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Animation runs only once on scroll
-      easing: 'ease-in-out', // Smooth easing
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
     });
   }, []);
 
@@ -41,7 +41,9 @@ const Air = () => {
               activeIndex={activeIndex}
               onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
               interval={3000}
-              fade // Smooth fading effect for transitions
+              fade
+              nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" style={{ filter: 'invert(50%)' }} />}
+              prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" style={{ filter: 'invert(50%)' }} />}
             >
               {airquality.map((product, idx) => (
                 <Carousel.Item key={idx}>

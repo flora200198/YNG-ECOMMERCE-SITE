@@ -283,7 +283,7 @@ const Checkout = () => {
               </div>
             )}
 
-            <button type="submit" className="btn btn-primary mt-3">Checkout</button>
+            <button type="submit" className="btn btn-primary mt-3 mb-5">Checkout</button>
           </form>
         </div>
 

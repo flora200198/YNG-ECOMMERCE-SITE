@@ -15,9 +15,9 @@ const Water = () => {
   // Initialize AOS for animations
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Trigger only once
-      easing: 'ease-in-out', // Smooth easing
+      duration: 1000,
+      once: true,
+      easing: 'ease-in-out',
     });
   }, []);
 
@@ -41,8 +41,10 @@ const Water = () => {
             <Carousel
               activeIndex={activeIndex}
               onSelect={(selectedIndex) => setActiveIndex(selectedIndex)}
-              interval={3000} // auto-slide every 3 seconds
-              fade // smooth fade transition between slides
+              interval={3000}
+              fade
+              nextIcon={<span aria-hidden="true" className="carousel-control-next-icon" style={{ filter: 'invert(50%)' }} />}
+              prevIcon={<span aria-hidden="true" className="carousel-control-prev-icon" style={{ filter: 'invert(50%)' }} />}
             >
               {waterquality.map((product, idx) => (
                 <Carousel.Item key={idx}>
