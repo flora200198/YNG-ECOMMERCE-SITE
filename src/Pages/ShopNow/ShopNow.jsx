@@ -11,18 +11,11 @@ const ShopNow = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(() => JSON.parse(localStorage.getItem('isLoggedIn')) || false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-    const [showQuoteForm, setShowQuoteForm] = useState(false);
+  const [showQuoteForm, setShowQuoteForm] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const categories = [
-    'All',
-    'Flow',
-    'Pressure',
-    'Level',
-    'Analyzer',
-    'Air Quality',
-    'Water Quality',
-    'Temperature'
+    'All', 'Flow', 'Pressure', 'Level', 'Analyzer', 'Air Quality', 'Water Quality', 'Temperature'
   ];
 
   useEffect(() => {
@@ -46,7 +39,6 @@ const ShopNow = () => {
       navigate('/login');
       return;
     }
-
     const exists = cart.find((item) => item.id === product.id);
     if (exists) {
       setCart(cart.map((item) =>
@@ -85,15 +77,11 @@ const ShopNow = () => {
     const matchesSearch =
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       product.description.toLowerCase().includes(searchTerm.toLowerCase());
-
-    const matchesCategory =
-      selectedCategory === 'All' || product.category === selectedCategory;
-
+    const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
   return (
-
     <div className="container py-5">
       {/* Header with Search and Cart */}
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -127,7 +115,7 @@ const ShopNow = () => {
         </div>
       </div>
 
-      {/* Carousel for Offers and Feedback - MOVED HERE */}
+      {/* Carousel for Offers and Feedback */}
       <div id="offersCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -168,31 +156,28 @@ const ShopNow = () => {
             return (
               <div className="col-md-4 mb-4" key={product.id}>
                 <div className="card h-100 shadow-sm">
-                  <img
-                    src={product.image}
-                    className="card-img-top product-image"
-                    alt={product.name}
-                  />
+                  <img src={product.image} className="card-img-top product-image" alt={product.name} />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">{product.description}</p>
                     <p className="fw-bold mb-2">₹{product.price}</p>
-
-                    {quantity === 0 ? (
-                      <div className="d-flex justify-content-between align-items-center mt-auto">
-                        <button className="btn btn-primary mt-auto" onClick={() => addToCart(product)}>
-                          <i className="bi bi-cart-plus me-2"></i>Add to Cart
-                        </button>
-                        <button className="btn btn-primary mt-auto">Get Quote</button>
-                      </div>
-                    ) : (
-                      <div className="d-flex justify-content-between align-items-center mt-auto">
-                        <button className="btn btn-outline-secondary" onClick={() => decrement(product.id)}>-</button>
-                        <span className="mx-3">{quantity}</span>
-                        <button className="btn btn-outline-secondary" onClick={() => increment(product.id)}>+</button>
-                        <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }}>Get Quote</button>
-                      </div>
-                    )}
+                    <div className="d-flex justify-content-between align-items-center mt-auto">
+                      {quantity === 0 ? (
+                        <>
+                          <button className="btn btn-primary" onClick={() => addToCart(product)}>
+                            <i className="bi bi-cart-plus me-2"></i>Add to Cart
+                          </button>
+                          <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }}>Get Quote</button>
+                        </>
+                      ) : (
+                        <>
+                          <button className="btn btn-outline-secondary" onClick={() => decrement(product.id)}>-</button>
+                          <span className="mx-3">{quantity}</span>
+                          <button className="btn btn-outline-secondary" onClick={() => increment(product.id)}>+</button>
+                          <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }}>Get Quote</button>
+                        </>
+                      )}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -202,11 +187,10 @@ const ShopNow = () => {
           <p className="text-center">No products found.</p>
         )}
       </div>
+
       {showQuoteForm && <Getquote selectedProduct={selectedProduct} onClose={() => setShowQuoteForm(false)} />}
     </div>
   );
-
-
 };
 
 export default ShopNow;
