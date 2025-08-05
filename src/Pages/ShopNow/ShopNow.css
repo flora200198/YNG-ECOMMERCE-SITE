@@ -1,8 +1,25 @@
 /* Fixed image container size without cropping */
 .product-image {
-  height: 200px; /* Fixed height for all product images */
+  height: 200px;
   width: 100%;
-  object-fit: contain; /* Shrinks or fits image without cropping */
-  background-color: #f8f9fa; /* Optional: add light background to fill empty space */
-  padding: 10px; /* Optional: adds some spacing inside container */
+  object-fit: contain; 
+  background-color: #f8f9fa;
+  padding: 10px; 
+}
+/* Zoom effect for product images */
+.product-image {
+  transition: transform 0.4s ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.08); /* Zoom in on hover */
+}
+
+/* Zoom effect for carousel images */
+.carousel-image {
+  transition: transform 0.4s ease-in-out;
+}
+
+.carousel-image:hover {
+  transform: scale(1.05); /* Slight zoom for carousel banners */
 }
