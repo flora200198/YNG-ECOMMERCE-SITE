@@ -7,19 +7,21 @@
   padding: 10px; 
 }
 /* Zoom effect for product images */
+/* Smooth zoom effect for product images */
+.product-card {
+  overflow: hidden; /* Ensures image stays within card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Slight lift for professional look */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
 .product-image {
   transition: transform 0.4s ease-in-out;
 }
 
-.product-image:hover {
-  transform: scale(1.08); /* Zoom in on hover */
-}
-
-/* Zoom effect for carousel images */
-.carousel-image {
-  transition: transform 0.4s ease-in-out;
-}
-
-.carousel-image:hover {
-  transform: scale(1.05); /* Slight zoom for carousel banners */
+.product-card:hover .product-image {
+  transform: scale(1.08); /* Subtle zoom-in */
 }

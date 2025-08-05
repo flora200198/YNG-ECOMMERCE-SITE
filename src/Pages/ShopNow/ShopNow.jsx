@@ -3,8 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useCheckout } from '../Context/Context';
 import './ShopNow.css';
 import Getquote from '../../components/Getquote/Getquote';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 
 const ShopNow = () => {
   const navigate = useNavigate();
@@ -27,15 +25,6 @@ const ShopNow = () => {
   useEffect(() => {
     const loggedInStatus = JSON.parse(localStorage.getItem('isLoggedIn')) || false;
     setIsLoggedIn(loggedInStatus);
-  }, []);
-
-  // ✅ Initialize AOS (Animations)
-  useEffect(() => {
-    AOS.init({
-      duration: 500, // Faster animation speed
-      once: true,
-      easing: 'ease-out', // Smooth feel
-    });
   }, []);
 
   const getQuantity = (productId) => {
@@ -93,17 +82,17 @@ const ShopNow = () => {
   });
 
   return (
-    <div className="container py-5" data-aos="fade-in">
+    <div className="container py-5">
       {/* Header with Search and Cart */}
-      <div className="d-flex justify-content-between align-items-center mb-4" data-aos="fade-up">
+      <div className="d-flex justify-content-between align-items-center mb-4">
         <h1>Shop Now</h1>
-        <button className="btn btn-outline-primary" onClick={viewCart} data-aos="zoom-in">
+        <button className="btn btn-outline-primary" onClick={viewCart}>
           View Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
         </button>
       </div>
 
       {/* Search and Category Filter */}
-      <div className="row mb-4" data-aos="fade-up">
+      <div className="row mb-4">
         <div className="col-md-6 mb-2">
           <input
             type="text"
@@ -127,24 +116,24 @@ const ShopNow = () => {
       </div>
 
       {/* Carousel for Offers and Feedback */}
-      <div id="offersCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000" data-aos="zoom-in">
+      <div id="offersCarousel" className="carousel slide mb-4" data-bs-ride="carousel" data-bs-interval="3000">
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="./assets/banner1.png" className="d-block w-100 carousel-image" alt="Offer 1" style={{ height: '30vh', objectFit: 'cover' }} />
+            <img src="./assets/banner1.png" className="d-block w-100" alt="Offer 1" style={{ height: '30vh', objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
               <h5>Expert Support!</h5>
               <p>Comprehensive installation and calibration for all Instruments.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="./assets/banner2.png" className="d-block w-100 carousel-image" alt="Feedback 1" style={{ height: '30vh', objectFit: 'cover' }} />
+            <img src="./assets/banner2.png" className="d-block w-100" alt="Feedback 1" style={{ height: '30vh', objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
               <h5>Certified Solutions</h5>
               <p>ISO-certified instruments designed for precision and reliability.</p>
             </div>
           </div>
           <div className="carousel-item">
-            <img src="./assets/banner3.png" className="d-block w-100 carousel-image" alt="Offer 2" style={{ height: '30vh', objectFit: 'cover' }} />
+            <img src="./assets/banner3.png" className="d-block w-100" alt="Offer 2" style={{ height: '30vh', objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
               <h5>Latest Innovation!</h5>
               <p>Experience unmatched accuracy with our next-gen Smart Level Transmitter.</p>
@@ -162,11 +151,11 @@ const ShopNow = () => {
       {/* Products */}
       <div className="row">
         {filteredProducts.length > 0 ? (
-          filteredProducts.map((product, index) => {
+          filteredProducts.map((product) => {
             const quantity = getQuantity(product.id);
             return (
-              <div className="col-md-4 mb-4" key={product.id} data-aos="fade-up" data-aos-delay={index * 100}>
-                <div className="card h-100 shadow-sm">
+              <div className="col-md-4 mb-4" key={product.id}>
+                <div className="card h-100 shadow-sm product-card">
                   <img src={product.image} className="card-img-top product-image" alt={product.name} />
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{product.name}</h5>
@@ -175,21 +164,17 @@ const ShopNow = () => {
                     <div className="d-flex justify-content-between align-items-center mt-auto">
                       {quantity === 0 ? (
                         <>
-                          <button className="btn btn-primary" onClick={() => addToCart(product)} data-aos="zoom-in" data-aos-delay="150">
+                          <button className="btn btn-primary" onClick={() => addToCart(product)}>
                             <i className="bi bi-cart-plus me-2"></i>Add to Cart
                           </button>
-                          <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }} data-aos="zoom-in" data-aos-delay="200">
-                            Get Quote
-                          </button>
+                          <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }}>Get Quote</button>
                         </>
                       ) : (
                         <>
                           <button className="btn btn-outline-secondary" onClick={() => decrement(product.id)}>-</button>
                           <span className="mx-3">{quantity}</span>
                           <button className="btn btn-outline-secondary" onClick={() => increment(product.id)}>+</button>
-                          <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }} data-aos="zoom-in" data-aos-delay="200">
-                            Get Quote
-                          </button>
+                          <button className="btn btn-primary" onClick={() => { setSelectedProduct(product); setShowQuoteForm(true); }}>Get Quote</button>
                         </>
                       )}
                     </div>
@@ -199,7 +184,7 @@ const ShopNow = () => {
             );
           })
         ) : (
-          <p className="text-center" data-aos="fade-up">No products found.</p>
+          <p className="text-center">No products found.</p>
         )}
       </div>
 
