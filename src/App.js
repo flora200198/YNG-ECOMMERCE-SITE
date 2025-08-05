@@ -18,6 +18,7 @@ import 'aos/dist/aos.css';
 import AOS from 'aos';
 import './App.css';
 import { CheckoutProvider } from './Pages/Context/Context';
+import ProductDetailCard from './components/ProductDetailcard/ProductDetailcard';
 
 function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
         <Route path='/checkout' element={<Checkout/>} /> 
         <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/product-details" element={<ProductDetailCard />} />
       </Routes>
       <Footer />
     </Router>
