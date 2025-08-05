@@ -62,7 +62,7 @@ const Blog = () => {
             supply in municipal systems, industrial plants, and wastewater facilities by providing 
             real-time, reliable monitoring data.
           </p>
-          <a href="#read-more-water" className="btn btn-outline-success mt-2">
+          <a href="#read-more-water" className="btn btn-success mt-2">
             <i className="bi bi-book me-2"></i> Read More
           </a>
         </div>
@@ -85,7 +85,7 @@ const Blog = () => {
             These systems track particulate matter, gases like SOx and NOx, and ensure industries meet 
             compliance requirements for emissions.
           </p>
-          <a href="#read-more-air" className="btn btn-outline-warning mt-2">
+          <a href="#read-more-air" className="btn btn-warning mt-2">
             <i className="bi bi-book me-2"></i> Read More
           </a>
         </div>
@@ -107,7 +107,7 @@ const Blog = () => {
             Devices such as <strong>Smart Pressure Transmitters</strong> and <strong>Radar Level Sensors</strong> 
             ensure better process control, safety, and automation in industrial environments.
           </p>
-          <a href="#read-more-pressure" className="btn btn-outline-danger mt-2">
+          <a href="#read-more-pressure" className="btn btn-danger mt-2">
             <i className="bi bi-book me-2"></i> Read More
           </a>
         </div>

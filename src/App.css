@@ -63,14 +63,30 @@ footer {
 
 /* Outline Button */
 .btn-outline-primary {
-  color: #ff6600;
+  color: white;
   border-color: #ff6600;
+  background-color: #ff6600;
   font-weight: 500;
 }
 
 .btn-outline-primary:hover {
   background-color: #ff6600;
+  border-color: #ff6600;
   color: white;
+}
+.btn-outline-primary:focus,
+.btn-outline-primary:active {
+  background-color: #ff6600 !important;
+  border-color: #ff6600 !important;
+  color: white !important;
+  box-shadow: none !important; /* Removes blue outline glow */
+}
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #ff6600 !important;
+  border-color: #ff6600 !important;
+  color: white !important;
+  box-shadow: none !important; /* Removes blue outline glow */
 }
 
 /* Links */
