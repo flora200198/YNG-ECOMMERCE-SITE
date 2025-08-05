@@ -2,6 +2,7 @@ import React from 'react';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from 'react';
+import './Blog.css'; // Assuming you have a CSS file for styling
 
 const Blog = () => {
   useEffect(() => {
@@ -24,9 +25,9 @@ const Blog = () => {
       <div className="row mb-5 align-items-center"> 
         <div className="col-md-6" data-aos="fade-right">
           <img 
-            src="https://placehold.co/600x400" 
+            src="/assets/flow.png" 
             alt="Flow Meter Insights" 
-            className="img-fluid rounded shadow"
+            className="img-fluid rounded shadow blog-image"
           />
         </div>
         <div className="col-md-6" data-aos="fade-left">
@@ -48,9 +49,9 @@ const Blog = () => {
       <div className="row mb-5 align-items-center flex-md-row-reverse">
         <div className="col-md-6" data-aos="fade-left">
           <img 
-            src="https://placehold.co/600x400" 
+            src="/assets/Analyzers.png" 
             alt="Water Quality Detectors" 
-            className="img-fluid rounded shadow"
+            className="img-fluid rounded shadow blog-image"
           />
         </div>
         <div className="col-md-6" data-aos="fade-right">
@@ -71,9 +72,9 @@ const Blog = () => {
       <div className="row mb-5 align-items-center">
         <div className="col-md-6" data-aos="fade-right">
           <img 
-            src="https://placehold.co/600x400" 
+            src="/assets/Air-monitoring.png" 
             alt="Air Quality Monitoring" 
-            className="img-fluid rounded shadow"
+            className="img-fluid rounded shadow blog-image"
           />
         </div>
         <div className="col-md-6" data-aos="fade-left">
@@ -94,9 +95,9 @@ const Blog = () => {
       <div className="row mb-5 align-items-center flex-md-row-reverse">
         <div className="col-md-6" data-aos="fade-left">
           <img 
-            src="https://placehold.co/600x400" 
+            src="/assets/Pressure-meter.png" 
             alt="Pressure and Level Sensors" 
-            className="img-fluid rounded shadow"
+            className="img-fluid rounded shadow blog-image"
           />
         </div>
         <div className="col-md-6" data-aos="fade-right">

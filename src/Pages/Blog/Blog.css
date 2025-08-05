@@ -1,0 +1,5 @@
+.blog-image {
+  object-fit: contain;
+  max-height: 400px; /* Prevents oversized images */
+  width: 100%;
+}

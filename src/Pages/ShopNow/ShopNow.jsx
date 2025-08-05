@@ -122,7 +122,7 @@ const ShopNow = () => {
             <img src="./assets/banner1.png" className="d-block w-100" alt="Offer 1" style={{ height: '30vh', objectFit: 'cover' }} />
             <div className="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
               <h5>Expert Support!</h5>
-              <p>Comprehensive installation and calibration for all Flow Meters.</p>
+              <p>Comprehensive installation and calibration for all Instruments.</p>
             </div>
           </div>
           <div className="carousel-item">
