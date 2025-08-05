@@ -10,7 +10,10 @@
   background-image: url("../../../public/assets/Logo.png");
   background-repeat: no-repeat;
 } */
-.custom-footer {
-  background-image: url("../../../public/assets/Logo.png");
+/* .custom-footer {
+  background-image: url("/assets/Logo.png");
   background-repeat: no-repeat;
-}
+  background-position: center;
+  background-size: contain;
+  min-height: 200px; /* Ensures image area is visible */
+/* }  */

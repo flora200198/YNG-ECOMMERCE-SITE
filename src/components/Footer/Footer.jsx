@@ -5,7 +5,13 @@ import './Footer.css';
 const Footer = () => {
   return (
     <>
-  <footer className="custom-footer text-white pt-5">
+  <footer className="custom-footer  text-white pt-5"  style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL}/assets/Logo.png)`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "contain",
+        minHeight: "200px"
+      }}>
     <div className="container">
       <div className="row">
         {/* Company Info */}
@@ -16,7 +22,7 @@ const Footer = () => {
             Trusted for innovation, accuracy, and reliability.
           </p>
           {/* Social Links */}
-          <div className="d-flex gap-3 mt-3">
+          <div className="d-flex justify-content-center gap-3 mt-3">
             <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-white fs-5">
               <i className="bi bi-instagram"></i>
             </a>
