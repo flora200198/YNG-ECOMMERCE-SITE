@@ -1,5 +1,5 @@
 :root {
-  --bs-primary: #ff6600; /* Orange as primary color */
+  --bs-primary: #ffd700; /* Yellow as primary color */
 }
 
 body {
@@ -20,9 +20,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-/* Navbar (Orange Background, White Fonts) */
+/* Navbar (Yellow Background, White Fonts) */
 .navbar {
-  background-color: #ff6600 !important; /* Orange navbar */
+  background-color: #ffd700 !important; /* Yellow navbar */
   border-bottom: none;
 }
 
@@ -37,9 +37,9 @@ h1, h2, h3, h4, h5, h6 {
   color: #f1f1f1 !important; /* Slight lighter hover */
 }
 
-/* Footer (Optional - Match Theme) */
+/* Footer (Match Theme) */
 footer {
-  background-color: #ff6600;
+  background-color: #ffd700;
   border-top: none;
   padding: 20px 0;
   text-align: center;
@@ -49,55 +49,57 @@ footer {
 
 /* Buttons */
 .btn-primary {
-  background-color: #ff6600;
-  border-color: #ff6600;
+  background-color: #ffd700;
+  border-color: #ffd700;
   color: white;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #e65c00;
-  border-color: #e65c00;
+  background-color: #e6c200;
+  border-color: #e6c200;
 }
 
 /* Outline Button */
 .btn-outline-primary {
   color: white;
-  border-color: #ff6600;
-  background-color: #ff6600;
+  border-color: #ffd700;
+  background-color: #ffd700;
   font-weight: 500;
 }
 
 .btn-outline-primary:hover {
-  background-color: #ff6600;
-  border-color: #ff6600;
+  background-color: #ffd700;
+  border-color: #ffd700;
   color: white;
 }
+
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
-  background-color: #ff6600 !important;
-  border-color: #ff6600 !important;
+  background-color: #ffd700 !important;
+  border-color: #ffd700 !important;
   color: white !important;
   box-shadow: none !important; /* Removes blue outline glow */
 }
+
 .btn-primary:focus,
 .btn-primary:active {
-  background-color: #ff6600 !important;
-  border-color: #ff6600 !important;
+  background-color: #ffd700 !important;
+  border-color: #ffd700 !important;
   color: white !important;
   box-shadow: none !important; /* Removes blue outline glow */
 }
 
 /* Links */
 a {
-  color: #ff6600;
+  color: #ffd700;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #e65c00;
+  color: #e6c200;
 }
 
 /* Icons */
@@ -128,15 +130,15 @@ a:hover {
 
 /* Accent Utilities */
 .border-orange {
-  border-color: #ff6600 !important;
+  border-color: #ffd700 !important;
 }
 
 .text-orange {
-  color: #ff6600 !important;
+  color: #ffd700 !important;
 }
 
 .bg-orange {
-  background-color: #ff6600 !important;
+  background-color: #ffd700 !important;
   color: white !important;
   border-radius: 5px;
   padding: 0.5rem 1rem;
