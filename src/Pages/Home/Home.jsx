@@ -124,8 +124,8 @@ const Home = () => {
     <div className="container py-5">
       {/* Hero Section */}
       <section className="text-center mb-5" data-aos="fade-down">
-        <h1 className="display-4">Precision Engineering Instruments</h1>
-        <p className="lead">Leading the industry in accurate flow measurement and control systems.</p>
+        <h1 className="display-4">Your Nexus Generation - Infra</h1>
+        <p className="lead">for smarter tomorrow...</p>
         <img
           src="/assets/Landing.png"
           alt="Hero - Engineering Instruments"
