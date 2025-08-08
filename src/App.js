@@ -19,6 +19,7 @@ import AOS from 'aos';
 import './App.css';
 import { CheckoutProvider } from './Pages/Context/Context';
 import ProductDetailCard from './components/ProductDetailcard/ProductDetailcard';
+import OurBusiness from './Pages/OurBusiness/OurBusiness';
 
 function App() {
   useEffect(() => {
@@ -42,6 +43,7 @@ function App() {
         <Route path='/checkout' element={<Checkout/>} /> 
         <Route path="/thankyou" element={<ThankYou />} />
         <Route path="/product-details" element={<ProductDetailCard />} />
+        <Route path="/business" element={<OurBusiness />} />
       </Routes>
       <Footer />
     </Router>

@@ -1,7 +1,32 @@
-.company-logo {
-  height: 120px; /* Increased size */
-  background-color: white; /* White background */
-  padding: 10px; /* Optional: padding to add spacing inside background */
-  border-radius: 8px; /* Optional: rounded edges for cleaner look */
-  display: inline-block;
+/* Navbar.css */
+
+/* Background in soft yellow theme */
+.navbar {
+  background-color: #fff3cd; /* Bootstrap soft yellow */
 }
+
+/* All nav links black */
+.navbar .nav-link {
+  color: #000 !important;
+  font-weight: 500;
+}
+
+/* Hover and active states */
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #ff9900 !important;
+  text-decoration: underline;
+}
+
+/* Toggler button border black */
+.navbar-toggler {
+  border-color: #000;
+}
+
+/* Custom black navbar toggler icon */
+/* .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' 
+  xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='black' stroke-width='2' 
+  stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 
+  23h22'/%3e%3c/svg%3e");
+} */
