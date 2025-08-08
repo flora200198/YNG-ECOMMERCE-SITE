@@ -6,12 +6,14 @@ import './OurBusiness.css'; // CSS for background animation
 import { useCheckout } from '../Context/Context';
 
 
-const { businesses } = useCheckout();
+
 
 const OurBusiness = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+
+  const { businesses } = useCheckout();
 
   return (
     <section className="business-section text-white py-5">
@@ -22,18 +24,18 @@ const OurBusiness = () => {
         </div>
 
         <div className="row g-4">
-          {businesses.map((item, index) => (
+          {Array.isArray(businesses) && businesses.map((item, index) => (
             <div className="col-md-6 col-lg-4" key={index} data-aos="fade-up">
               <div className="card h-100 shadow-sm border-0">
                 <img
-                  src={item.image}
+                  src={item?.image}
                   className="card-img-top"
-                  alt={item.title}
+                  alt={item?.title || ''}
                   style={{ height: '200px', objectFit: 'cover' }}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">{item.title}</h5>
-                  <p className="card-text">{item.description}</p>
+                  <h5 className="card-title">{item?.title}</h5>
+                  <p className="card-text">{item?.description}</p>
                 </div>
               </div>
             </div>
