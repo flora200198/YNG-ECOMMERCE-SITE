@@ -13,7 +13,7 @@ export const businesses = [
   {
     title: "STP (Sewage Treatment Plant)",
     description: "Design and installation of modern sewage treatment plants for residential, commercial, and industrial needs.",
-    image: "https://via.placeholder.com/400x250?text=STP"
+    image: "/assets/Landing.png"
   },
   {
     title: "ETP (Effluent Treatment Plant)",
@@ -740,7 +740,7 @@ export const CheckoutProvider = ({ children }) => {
   
 
   return (
-    <CheckoutContext.Provider value={{ ProductDetails, selectedProduct, setSelectedProduct, products, cartItems, setCartItems, shippingAddress, setShippingAddress }}>
+    <CheckoutContext.Provider value={{ businesses,ProductDetails, selectedProduct, setSelectedProduct, products, cartItems, setCartItems, shippingAddress, setShippingAddress }}>
       {children}
     </CheckoutContext.Provider>
   );
