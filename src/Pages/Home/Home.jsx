@@ -8,6 +8,7 @@ import { useCheckout } from '../Context/Context';
 const Home = () => {
   const navigate = useNavigate();
   const { products } = useCheckout();
+  const { businesses } = useCheckout();
 
   const NextArrow = ({ onClick }) => (
     <div
@@ -165,46 +166,39 @@ const Home = () => {
 
       {/* Product Overview */}
       <section className="mb-5" data-aos="zoom-in-up">
-        <div className="d-flex justify-content-between align-items-center">
-          <h2>
-            <i className="bi bi-box-seam text-success me-2"></i>Our Products
-          </h2>
-          <button
-            className="btn btn-link text-decoration-none d-flex align-items-center"
-            onClick={() => navigate('/products')}
-          >
-            View All Products <i className="bi bi-arrow-right ms-2"></i>
-          </button>
-        </div>
-
-        <section className="mb-5" data-aos="zoom-in-up">
-          <Slider {...settings} className="mt-4">
-            {products.map((product, index) => (
+        <Slider {...settings} className="mt-4">
+          {Array.isArray(businesses) &&
+            businesses.map((business, index) => (
               <div key={index} className="p-2">
                 <div className="card shadow-sm border-0 h-100 equal-card">
-                  <img src={product.image} className="card-img-top p-3" alt={product.title} />
+                  <img
+                    src={business?.image}
+                    className="card-img-top p-3"
+                    alt={business?.title || ''}
+                  />
                   <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
+                    <h5 className="card-title">{business?.title}</h5>
+                    {/* <p className="card-text">{business?.description}</p> */}
                   </div>
                 </div>
               </div>
             ))}
-            <div className="p-2">
-              <div
-                className="card shadow-sm border-0 h-100 equal-card d-flex align-items-center justify-content-center text-center"
-                style={{ cursor: "pointer", background: "#f8f9fa" }}
-                onClick={() => navigate('/products')}
-              >
-                <div className="view-all-content text-center">
-                  <h5 className="text-primary mb-2">View All Products</h5>
-                  <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
-                </div>
+
+          <div className="p-2">
+            <div
+              className="card shadow-sm border-0 h-100 equal-card d-flex align-items-center justify-content-center text-center"
+              style={{ cursor: "pointer", background: "#f8f9fa" }}
+              onClick={() => navigate('/businesses')}
+            >
+              <div className="view-all-content text-center">
+                <h5 className="text-primary mb-2">View All</h5>
+                <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
               </div>
             </div>
-
-          </Slider>
-        </section>
+          </div>
+        </Slider>
       </section>
+
 
 
 
