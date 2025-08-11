@@ -30,3 +30,11 @@
 .card-text {
   color: #555555;
 }
+
+/* Ensure full image is shown, scaled down if needed */
+.card-img-top {
+  width: 100%;
+  height: 200px; /* Fixed card height */
+  object-fit: contain; /* Show entire image without cropping */
+  background-color: #f8f9fa; /* Optional: gray background for empty space */
+}

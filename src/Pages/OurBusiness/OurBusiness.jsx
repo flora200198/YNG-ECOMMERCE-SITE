@@ -16,33 +16,41 @@ const OurBusiness = () => {
   const { businesses } = useCheckout();
 
   return (
-    <section className="business-section text-white py-5">
-      <div className="container">
-        <div className="text-center mb-5">
-          <h2 className="fw-bold">Our Business</h2>
-          <p className="text-light">Explore the diverse verticals we serve with innovation and excellence.</p>
-        </div>
+    <>
+      <section className="business-section text-white py-5">
+        <div className="container">
+          <div className="text-center mb-5">
+            <h2 className="fw-bold">Our Business</h2>
+            <p className="text-light">Explore the diverse verticals we serve with innovation and excellence.</p>
+          </div>
 
-        <div className="row g-4">
-          {Array.isArray(businesses) && businesses.map((item, index) => (
-            <div className="col-md-6 col-lg-4" key={index} data-aos="fade-up">
-              <div className="card h-100 shadow-sm border-0">
-                <img
-                  src={item?.image}
-                  className="card-img-top"
-                  alt={item?.title || ''}
-                  style={{ height: '200px', objectFit: 'cover' }}
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{item?.title}</h5>
-                  <p className="card-text">{item?.description}</p>
+          <div className="row g-4">
+            {Array.isArray(businesses) && businesses.map((item, index) => (
+              <div className="col-md-6 col-lg-4" key={index} data-aos="fade-up">
+                <div className="card h-100 shadow-sm border-0">
+                  <img
+                    src={item?.image}
+                    className="card-img-top"
+                    alt={item?.title || ''}
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{item?.title}</h5>
+                    <p className="card-text">{item?.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <section className="text-center bg-light py-4 rounded shadow-sm" data-aos="zoom-in">
+        <h3><i className="bi bi-envelope-paper text-primary me-2"></i>Let’s work together to drive your business forward.</h3>
+        <p>Contact us today.</p>
+        <a href="/contact" className="btn btn-primary">
+          <i className="bi bi-send-fill me-1"></i>Connect with Us
+        </a>
+      </section>
+    </>
   );
 };
 

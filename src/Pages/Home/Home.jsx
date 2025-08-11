@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import { useCheckout } from '../Context/Context';
 
+
 const Home = () => {
   const navigate = useNavigate();
   const { products } = useCheckout();
@@ -188,7 +189,7 @@ const Home = () => {
             <div
               className="card shadow-sm border-0 h-100 equal-card d-flex align-items-center justify-content-center text-center"
               style={{ cursor: "pointer", background: "#f8f9fa" }}
-              onClick={() => navigate('/businesses')}
+              onClick={() => navigate('/business')}
             >
               <div className="view-all-content text-center">
                 <h5 className="text-primary mb-2">View All</h5>

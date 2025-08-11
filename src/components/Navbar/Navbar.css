@@ -15,7 +15,7 @@
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
   color: #ff9900 !important;
-  text-decoration: underline;
+  
 }
 
 /* Toggler button border black */

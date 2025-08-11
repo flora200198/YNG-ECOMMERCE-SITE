@@ -13,43 +13,48 @@ export const businesses = [
   {
     title: "STP (Sewage Treatment Plant)",
     description: "Design and installation of modern sewage treatment plants for residential, commercial, and industrial needs.",
-    image: "/assets/Landing.png"
+    image: "/assets/STP.png"
   },
   {
     title: "ETP (Effluent Treatment Plant)",
     description: "Comprehensive solutions for treating industrial wastewater and effluents.",
-    image: "https://via.placeholder.com/400x250?text=ETP"
+    image: "/assets/ETP.png"
   },
   {
     title: "WTP (Water Treatment Plant)",
     description: "Advanced water treatment systems for clean and potable water supply.",
-    image: "https://via.placeholder.com/400x250?text=WTP"
+    image: "/assets/WTP.png"
   },
   {
     title: "Automation for Schools",
     description: "Smart automation systems to digitize attendance, security, and communication in educational institutions.",
-    image: "https://via.placeholder.com/400x250?text=School+Automation"
+    image: "/assets/school-automation.png"
   },
   {
     title: "Smart Home Solutions",
     description: "Home automation services for lighting, climate, security, and more using IoT technology.",
-    image: "https://via.placeholder.com/400x250?text=Smart+Home"
+    image: "/assets/smart-home.png"
   },
   {
     title: "Consultancy Services",
     description: "Expert consulting in environmental compliance, engineering, and project execution.",
-    image: "https://via.placeholder.com/400x250?text=Consultancy"
+    image: "/assets/consultancy.png"
   },
   {
     title: "Preconstructed Modular Houses",
     description: "Fast and sustainable prefab housing options tailored for modern living.",
-    image: "https://via.placeholder.com/400x250?text=Prefab+Houses"
+    image: "/assets/pre-structured-house.png"
   },
   {
     title: "Turnkey Installation Services",
     description: "End-to-end project installation and commissioning across sectors.",
-    image: "https://via.placeholder.com/400x250?text=Installation"
+    image: "/assets/turnkey.png"
   },
+ {
+    title: "Environmental Solutions",
+    description: "Innovative solutions for environmental monitoring and compliance.",
+    image: "/assets/instruments.png"
+  }
 ];
 
 export const products = [
