@@ -17,3 +17,4 @@
   background-size: contain;
   min-height: 200px; /* Ensures image area is visible */
 /* }  */
+ /* backgroundImage: `url(${process.env.PUBLIC_URL}/assets/Logo.png)`, */
