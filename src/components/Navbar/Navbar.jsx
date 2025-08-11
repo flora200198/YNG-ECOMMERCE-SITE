@@ -10,7 +10,7 @@ const Navbar = () => {
           <img
             src="/assets/Logo.png"  // Corrected image path if placed in public/assets
             alt="Company Logo"
-            style={{ height: '80px' }}
+            style={{ height: '80px' , borderRadius: '6px'}}
             className="company-logo"
           />
         </Link>

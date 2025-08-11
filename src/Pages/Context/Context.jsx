@@ -736,6 +736,706 @@ export const ProductDetails = [
 
 ]
 
+// businessDetails.js
+export const businessDetails = [
+  {
+    slug: "stp",
+    title: "STP (Sewage Treatment Plant)",
+    routeLink: "/business/stp", // use this in cards/menus
+    icon: "bi bi-water",
+    themeClass: "text-warning",
+
+    whyNeeded: `Water is one of the most valuable resources on our planet, yet every day, vast quantities of it are polluted by
+    human and industrial activity. Untreated sewage is a major contributor to environmental degradation — contaminating
+    rivers, lakes, and groundwater, spreading diseases, and harming aquatic life. Governments, industries, and communities
+    worldwide are under increasing pressure to ensure that wastewater is treated before being released back into the
+    environment. This is where Sewage Treatment Plants (STPs) play a critical role.`,
+
+    whatItDoes: `An STP processes wastewater from homes, offices, institutions, and industries, removing harmful contaminants, organic
+    matter, and pathogens. The treated water is then safe to discharge into the environment or reuse for non-potable purposes
+    such as landscaping, cooling towers, and flushing systems.`,
+
+    processFlow: [
+      "Preliminary Treatment – Screening and grit removal to eliminate large solids, debris, and sand.",
+      "Primary Treatment – Sedimentation tanks allow heavier particles to settle, reducing suspended solids.",
+      "Secondary (Biological) Treatment – Microorganisms break down organic pollutants in aeration tanks.",
+      "Tertiary Treatment – Advanced filtration, chlorination, or UV disinfection to remove remaining pathogens and impurities.",
+      "Sludge Treatment – Dewatering and safe disposal or conversion of sludge into manure or biogas."
+    ],
+
+    environmentBenefits: [
+      "Pollution Prevention – Stops harmful chemicals, waste, and pathogens from contaminating natural water bodies.",
+      "Water Conservation – Treated water can be reused, reducing the strain on freshwater sources.",
+      "Biodiversity Protection – Protects aquatic ecosystems and wildlife habitats.",
+      "Climate Impact Reduction – Modern STPs can produce biogas, lowering greenhouse gas emissions."
+    ],
+
+    industryBenefits: [
+      "Regulatory Compliance – Meets environmental standards, avoiding fines and legal action.",
+      "Cost Savings – Recycled water can reduce dependency on costly freshwater sources.",
+      "Sustainability Goals – Enhances corporate image and meets CSR commitments.",
+      "Operational Safety – Prevents foul odors, disease spread, and equipment corrosion caused by untreated wastewater."
+    ],
+
+    purpose: [
+      "Mandatory Requirement – In many regions, STPs are legally required for residential complexes, commercial buildings, hotels, hospitals, and industries.",
+      "Resource Recovery – Converts waste into usable water and by-products.",
+      "Sustainability Commitment – Reduces environmental footprint and promotes long-term resource security."
+    ],
+
+    industriesNeed: [
+      "Residential townships & apartment complexes",
+      "Hotels and resorts",
+      "Hospitals and healthcare facilities",
+      "Manufacturing units",
+      "Food & beverage processing plants",
+      "Educational institutions & corporate campuses",
+      "Government and defense facilities"
+    ],
+
+    yngSpecialityIntro: `At YNG Infra, we go beyond standard STP installations — we design smart, future-ready sewage treatment
+    systems that deliver maximum efficiency, minimal maintenance, and long operational life.`,
+
+    yngSpecialityPoints: [
+      "Customized Designs – Each STP is tailored to the client’s water load, space availability, and reuse goals.",
+      "Advanced Technology – Incorporating MBBR, SBR, MBR, and other cutting-edge treatment processes.",
+      "Energy Efficiency – Low power consumption with optimized aeration and automation.",
+      "Space-Saving Solutions – Compact modular designs for urban settings.",
+      "End-to-End Service – From design and installation to training, operation, and maintenance support.",
+      "Regulatory Expertise – Ensuring full compliance with local and international environmental standards."
+    ],
+
+    conclusion: `With YNG Infra, you don’t just get a sewage treatment plant — you get a sustainable water management
+    solution that protects the environment, saves resources, and adds long-term value to your business or community.`
+  },
+  {
+  slug: "etp",
+  title: "ETP (Effluent Treatment Plant)",
+  routeLink: "/business/etp",
+  icon: "bi bi-recycle",
+  themeClass: "text-warning",
+
+  whyNeeded: `Industrial processes generate effluents with high TSS, BOD, COD, oil & grease, color, nutrients, and heavy metals.
+  If discharged untreated, these pollutants damage water bodies, soil, and public health. Regulations (CPCB/SPCB) mandate
+  treatment before discharge, and increasing water stress pushes industries to recycle and reuse water. ETPs make compliance
+  and water-reuse possible.`,
+
+  whatItDoes: `An ETP treats industrial wastewater to remove suspended solids, organic load, oils, metals, and toxic compounds; adjusts pH;
+  disinfects; and polishes water for safe discharge or reuse in utilities (cooling towers, boiler feed pre-treatment, gardening) or
+  for ZLD schemes.`,
+
+  processFlow: [
+    "Collection & Equalization – Buffer flow/quality variations for steady treatment.",
+    "Screening & Oil/Grit Removal – Bar screens, oil traps, and grit chambers.",
+    "pH Correction/Neutralization – Acid/alkali dosing to optimal reaction range.",
+    "Coagulation–Flocculation – Chemical addition with rapid/slow mixing for colloid removal.",
+    "Primary Clarification / DAF – Settle or float floc and fats/oils.",
+    "Biological Treatment – ASP/MBBR/SBR/UASB to reduce BOD/COD biologically.",
+    "Secondary Clarifier – Separate biomass and produce clarified effluent.",
+    "Tertiary Polishing – Pressure sand filter, activated carbon filter, cartridge filters; optional UF.",
+    "Advanced Treatment (Reuse/ZLD) – RO/DTRO; evaporator (MEE) and ATFD/crystallizer if ZLD required.",
+    "Disinfection – UV/chlorination/ozonation as needed.",
+    "Sludge Handling – Thickening, filter press/centrifuge; safe disposal as per norms."
+  ],
+
+  environmentBenefits: [
+    "Major pollutant load reduction (BOD/COD/TSS, color, O&G, metals).",
+    "Protects rivers, lakes, and groundwater from toxic discharge.",
+    "Enables reuse, reducing freshwater extraction and stress on local sources.",
+    "Supports ZLD policies, minimizing liquid discharge.",
+    "Proper sludge management prevents secondary pollution."
+  ],
+
+  industryBenefits: [
+    "Regulatory compliance and smooth consent/renewals with SPCB/CPCB.",
+    "Lower water costs via recycle for cooling/process and utility makeup.",
+    "Reduced discharge penalties/cess and better ESG/CSR ratings.",
+    "Protects equipment (piping, exchangers, cooling towers) from fouling/corrosion.",
+    "Scalable, modular systems that grow with production."
+  ],
+
+  purpose: [
+    "Meet statutory discharge norms and buyer audit requirements.",
+    "Achieve water-reuse/neutrality targets and resilience during scarcity.",
+    "Enable ZLD where mandated or strategically beneficial."
+  ],
+
+  industriesNeed: [
+    "Chemicals & Petrochemicals",
+    "Pharmaceuticals & Biotech",
+    "Textiles & Dyeing",
+    "Food & Beverage",
+    "Pulp & Paper",
+    "Refineries & Oil & Gas",
+    "Metal Finishing & Electroplating",
+    "Tanneries",
+    "Power Plants",
+    "Automotive",
+    "Mines & Mineral Processing"
+  ],
+
+  yngSpecialityIntro: `YNG Infra delivers tailor-made, turnkey ETPs engineered for complex and variable industrial effluents—focused on compliance, reuse, and lifecycle cost.`,
+
+  yngSpecialityPoints: [
+    "Influent characterization & jar/treatability studies before design.",
+    "Right-fit tech selection: DAF, MBBR, SBR, UASB, MBR, UF/RO; MEE/ATFD for ZLD.",
+    "PLC/SCADA automation, remote monitoring, alarms, and reports.",
+    "Energy & chemical optimization (VFD blowers, optimized dosing).",
+    "Compact skid-mounted and modular layouts for space-constrained sites.",
+    "Retrofits & upgrades to improve legacy ETP performance.",
+    "O&M, AMC, and operator training for reliable, safe operations.",
+    "Compliance documentation and liaison support with SPCB/CPCB.",
+    "Performance guarantees on treated water quality and reuse KPIs."
+  ],
+
+  conclusion: `Partner with YNG Infra for a compliant, efficient, and future-ready ETP—cut operating costs, reach reuse/ZLD targets, and protect the environment while keeping production running smoothly.`
+  },
+  {
+  slug: "wtp",
+  title: "WTP (Water Treatment Plant)",
+  routeLink: "/business/wtp",
+  icon: "bi bi-droplet-half",
+  themeClass: "text-warning",
+
+  whyNeeded: `Raw water from borewells, rivers, lakes, and municipal sources often contains turbidity, hardness, iron/manganese, TDS, color, odor, and microbes.
+  Without proper treatment, it causes scaling/corrosion, equipment failures, product-quality issues, and health risks. A WTP ensures safe, consistent,
+  and compliant water for drinking and process applications, even as source quality fluctuates seasonally.`,
+
+  whatItDoes: `A WTP treats raw water to defined quality targets (potable or process-spec). It removes suspended solids, hardness, iron/metals, organics, color/odor,
+  and pathogens; reduces TDS where required; stabilizes pH/alkalinity; and delivers clear, safe, and consistent water for distribution and use.`,
+
+  processFlow: [
+    "Intake, Screening & Raw Water Storage – Capture and buffer feed; remove coarse debris.",
+    "Aeration/Oxidation – Pre-oxidize Fe/Mn, strip gases, improve coagulation.",
+    "Coagulation–Flocculation – Chemical addition and mixing to aggregate colloids.",
+    "Clarification – Tube/lamella settlers or clariflocculators to remove floc.",
+    "Filtration – Pressure sand / rapid gravity filters to polish turbidity.",
+    "Activated Carbon Filtration – Remove organics, color, taste & odor, residual chlorine.",
+    "Softening / Ion Exchange – Reduce hardness; optionally DM/MB for low-conductivity needs.",
+    "Membrane Treatment (as needed) – UF for pathogen/turbidity barrier; RO/DTRO for TDS reduction.",
+    "pH Correction & Stabilization – Corrosion/scale control; remineralization for palatability.",
+    "Disinfection – UV/chlorination/ozonation to inactivate pathogens and maintain residual.",
+    "Storage & Distribution – Hygienic tanks, booster pumps, and monitored distribution.",
+  ],
+
+  environmentBenefits: [
+    "Reduces bottled-water dependency and plastic waste through on-site safe water.",
+    "Optimizes chemical/energy use with right-sized unit operations.",
+    "Enables water reuse integration (UF/RO permeate blending) to conserve freshwater.",
+    "Protects downstream systems from scaling/corrosion, extending asset life."
+  ],
+
+  industryBenefits: [
+    "Quality & Consistency – Stable water quality for process and utilities.",
+    "Protects Equipment – Minimizes scaling/corrosion in boilers, cooling towers, and process lines.",
+    "Compliance & Audits – Helps meet internal specs and regulatory/standard guidelines.",
+    "Opex Savings – Fewer breakdowns, lower chemical use, and improved uptime.",
+    "Product Quality – Critical for pharma, F&B, electronics, and high-spec applications."
+  ],
+
+  purpose: [
+    "Produce potable water for campuses, hotels, hospitals, and residential townships.",
+    "Supply process water meeting hardness/TDS/microbiological limits for industry.",
+    "Condition make-up water for boilers and cooling towers.",
+    "Stabilize variable source water quality across seasons and locations."
+  ],
+
+  industriesNeed: [
+    "Residential Townships & Commercial Complexes",
+    "Hospitals, Hotels & Institutions",
+    "Pharmaceuticals & Biotech",
+    "Food & Beverage Processing",
+    "Power & Utilities (Boiler/Cooling Tower Make-up)",
+    "Electronics & Precision Manufacturing",
+    "Automotive & General Manufacturing",
+    "Municipal & Community Water Supply"
+  ],
+
+  yngSpecialityIntro: `YNG Infra designs application-specific WTPs based on source-water analytics and end-use quality targets—balancing performance, footprint, and lifecycle cost.`,
+
+  yngSpecialityPoints: [
+    "Raw water analysis and pilot/jar testing to select the right train.",
+    "Technology stack: PSF/ACF, softeners, DM/MB, UF/RO, advanced oxidation, UV/ozone, remineralization.",
+    "Hygienic design options for pharma/F&B (SS316L skids, sanitary piping, validated layouts).",
+    "PLC/SCADA automation with online turbidity, pH, ORP, conductivity, and flow monitoring.",
+    "CIP systems for membranes/filters; chemical & energy optimization with VFDs and smart dosing.",
+    "Modular, skid-mounted plants for fast deployment and easy expansion.",
+    "Retrofits/upgrades of legacy WTPs to improve output quality and reduce OPEX.",
+    "AMC/O&M packages, operator training, and audit/compliance documentation."
+  ],
+
+  conclusion: `Choose YNG Infra for a robust, low-maintenance WTP that delivers safe, consistent water—protecting your assets, improving product quality, and reducing total cost of ownership.`
+ },
+ {
+  slug: "school-automation",
+  title: "Automation for Schools",
+  routeLink: "/business/school-automation",
+  icon: "bi bi-mortarboard",
+  themeClass: "text-warning",
+
+  whyNeeded: `Schools manage thousands of daily events—attendance, security, fees, transport, announcements, exams, and communication.
+  Manual handling causes delays, errors, and safety gaps. Automation centralizes operations, improves safety and transparency,
+  and keeps parents, teachers, and administrators aligned in real time.`,
+
+  whatItDoes: `A unified platform that digitizes campus operations—smart attendance, secure access control, transport tracking,
+  digital notices, timetable & exam management, fee workflows, and analytics—integrated with existing ERP/LMS and hardware (RFID/NFC, CCTV, GPS).`,
+
+  processFlow: [
+    "Smart Entry & Attendance – RFID/NFC/Biometric at gates/classrooms with auto SMS/app notifications to parents.",
+    "Access Control & Visitor Management – QR/OTP visitor passes; restricted zones for staff/students.",
+    "Smart Transport – Live GPS bus tracking, geo-fencing, route optimization, student boarding alerts.",
+    "Timetable, Exams & Scheduling – Publish timetables, invigilation, room allocation, results workflows.",
+    "Communication Hub – App/WhatsApp/SMS push for circulars, events, emergency alerts, homework.",
+    "Fees & Finance – Online payments, receipts, dues reminders, integration with accounting/ERP.",
+    "Asset & Facility Management – Lab/IT asset logs, complaints/tickets, AMC reminders.",
+    "Safety & Surveillance – CCTV integration, emergency SOPs, panic alerts, audit trails.",
+    "Dashboards & Analytics – Attendance trends, bus KPIs, fee collections, performance insights."
+  ],
+
+  environmentBenefits: [
+    "Paperless administration via digital circulars, attendance, and reports.",
+    "Optimized transport routes reduce idling, fuel use, and emissions.",
+    "Smart energy schedules (lighting/HVAC) lower campus power consumption."
+  ],
+
+  industryBenefits: [
+    "Student Safety – Real-time entry/exit logs, bus tracking, emergency alerts.",
+    "Operational Efficiency – Automated attendance, fees, and communication save staff time.",
+    "Parent Engagement – Instant updates via app/SMS improve transparency and trust.",
+    "Data Accuracy & Audits – Centralized records with traceable logs for inspections.",
+    "Cost Control – Route optimization, energy schedules, and reduced paperwork lower OPEX."
+  ],
+
+  purpose: [
+    "Digitize attendance, fees, transport, and communication for faster, error-free operations.",
+    "Strengthen campus security with access control and visitor management.",
+    "Provide real-time visibility to parents and administrators.",
+    "Standardize processes and maintain compliance-ready audit trails."
+  ],
+
+  industriesNeed: [
+    "K–12 Schools (CBSE/ICSE/State Boards)",
+    "Colleges & Universities",
+    "Coaching/Training Institutes",
+    "Hostels & Residential Schools",
+    "Pre-schools & Daycare Centers",
+    "Skill Development Centers"
+  ],
+
+  yngSpecialityIntro: `YNG Infra delivers end-to-end school automation—hardware + software + integrations—tailored to your campus size, policies, and budget.`,
+
+  yngSpecialityPoints: [
+    "Modular platform: start with attendance/transport and scale to full campus automation.",
+    "Seamless integrations with ERP/LMS, payment gateways, SMS/WhatsApp, CCTV, RFID/NFC, GPS.",
+    "Secure-by-design: role-based access, encryption, and comprehensive audit trails.",
+    "Mobile-first parent & teacher apps with multilingual support and offline-friendly features.",
+    "Rapid deployment: cloud/on-prem options, training, and change management.",
+    "24×7 support, AMC/O&M, and SLA-backed uptime; custom dashboards for management.",
+    "Compliance-friendly logs for inspections and safety audits."
+  ],
+
+  conclusion: `Transform your campus into a safe, efficient, and connected environment—reduce manual workload, delight parents, and give administrators real-time control with YNG Infra’s School Automation.` 
+ },
+ {
+  slug: "smart-home",
+  title: "Smart Home Solutions",
+  routeLink: "/business/smart-home",
+  icon: "bi bi-house-gear",
+  themeClass: "text-warning",
+
+  whyNeeded: `Modern homes juggle comfort, security, and energy costs. Manual control leads to wastage (lights/HVAC left on),
+  safety blind spots, and poor visibility into consumption. Smart Home Solutions automate daily routines, enhance safety,
+  and cut energy bills—while giving homeowners app and voice control from anywhere.`,
+
+  whatItDoes: `An integrated system that connects lighting, fans, HVAC, curtains/blinds, door locks, video doorbells, CCTV,
+  sensors (motion, occupancy, gas, smoke, water leak), appliances, energy meters, solar/backup, and voice assistants.
+  It enables scenes, schedules, and condition-based automations, with dashboards for usage insights and alerts.`,
+
+  processFlow: [
+    "Site Survey & Requirement Capture – Rooms, loads, security zones, user preferences.",
+    "Network & Topology Design – Reliable Wi-Fi + Zigbee/Z-Wave/BLE; optional wired KNX/RS485.",
+    "Control Hardware – Smart switches/dimmers/relays, scene controllers, hubs/gateways.",
+    "Sensors & Safety – Motion, occupancy, door/window, smoke/gas, water leak, lux, temperature.",
+    "Security & Access – Smart locks, video door phones, CCTV/NVR, visitor management.",
+    "HVAC & Shades – Thermostats, IR bridges, motorized curtains/blinds with sunrise/sunset logic.",
+    "Energy & Utilities – Smart meters, load control, solar/UPS integration, peak-load shedding.",
+    "Voice & App – Alexa/Google/Siri integration, user roles, secure remote access.",
+    "Automation Programming – Scenes (Good Morning, Away, Movie Night), schedules, geofencing.",
+    "Testing, Training & Handover – User onboarding, documentation, and quick-start guides.",
+    "AMC & Remote Support – Health monitoring, firmware updates, and SLA-backed service."
+  ],
+
+  environmentBenefits: [
+    "10–30% potential energy savings via occupancy, schedules, and adaptive dimming.",
+    "Peak-load management reduces grid stress and carbon intensity.",
+    "Water-leak detection and automated cut-off minimize wastage and damage.",
+    "Solar/backup integration prioritizes clean energy and extends battery life.",
+    "Longer appliance life through optimized runtimes and soft-start control."
+  ],
+
+  industryBenefits: [
+    "Comfort & Convenience – One-tap scenes, voice control, and automation of routines.",
+    "Safety & Security – Proactive alerts (smoke/gas/leak/intrusion), remote verification via cameras.",
+    "Energy Visibility – Real-time metering, bills forecasting, and appliance-level insights.",
+    "Property Value – Premium fit-out with modern controls and neat aesthetics.",
+    "Low Disruption – Retrofit options preserve existing wiring and switch plates."
+  ],
+
+  purpose: [
+    "Centralize control of lighting, HVAC, security, and utilities.",
+    "Reduce electricity and water costs through automation and insights.",
+    "Enhance family safety with intelligent sensing and alerts.",
+    "Enable elderly/child-friendly living with routines and voice control.",
+    "Future-proof the home with scalable, interoperable tech."
+  ],
+
+  industriesNeed: [
+    "Apartments & Condominiums",
+    "Individual Villas & Bungalows",
+    "Gated Communities & Clubhouses",
+    "Hotels, Resorts & Serviced Apartments",
+    "Premium Rentals & Co-living Spaces",
+    "Home Offices & Studio Apartments",
+    "Senior-Living & Assisted-Care Homes"
+  ],
+
+  yngSpecialityIntro: `YNG Infra delivers vendor-agnostic, scalable smart homes—hybrid wired/wireless designs with local control fallback,
+  robust security, and clean aesthetics tailored to Indian power/network conditions.`,
+
+  yngSpecialityPoints: [
+    "Retrofit-friendly smart switches and DIN-rail panels—minimal civil work.",
+    "Interoperability: Zigbee/Z-Wave/KNX/Wi-Fi; works with Alexa/Google/Siri.",
+    "Local-first operation with cloud remote access; privacy and encryption by design.",
+    "Professional electrical standards: IS/IEC-compliant protection, labeling, and documentation.",
+    "Energy dashboards with actionable automations (peak-cut, schedule, occupancy).",
+    "Neat UI/UX: scene keypads, engraved plates, and custom mobile dashboards.",
+    "End-to-end delivery: design, installation, programming, training, AMC/O&M.",
+    "Scalable architecture—start small, expand room-by-room without rewiring."
+  ],
+
+  conclusion: `Upgrade to a safer, smarter, and more efficient home. With YNG Infra’s Smart Home Solutions, enjoy effortless control,
+  measurable savings, and premium living—today and as your needs evolve.`
+ },
+ {
+  slug: "consultancy",
+  title: "Consultancy Services",
+  routeLink: "/business/consultancy",
+  icon: "bi bi-clipboard-check",
+  themeClass: "text-warning",
+
+  whyNeeded: `Projects fail or stall not because of intent, but due to unclear requirements, regulatory hurdles, wrong tech choices,
+  and budget/time overruns. Expert consultancy de-risks decisions early, aligns stakeholders, secures approvals, and optimizes CAPEX/OPEX—
+  so execution is smooth and outcomes are measurable.`,
+
+  whatItDoes: `End-to-end advisory across environmental compliance, water & wastewater, automation, and infrastructure—covering feasibility/DPR,
+  basic & detailed engineering, tech evaluation, budgeting, statutory approvals, tendering, vendor management, commissioning support, and audits.`,
+
+  processFlow: [
+    "Discovery & Site Assessment – Data capture, loads, constraints, stakeholder goals.",
+    "Baseline Studies – Sampling/analysis, utility audits, as-built review, risk register.",
+    "Compliance Mapping – CPCB/SPCB norms, ISO 14001/45001, water/storm/sewage by-laws.",
+    "Solution Engineering – Alternatives, PFD/P&ID, sizing, layouts, control philosophy.",
+    "Tech & Vendor Evaluation – RFP specs, pre-bid clarifications, techno-commercial comparisons.",
+    "Costing & ROI – CAPEX/OPEX models, lifecycle cost, payback and sensitivity.",
+    "Permits & Liaison – Consent to Establish/Operate, environmental clearances, documentation.",
+    "Procurement & Contracts – BOQ, tender docs, bid evaluation, negotiations, award support.",
+    "Execution Support – QA/QC plans, site reviews, FAT/SAT, commissioning & performance tests.",
+    "Training & Handover – O&M manuals, SOPs, safety plans, AMC/O&M strategy.",
+    "Post-Implementation Audits – Performance benchmarking, optimization roadmap."
+  ],
+
+  environmentBenefits: [
+    "Assured compliance to discharge/emission standards and audit readiness.",
+    "Reduced water abstraction via reuse/recycle schemes built into design.",
+    "Waste minimization and energy optimization, lowering carbon footprint.",
+    "Better sludge/solid-waste handling and safer operations."
+  ],
+
+  industryBenefits: [
+    "Faster approvals and fewer reworks through correct-first-time engineering.",
+    "Optimized CAPEX/OPEX with right-sized technology and competitive tendering.",
+    "Schedule certainty with structured PMO, QA/QC, and risk controls.",
+    "Vendor neutrality and transparent decision trails for management/board."
+  ],
+
+  purpose: [
+    "Validate feasibility and select the right technology before investing.",
+    "Navigate SPCB/CPCB and local authority approvals without delay.",
+    "Standardize specs and contracts across multi-site rollouts.",
+    "Upgrade/retrofit legacy plants to meet new compliance or capacity."
+  ],
+
+  industriesNeed: [
+    "Manufacturing (Auto, FMCG, Metals, Electronics)",
+    "Pharma & Biotech",
+    "Chemicals & Petrochemicals",
+    "Food & Beverage",
+    "Hospitals, Campuses & IT Parks",
+    "Real Estate & Smart Infrastructure",
+    "Textiles & Dyeing",
+    "Power & Utilities",
+    "Municipal & Urban Local Bodies"
+  ],
+
+  yngSpecialityIntro: `YNG Infra brings multidisciplinary expertise—process, environmental, electrical, instrumentation, and automation—
+  to deliver practical, compliant, and future-ready designs with clear outcomes.`,
+
+  yngSpecialityPoints: [
+    "Evidence-based design: treatability/jar tests, data logging, and digital twins where useful.",
+    "Vendor-agnostic specs and balanced scorecards for fair techno-commercial selection.",
+    "Strong regulatory liaison: complete filings, formats, and inspection readiness.",
+    "PLC/SCADA philosophy, IIoT/OCEMS readiness, and cyber-safe architectures.",
+    "Lifecycle focus: low OPEX layouts, energy & chemical optimization, maintainability built-in.",
+    "Retrofit specialists: capacity upgrades and compliance fixes without long shutdowns.",
+    "Structured PMO with milestones, DPRs, and management dashboards."
+  ],
+
+  conclusion: `From feasibility to handover, partner with YNG Infra to de-risk decisions, achieve approvals on time, and build assets that
+  perform—compliantly, efficiently, and sustainably—throughout their lifecycle.`
+  },
+  {
+  slug: "modular-houses",
+  title: "Preconstructed Modular Houses",
+  routeLink: "/business/modular-houses",
+  icon: "bi bi-houses",
+  themeClass: "text-warning",
+
+  whyNeeded: `Conventional construction faces delays, cost overruns, labor shortages, and inconsistent quality—especially in dense cities
+  and remote sites. Modular buildings deliver speed, predictability, and factory-grade quality with lower site disruption and
+  a smaller carbon footprint. They’re ideal for rapid deployment, scalable growth, and smart, energy-efficient living.`,
+
+  whatItDoes: `Modular housing is built off-site in factory conditions as finished volumetric modules (structure + walls + MEP + interiors).
+  Modules are transported to site, craned into place, locked structurally, and connected to utilities. Designs range from studios
+  and villas to classrooms, clinics, offices, resorts—fully “smart-home ready” with integrated IoT and energy options.`,
+
+  processFlow: [
+    "Needs Assessment & Permits – Site survey, by-laws, fire/NBC compliance, and approvals strategy.",
+    "Concept & Engineering – Floor plans, elevations, structural checks (wind/seismic), MEP layout, and finishes.",
+    "Factory Fabrication – Steel/LGS/CFS framing, wall/floor/roof panels, insulation, windows/doors, first-fix MEP.",
+    "Quality Control – Dimensional checks, leak tests, electrical/pressure tests, finishing QA.",
+    "Foundations & Site Prep – Plinth/pile/raft, anchor bolts, drainage, and utility sleeves.",
+    "Transport & Cranage – Route planning, escorts, lift plans, and staging.",
+    "On-Site Assembly – Module placement, inter-module connections, weather sealing.",
+    "Utilities Hook-Up – Electrical, plumbing, HVAC, networking; smart devices commissioning.",
+    "Finishing & Snag Clearance – Fixtures, cabinetry, painting, flooring, and site works.",
+    "Handover & Documentation – As-builts, O&M manuals, warranty; AMC/O&M onboarding."
+  ],
+
+  environmentBenefits: [
+    "Up to 80–90% factory fabrication reduces site waste, dust, and noise.",
+    "Optimized material use lowers embodied carbon; modules are reusable/relocatable.",
+    "High-performance insulation and airtightness cut HVAC loads.",
+    "Solar-ready roofs, rainwater harvesting, and greywater reuse options.",
+    "Less site traffic reduces emissions and community disturbance."
+  ],
+
+  industryBenefits: [
+    "Fast Time-to-Occupy – Parallel factory/site work compresses schedules by 30–60%.",
+    "Predictable Cost & Quality – Controlled production and repeatable QA.",
+    "Scalable & Flexible – Add/remove modules as needs evolve; relocate if required.",
+    "Minimal Site Disruption – Smaller crews and cleaner sites, ideal for operating campuses.",
+    "Integrated Smart & MEP – Plug-and-play utilities and automation lower lifecycle cost."
+  ],
+
+  purpose: [
+    "Rapid residential units (studios, villas, staff housing, farm stays).",
+    "Education & Healthcare (classrooms, labs, hostels, clinics, PHCs).",
+    "Hospitality & Retail (resorts, cabins, cafés, pop-ups).",
+    "Corporate/Industrial (site offices, canteens, control rooms).",
+    "Disaster Relief & Remote Camps (defense, mining, infra projects)."
+  ],
+
+  industriesNeed: [
+    "Real Estate Developers & Gated Communities",
+    "Education Campuses & Training Centers",
+    "Hospitals, Clinics & Wellness Resorts",
+    "Hospitality, Tourism & Agro-tourism",
+    "Industrial Parks & Construction Sites",
+    "Disaster Response & Government Housing",
+    "Retail & Experience Centers",
+    "Defense, Mining & Remote Operations"
+  ],
+
+  yngSpecialityIntro: `YNG Infra delivers turnkey modular buildings—structure, MEP, interiors, and smart automation—engineered for Indian
+  climates and codes, with rapid deployment and assured quality.`,
+
+  yngSpecialityPoints: [
+    "Multiple systems: Light-Gauge Steel (LGS/CFS), PEB, hybrid steel + SIPs, and container-based modules.",
+    "Thermal/acoustic envelopes: rockwool/PIR/XPS, low-E glazing, cool roofs, and acoustic detailing.",
+    "Smart-home bundles: lighting/HVAC/locks/CCTV, energy meters, water-leak and gas sensors, app/voice control.",
+    "Green options: solar PV/inverters, rainwater harvesting, low-flow fixtures, greywater reuse integration.",
+    "Factory-built bathrooms/kitchens for speed and fit-finish; modular furniture packages.",
+    "Code & compliance: NBC, fire norms, seismic/wind checks; vetted electrical/plumbing standards.",
+    "Logistics & cranage planning for tight urban or remote access sites.",
+    "AMC/O&M, remote monitoring, and performance SLAs; upgrade paths for expansion."
+  ],
+
+  conclusion: `Build faster and smarter with YNG Infra’s Preconstructed Modular Houses—premium finishes, integrated automation,
+  and sustainable performance, delivered on time and ready to live or work in from day one.`
+},
+{
+  slug: "turnkey-installation",
+  title: "Turnkey Installation Services",
+  routeLink: "/business/turnkey-installation",
+  icon: "bi bi-tools",
+  themeClass: "text-warning",
+
+  whyNeeded: `Projects often slip on schedule and budget due to multi-vendor handoffs, unclear scope, and site coordination gaps.
+  Turnkey delivery gives a single point of responsibility for design, procurement, installation, automation, testing, and handover—
+  reducing risk, compressing timelines, and assuring quality, safety, and compliance.`,
+
+  whatItDoes: `End-to-end EPC/EPCM execution of water & wastewater plants (STP/ETP/WTP), environmental systems, automation,
+  and smart infrastructure. We handle basic/detailed engineering, civil & structural works, MEP, instrumentation & control,
+  PLC/SCADA, FAT/SAT, statutory clearances, documentation, training, and O&M onboarding.`,
+
+  processFlow: [
+    "Requirement Capture & Site Survey – Loads, utilities, constraints, stakeholder goals.",
+    "Engineering – PFD/P&ID, GA/layouts, cable routing, hook-up drawings, BOQs, control philosophy.",
+    "Project Planning – WBS, schedule, traffic & cranage plans, HSE (HIRA/JSA), QA/QC plans.",
+    "Procurement – Vendor pre-qualification, RFQs, techno-commercial evaluation, expediting, inspections.",
+    "Factory Build & FAT – Skid fabrication, panel building, software staging, functional tests.",
+    "Civil & Structural Works – Foundations, plinths, trenches, pipe racks, supports.",
+    "Mechanical Installation – Equipment erection, piping, valves, flushing & hydrotests.",
+    "Electrical Works – Panels, transformers, cabling, earthing, lighting, protection settings.",
+    "Instrumentation & Automation – Field instruments, marshaling, PLC/SCADA configuration, loop checks.",
+    "Pre-commissioning – Dry runs, interlocks, cause-&-effect, I/O validation, punch-list closure.",
+    "Wet Commissioning & Performance Tests – Trial runs, optimization, performance guarantee tests.",
+    "Training, Handover & Documentation – SOPs, O&M manuals, as-builts, spares, warranties, AMC kickoff."
+  ],
+
+  environmentBenefits: [
+    "Right-sized, energy-efficient equipment reduces long-term power and chemical use.",
+    "Less rework and scrap through controlled QA/QC and prefabrication.",
+    "Compliance-first execution minimizes emissions/discharge risks and penalties.",
+    "Waste segregation and HSE practices improve site environmental performance."
+  ],
+
+  industryBenefits: [
+    "Single-window accountability with clear KPIs and guaranteed outcomes.",
+    "Predictable schedule and cost through detailed planning and change control.",
+    "Higher reliability via standardized QA/QC, FAT/SAT, and documentation.",
+    "Faster ramp-up to design capacity with trained staff and O&M readiness."
+  ],
+
+  purpose: [
+    "Deliver projects on time and within budget with a single responsible partner.",
+    "De-risk complex multi-discipline coordination across civil, MEP, and automation.",
+    "Achieve statutory compliance and pass audits from day one.",
+    "Ensure performance guarantees on flow, quality, efficiency, and uptime."
+  ],
+
+  industriesNeed: [
+    "Water & Wastewater (STP/ETP/WTP)",
+    "Pharma & Biotech",
+    "Food & Beverage",
+    "Chemicals & Petrochemicals",
+    "Automotive & General Manufacturing",
+    "Power & Utilities",
+    "Hospitals, Campuses & IT Parks",
+    "Municipal & Smart Infrastructure"
+  ],
+
+  yngSpecialityIntro: `YNG Infra executes turnkey projects with in-house process, electrical, and instrumentation teams—combining
+  prefabricated skids, robust automation, and disciplined project controls for faster, safer delivery.`,
+
+  yngSpecialityPoints: [
+    "Vendor-agnostic tech selection with lifecycle (CAPEX/OPEX) optimization.",
+    "3D modeling/BIM, clash detection, and cable/pipe routing for buildability.",
+    "HAZOP/HIRA, method statements, and strict PTW safety systems.",
+    "Prefabricated skids and standardized panels to reduce site time.",
+    "PLC/SCADA with remote monitoring, reports, alarms, and historian.",
+    "Rigorous QA/QC: ITPs, WPS/PQR where needed, calibrated tools, test packs.",
+    "Transparent governance: progress dashboards, RFI/RFC workflows, change management.",
+    "AMC/O&M options with SLAs, spares strategy, and continuous optimization support."
+  ],
+
+  conclusion: `Choose YNG Infra as your turnkey partner to accelerate execution, control risk, and achieve assured performance—
+  from the first drawing to stable, compliant operations on site.`
+ },
+ {
+  slug: "environmental-solutions",
+  title: "Environmental Solutions & Instrumentation",
+  routeLink: "/business/environmental-solutions",
+  icon: "bi bi-globe2",
+  themeClass: "text-warning",
+
+  whyNeeded: `Regulatory norms and ESG goals demand continuous, reliable measurement of water and air quality. Without accurate instruments,
+  plants risk non-compliance, unsafe conditions, energy waste, and product quality issues. A robust instrumentation layer
+  gives real-time visibility, faster decisions, and proof of compliance.`,
+
+  whatItDoes: `Supply, integrate, and maintain engineering instruments and monitoring systems—flow, pressure, temperature transmitters;
+  online water quality monitoring (pH, ORP, DO, turbidity, conductivity, TDS, ammonia, nitrate, chlorine);
+  ambient/stack air quality monitoring (PM2.5/PM10, NOx, SO2, O3, CO, CO2, VOCs);
+  fixed/portable gas detectors (CH4, H2S, NH3, LPG, Cl2, CO, CO2)—
+  with data logging, dashboards, alarms, and reporting (OCEMS/CAAQMS ready).`,
+
+  processFlow: [
+    "Requirement Study & Site Survey – Loads, media, ranges, process conditions, hazardous areas.",
+    "Instrument Selection & Spec – Technology fit (mag/ultrasonic/vortex for flow; DP/absolute for pressure; RTD/TC for temperature), materials, IP/EX ratings.",
+    "Sampling & Installation Design – Tapping, impulse lines, probe lengths, sample conditioning, enclosures, cabling.",
+    "Panel/Skid Build & FAT – Analyzer shelters, SS/FRP panels, purge systems; factory acceptance tests.",
+    "Installation & Commissioning – Mounting, routing, loop checks, calibration, baseline creation.",
+    "Integration – PLC/SCADA/IIoT (4–20 mA, HART, Modbus, Profibus), dashboards, reports, alarms/SOPs.",
+    "Validation & Training – Method validation, documentation, operator training.",
+    "AMC/O&M – Preventive maintenance, recalibration, spares, remote support."
+  ],
+
+  environmentBenefits: [
+    "Early leak/emission detection prevents spills and air pollution.",
+    "Optimized dosing/aeration reduces chemical and energy use.",
+    "Continuous evidence for compliance reduces environmental risk.",
+    "Better process control protects receiving water bodies and communities."
+  ],
+
+  industryBenefits: [
+    "Compliance assurance with auditable data and automated reports.",
+    "Higher uptime and product consistency from stable measurements.",
+    "Lower OPEX via right-sized control and preventive maintenance.",
+    "Improved safety with real-time gas detection and interlocks."
+  ],
+
+  purpose: [
+    "Achieve real-time visibility of critical water and air parameters.",
+    "Meet statutory reporting (continuous monitoring) and ESG targets.",
+    "Standardize measurement across sites for comparable KPIs.",
+    "Reduce risk from leaks, over-dosing, and off-spec discharge."
+  ],
+
+  industriesNeed: [
+    "STP/ETP/WTP & Utilities",
+    "Pharma & Biotech",
+    "Food & Beverage",
+    "Chemicals & Petrochemicals",
+    "Oil & Gas & Refineries",
+    "Power & Boilers/Cooling Towers",
+    "Metals, Cement & Mining",
+    "Pulp & Paper",
+    "Electronics & Precision Mfg.",
+    "Hospitals, Campuses & Smart Cities"
+  ],
+
+  yngSpecialityIntro: `YNG Infra delivers end-to-end environmental instrumentation—application engineering, certified hardware,
+  integration, and lifecycle services—so data is reliable, actionable, and audit-ready.`,
+
+  yngSpecialityPoints: [
+    "Broad portfolio: flow (mag/ultrasonic/vortex), pressure (gauge/DP), temperature (RTD/TC + transmitters).",
+    "Online water quality analyzers (pH, ORP, DO, turbidity, conductivity/TDS, ammonia, nitrate, chlorine).",
+    "Air quality systems: ambient/stack (PM2.5/PM10, NOx, SO2, O3, CO, CO2, VOC) with OCEMS/CAAQMS readiness.",
+    "Gas detection (fixed/portable) for CH4, H2S, NH3, LPG, Cl2, CO, CO2 with alarm/interlock logic.",
+    "Hazard-area compliance (ATEX/IECEx), IP65/68, hygienic and corrosion-resistant builds.",
+    "Calibration & traceability, method validation, and documentation for audits.",
+    "SCADA/IIoT dashboards, reports, SMS/e-mail alerts; 4G/NB-IoT/LoRaWAN telemetry.",
+    "Analyzer shelters, sample conditioning systems, SS/FRP panels—turnkey delivery.",
+    "AMC/O&M with spares strategy, SLAs, and remote health monitoring."
+  ],
+
+  conclusion: `Measure what matters. With YNG Infra’s Environmental Solutions, you get accurate instruments, seamless integration,
+  and dependable data—keeping your operations compliant, efficient, and safe.`
+}
+
+];
+
+
 // 3. Provider component
 export const CheckoutProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
@@ -745,7 +1445,7 @@ export const CheckoutProvider = ({ children }) => {
   
 
   return (
-    <CheckoutContext.Provider value={{ businesses,ProductDetails, selectedProduct, setSelectedProduct, products, cartItems, setCartItems, shippingAddress, setShippingAddress }}>
+    <CheckoutContext.Provider value={{ businessDetails, businesses,ProductDetails, selectedProduct, setSelectedProduct, products, cartItems, setCartItems, shippingAddress, setShippingAddress }}>
       {children}
     </CheckoutContext.Provider>
   );

@@ -38,3 +38,9 @@
   object-fit: contain; /* Show entire image without cropping */
   background-color: #f8f9fa; /* Optional: gray background for empty space */
 }
+.business-img {
+  height: 200px;       /* or whatever you prefer */
+  width: 100%;
+  object-fit: contain; /* shows full image without cropping */
+  background-color: #f8f9fa; /* optional letterbox background */
+}

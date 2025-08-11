@@ -20,6 +20,7 @@ import './App.css';
 import { CheckoutProvider } from './Pages/Context/Context';
 import ProductDetailCard from './components/ProductDetailcard/ProductDetailcard';
 import OurBusiness from './Pages/OurBusiness/OurBusiness';
+import BusinessDetails from './Pages/BusinessDetails/BusinessDetails';
 
 function App() {
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
         <Route path="/thankyou" element={<ThankYou />} />
         <Route path="/product-details" element={<ProductDetailCard />} />
         <Route path="/business" element={<OurBusiness />} />
+        <Route path="/business/:slug" element={<BusinessDetails />} />
       </Routes>
       <Footer />
     </Router>
