@@ -1,12 +1,13 @@
 import React from 'react';
+import './About.css';
 
 const About = () => {
   return (
     <div className="container py-5">
       {/* Hero Section */}
       <section className="text-center mb-5" data-aos="fade-down">
-        <h1 className="display-4">About Our Company</h1>
-        <p className="lead">Engineering precision for industries worldwide.</p>
+        <h2 className="display-4" >About Our Company</h2>
+        <p className="lead"  >YNG Infra builds future-ready infrastructure across water & wastewater treatment, environmental monitoring, school & home automation, modular housing, and turnkey project delivery. We help industries and communities operate sustainably and reliably at lower lifetime cost.</p>
         <img src="./assets/About.png" alt="Company Overview" className="img-fluid rounded shadow-sm mt-3" />
       </section>
 
