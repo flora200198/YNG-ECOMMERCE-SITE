@@ -139,27 +139,24 @@ const Home = () => {
       <section className="mb-5" data-aos="fade-up">
         <h2><i className="bi bi-building text-primary me-2"></i>YNG Infra</h2>
         <p>
-          At <strong>YNG Infra</strong>, our company policy is built on a foundation of excellence, integrity, and innovation.
-          We are committed to delivering high-quality engineering solutions that combine advanced technology with unmatched precision
-          to meet the evolving needs of modern industries.
+          At <strong>YNG Infra</strong>, we provide innovative and reliable solutions across diverse business verticals — including advanced
+          engineering instrumentation, industrial automation, water and wastewater treatment systems, environmental monitoring, and smart
+          infrastructure solutions.
         </p>
         <p>
-          Guided by strict international standards, we ensure every product and service reflects our dedication to quality, reliability,
-          and customer satisfaction. Our approach focuses on fostering long-term partnerships by understanding our clients’ unique
-          requirements and providing customized solutions backed by expert support.
+          Our portfolio covers <strong>STP, ETP, and WTP</strong> systems for effective water purification and waste management,
+          <strong>automation solutions</strong> for schools and homes, <strong>environmental compliance consultancy</strong>,
+          <strong>preconstructed modular houses</strong>, and <strong>turnkey installation services</strong> for end-to-end project delivery.
         </p>
         <p>
-          We continuously invest in research, development, and technological advancements to create future-ready instrumentation and
-          automation systems that improve operational efficiency while adhering to the highest standards of safety, sustainability, and
-          regulatory compliance.
+          We are committed to delivering high-quality, future-ready systems that enhance operational efficiency, ensure compliance with
+          international standards, and contribute to sustainable growth. Every solution we offer is designed with precision, safety, and
+          long-term reliability in mind.
         </p>
         <p>
-          At YNG Infra, we believe in empowering our people, nurturing ethical practices, and driving innovation to build a culture of
-          trust and accountability. With a vision to be a global leader in fluid measurement and industrial automation, we strive to
-          deliver solutions that not only enhance performance but also contribute to sustainable growth for our customers and the
-          industries we serve.
+          Guided by a focus on collaboration, integrity, and customer satisfaction, <strong>YNG Infra</strong> strives to be the trusted
+          partner for industries seeking excellence in engineering, environmental, and technological solutions.
         </p>
-
         <a href="/about" className="btn btn-outline-primary mt-3">
           <i className="bi bi-info-circle me-1"></i>Learn More About Us
         </a>
