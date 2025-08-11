@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import Slider from "react-slick";
 import { useCheckout } from '../Context/Context';
 
-
 const Home = () => {
   const navigate = useNavigate();
   const { products } = useCheckout();
@@ -28,7 +27,6 @@ const Home = () => {
       <i className="bi bi-chevron-left custom-arrow"></i>
     </div>
   );
-
 
   const settings = {
     dots: true,
@@ -61,7 +59,6 @@ const Home = () => {
       }
     ]
   };
-
 
   const [activeIndex, setActiveIndex] = useState(0);
   const industries = [
@@ -122,6 +119,7 @@ const Home = () => {
       image: "./assets/delivery.png"
     }
   ];
+
   return (
     <div className="container py-5">
       {/* Hero Section */}
@@ -181,26 +179,24 @@ const Home = () => {
                 </div>
               </div>
             ))}
- <div className="p-2">
-  <div
-    className="card shadow-sm border-0 h-100 equal-card view-all-card"
-    style={{ cursor: "pointer", background: "#f8f9fa" }}
-    onClick={() => navigate('/business')}
-    role="button"
-    tabIndex={0}
-  >
-    {/* 200px placeholder to match .card-img-top on other cards */}
-    <div className="card-img-top view-all-placeholder" />
+          <div className="p-2">
+            <div
+              className="card shadow-sm border-0 h-100 equal-card view-all-card"
+              style={{ cursor: "pointer", background: "#f8f9fa" }}
+              onClick={() => navigate('/business')}
+              role="button"
+              tabIndex={0}
+            >
+              {/* 200px placeholder to match .card-img-top on other cards */}
+              <div className="card-img-top view-all-placeholder" />
 
-    {/* Centered body content */}
-    <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
-      <h5 className="text-primary mb-2">View All</h5>
-      <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
-    </div>
-  </div>
-</div>
-
-
+              {/* Centered body content */}
+              <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
+                <h5 className="text-primary mb-2">View All</h5>
+                <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
+              </div>
+            </div>
+          </div>
         </Slider>
       </section>
 
