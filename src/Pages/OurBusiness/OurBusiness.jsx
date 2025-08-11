@@ -113,6 +113,7 @@ const OurBusiness = () => {
                       <div className="card-body">
                         <h5 className="card-title">{item?.title}</h5>
                         <p className="card-text">{item?.description}</p>
+                        <button  className="btn btn-primary">For more info</button>
                       </div>
                     </div>
                   </Link>

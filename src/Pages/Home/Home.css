@@ -42,6 +42,8 @@
   justify-content: space-between;
   height: 100%; /* Ensures cards stretch evenly */
 }
+.card-body { display: flex; flex-direction: column; flex: 1 1 auto; }
+
 .custom-arrow {
   position: absolute;
   top: 50%;
@@ -99,18 +101,19 @@ text-align: center;
   }
 }
 
-.card.d-flex {
+/* .card.d-flex {
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.view-all-card {
+.view-all-card .card {
   display: flex;
   justify-content: center; 
   align-items: center;     
   background: #f8f9fa;
   cursor: pointer;
+  height: 100%;
   min-height: 250px;       
 }
 
@@ -151,4 +154,31 @@ text-align: center;
   .hero-image {
     height: 30vh; /* Further reduce height for mobile */
   }
+}
+
+
+/* Make slick slides equal height */
+.slick-track { display: flex !important; }
+.slick-slide { height: auto !important; }
+.slick-slide > div { height: 100%; }
+.slick-slide .card { height: 100%; }
+
+/* Equal card: stretch, don't center (remove justify-content: center) */
+.equal-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let the body fill remaining space */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+/* Placeholder top area same height as other card images */
+.view-all-placeholder {
+  height: 200px;          /* match your .card-img-top height */
+  background: #f8f9fa;
 }

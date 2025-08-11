@@ -181,19 +181,26 @@ const Home = () => {
                 </div>
               </div>
             ))}
+ <div className="p-2">
+  <div
+    className="card shadow-sm border-0 h-100 equal-card view-all-card"
+    style={{ cursor: "pointer", background: "#f8f9fa" }}
+    onClick={() => navigate('/business')}
+    role="button"
+    tabIndex={0}
+  >
+    {/* 200px placeholder to match .card-img-top on other cards */}
+    <div className="card-img-top view-all-placeholder" />
 
-          <div className="p-2">
-            <div
-              className="card shadow-sm border-0 h-100 equal-card d-flex align-items-center justify-content-center text-center"
-              style={{ cursor: "pointer", background: "#f8f9fa" }}
-              onClick={() => navigate('/business')}
-            >
-              <div className="view-all-content text-center">
-                <h5 className="text-primary mb-2">View All</h5>
-                <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
-              </div>
-            </div>
-          </div>
+    {/* Centered body content */}
+    <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
+      <h5 className="text-primary mb-2">View All</h5>
+      <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
+    </div>
+  </div>
+</div>
+
+
         </Slider>
       </section>
 
