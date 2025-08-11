@@ -130,47 +130,14 @@ const ShopNow = () => {
                   <div className="card-body d-flex flex-column">
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">{product.description}</p>
-                    <p className="fw-bold mb-2">₹{product.price}</p>
-                    <div className="d-flex justify-content-between align-items-center mt-auto">
-                      {quantity === 0 ? (
-                        <>
-                          <button
-                            className="btn btn-primary"
-                            onClick={(e) => { e.stopPropagation(); addToCart(product); }}
-                          >
-                            <i className="bi bi-cart-plus me-2"></i>Add to Cart
-                          </button>
-                          <button
+                     <button
                             className="btn btn-primary"
                             onClick={(e) => { e.stopPropagation(); setQuoteProduct(product); setShowQuoteForm(true); }}
                           >
                             Get Quote
                           </button>
-                        </>
-                      ) : (
-                        <>
-                          <button
-                            className="btn btn-outline-secondary"
-                            onClick={(e) => { e.stopPropagation(); decrement(product.id); }}
-                          >
-                            -
-                          </button>
-                          <span className="mx-3">{quantity}</span>
-                          <button
-                            className="btn btn-outline-secondary"
-                            onClick={(e) => { e.stopPropagation(); increment(product.id); }}
-                          >
-                            +
-                          </button>
-                          <button
-                            className="btn btn-primary"
-                            onClick={(e) => { e.stopPropagation(); setQuoteProduct(product); setShowQuoteForm(true); }}
-                          >
-                            Get Quote
-                          </button>
-                        </>
-                      )}
-                    </div>
+                    {/* <p className="fw-bold mb-2">₹{product.price}</p> */}
+                    
                   </div>
                 </div>
               </div>
