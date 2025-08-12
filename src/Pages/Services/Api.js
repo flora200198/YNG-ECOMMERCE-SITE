@@ -7,7 +7,7 @@ const API = axios.create({
 });
 
 // POSTs
-// export const postContactForm = (data) => API.post("/contact", data);
+export const postContactForm = (data) => API.post("/contact", data);
 export const postJoinForm    = (data) => API.post("/join", data);
 // export const postGetquoteForm = (data) => API.post("/get-quote", data);
 
