@@ -15,7 +15,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 // Import routes
-app.use('/join', Joinus);
+app.use('/api', Joinus);
 app.use('/get-quote', Getquote);
 app.use('/contact', Contact);
 // connectDB(); // Connect to MongoDB
