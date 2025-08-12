@@ -45,8 +45,13 @@ const Footer = () => {
           <ul className="list-unstyled" >
             <li><Link to="/" className=" text-decoration-none" style={{color: "black"}}>Home</Link></li>
             <li><Link to="/products" className=" text-decoration-none" style={{color: "black"}}>Products</Link></li>
-            <li><Link to="/about" className=" text-decoration-none" style={{color: "black"}}>About</Link></li>
+            <li><Link to="/business" className="text-decoration-none" style={{color: "black"}}>Our Business</Link></li>
+            <li><Link to="/shop" className="text-decoration-none" style={{color: "black"}}>Get Quotes</Link></li>
+            <li><Link to="/contact" className="text-decoration-none" style={{color: "black"}}>Contact</Link></li>
+            <li><Link to="/join" className="text-decoration-none" style={{color: "black"}}>Join Us</Link></li>
+             <li><Link to="/about" className=" text-decoration-none" style={{color: "black"}}>About</Link></li>
             <li><Link to="/blog" className="text-decoration-none" style={{color: "black"}}>Blog</Link></li>
+
           </ul>
         </div>
 

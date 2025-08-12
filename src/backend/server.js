@@ -6,7 +6,7 @@ require('dotenv').config();
 const Joinus = require('./Routes/Joinus.Route');
 const Getquote = require('./Routes/Getquote.Route');
 const Contact = require('./Routes/Contact.Route');
-const ConfigDB = require('./Config/configdB');
+// const connectDB = require('./Config/configdB').connectDB;
 const { config } = require('dotenv');
 
 const port = process.env.PORT || 3000;
@@ -18,7 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/join', Joinus);
 app.use('/get-quote', Getquote);
 app.use('/contact', Contact);
-configDB(); // Connect to MongoDB
+// connectDB(); // Connect to MongoDB
+
 app.get('/', (req, res) => {
     res.send('Hello World!');
     });

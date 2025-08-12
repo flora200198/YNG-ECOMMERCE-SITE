@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const GetQuote = require('../models/getquote'); // Ensure correct import based on your file structure
-const { sendAdminEmail, sendUserEmail } = require('../utils/mailer');
+const { sendAdminEmail, sendUserEmail } = require('../controller/mailer');
 
 // POST /get-quote
 router.post('/get-quote', async (req, res) => {

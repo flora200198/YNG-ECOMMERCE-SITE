@@ -84,9 +84,9 @@ const ShopNow = () => {
       {/* Header */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h1>Shop Now</h1>
-        <button className="btn btn-outline-primary" onClick={viewCart}>
+        {/* <button className="btn btn-outline-primary" onClick={viewCart}>
           View Cart ({cart.reduce((sum, item) => sum + item.quantity, 0)})
-        </button>
+        </button> */}
       </div>
 
       {/* Search and Filter */}

@@ -1,8 +1,8 @@
 const router = require('express').Router();
 const {sendAdminEmail, sendUserEmail} = require('../controller/mailer');
-const { validateContact } = require('../Middlewares/Contact.Middleware');
+// const { validateContact } = require('../Middlewares/Contact.Middleware');
 const Contact = require('../models/contact');
-const { sendAdminEmail, sendUserEmail } = require('../controller/mailer');
+
 
 // POST route to handle contact form submission
 router.post('/contact', async (req, res) => {
