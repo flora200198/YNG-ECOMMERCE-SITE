@@ -1,5 +1,3 @@
-// CheckoutContext.js
-
 import { createContext, useContext, useState } from "react";
 import ProductDetailCard from "../../components/ProductDetailcard/ProductDetailcard";
 

@@ -18,19 +18,17 @@ const getQuoteSchema = new Schema(
       type: String, 
       required: true, 
       trim: true,
-      // adjust to your locale; this allows +, spaces, dashes, 7–15 digits
       match: [/^\+?[0-9\s\-()]{7,15}$/, 'Invalid phone number'] 
     },
 
     company:       { type: String, required: true, trim: true },
 
-    lineSize:      { type: String, trim: true },          // e.g., "2 inch", "DN50"
+    lineSize:      { type: String, trim: true },          
     application:   { type: String, trim: true },
-    applicationMedia: { type: String, trim: true },       // e.g., "Water", "Steam", "Acid"
-    opTemperature: { type: Number },                      // °C (store as number)
-    opPressure:    { type: Number },                      // bar/psi (document unit)
-    flowRange:     { type: String, trim: true },          // e.g., "0.5–5 m³/h"
-
+    applicationMedia: { type: String, trim: true },       
+    opTemperature: { type: Number },                      
+    opPressure:    { type: Number },                     
+    flowRange:     { type: String, trim: true },         
     message:       { type: String, trim: true, maxlength: 2000 },
     createdAt: { type: Date, default: Date.now }
   },
