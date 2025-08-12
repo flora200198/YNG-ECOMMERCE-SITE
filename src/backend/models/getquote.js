@@ -31,14 +31,15 @@ const getQuoteSchema = new Schema(
     opPressure:    { type: Number },                      // bar/psi (document unit)
     flowRange:     { type: String, trim: true },          // e.g., "0.5–5 m³/h"
 
-    message:       { type: String, trim: true, maxlength: 2000 }
+    message:       { type: String, trim: true, maxlength: 2000 },
+    createdAt: { type: Date, default: Date.now }
   },
-  { timestamps: { createdAt: 'submittedAt', updatedAt: 'updatedAt' } }
+  
 );
 
 // Optional: helpful indexes
 getQuoteSchema.index({ submittedAt: -1 });
 getQuoteSchema.index({ email: 1 });
 
-const GetQuote = mongoose.model('GetQuote', getQuoteSchema);
+const GetQuote = mongoose.model('GetQuote', getQuoteSchema, 'GetQuoteForms');
 module.exports = GetQuote;

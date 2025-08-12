@@ -6,11 +6,12 @@ const contactSchema = new Schema(
     name:    { type: String, required: true, trim: true },
     address: { type: String, required: true, trim: true },
     number:  { type: String, required: true, trim: true },
-    message: { type: String }
+    message: { type: String },
+    createdAt: { type: Date, default: Date.now }
   },
   // This adds createdAt/updatedAt; rename createdAt -> submittedAt
-  { timestamps: { createdAt: 'submittedAt', updatedAt: 'updatedAt' } }
+
 );
 
-const Contact = mongoose.model('Contact', contactSchema);
+const Contact = mongoose.model('Contact', contactSchema, 'ContactForms'); // 'ContactForms' is the collection name
 module.exports = Contact;
