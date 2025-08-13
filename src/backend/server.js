@@ -10,25 +10,16 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ✅ Exact origins (no trailing slash). Add ALL frontends you actually use.
-const allowed = new Set([
-  'http://localhost:3000',
-  'http://localhost:3000',
-  'https://yng-ecommerce-site.vercel.app', // add if your prod frontend is on Render
-]);
 
-const corsOptions = {
-  origin(origin, cb) {
-    // Allow non-browser tools (no Origin) and allowlisted origins
-    if (!origin || allowed.has(origin)) return cb(null, true);
-    return cb(new Error('Not allowed by CORS: ' + origin));
-  },
+
+// Allow only the official frontend domain
+app.use(cors({
+  origin: 'https://yng-ecommerce-site.vercel.app',
   methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: false // set to true only if you use cookies/credentials
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions)); // ✅ mirror the same options
+}));
+app.options('*', cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // replaces bodyParser
