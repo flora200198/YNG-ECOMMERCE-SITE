@@ -9,6 +9,5 @@ const joinSchema = new Schema(
     createdAt: { type: Date, default: Date.now }
   }
 );
-
 const Join = mongoose.model('Join', joinSchema, 'JoinForms');
 module.exports = Join;

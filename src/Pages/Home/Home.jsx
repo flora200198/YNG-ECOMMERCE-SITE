@@ -161,7 +161,20 @@ const Home = () => {
       </section>
 
       {/* Product Overview */}
-      <section className="mb-5" data-aos="zoom-in-up">
+      <section className="mb-5 d-flex justify-content-between align-items-center mb-2 " data-aos="zoom-in-up">
+        {/* <div className="d-flex justify-content-between align-items-center mb-2"> */}
+        <h3 className="mb-0">Our Business</h3>
+
+        {/* Desktop/tablet: button on the right */}
+        <button
+          type="button"
+          className="btn btn-outline-primary d-none d-md-inline-flex align-items-center"
+          onClick={() => navigate('/business')}
+          aria-label="View all businesses"
+        >
+          View All
+          <i className="bi bi-arrow-right-circle ms-2" aria-hidden="true" />
+        </button>
         <Slider {...settings} className="mt-4">
           {Array.isArray(businesses) &&
             businesses.map((business, index) => (
@@ -199,10 +212,6 @@ const Home = () => {
           </div>
         </Slider>
       </section>
-
-
-
-
       {/* Industries Served */}
       <section className="mb-5" data-aos="fade-right">
         <div className="container">

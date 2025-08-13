@@ -9,8 +9,6 @@ const contactSchema = new Schema(
     message: { type: String },
     createdAt: { type: Date, default: Date.now }
   },
-  // This adds createdAt/updatedAt; rename createdAt -> submittedAt
-
 );
 
 const Contact = mongoose.model('Contact', contactSchema, 'ContactForms'); // 'ContactForms' is the collection name
