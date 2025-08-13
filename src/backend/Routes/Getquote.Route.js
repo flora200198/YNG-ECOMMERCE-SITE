@@ -71,7 +71,7 @@ router.post('/get-quote', async (req, res) => {
         const payload = {
           name,
           email,
-          number: phone,         // mailer uses 'number'
+          number: phone,         
           productName,
           quantity,
           company,

@@ -57,23 +57,22 @@ const Getquote = ({ selectedProduct, onClose }) => {
   };
 
   // Build backend-friendly payload (aligns with your mailer getQuote case)
-  const buildPayload = (d) => ({
-    name: d.name.trim(),
-    email: d.email.trim(),
-    number: d.phone.trim(),              // your backend expects "number"
-    service: d.productName.trim(),       // what they’re asking a quote for
-    details: [
-      `Quantity: ${d.quantity || ''}`,
-      `Company: ${d.company || ''}`,
-      `Line Size: ${d.lineSize || ''}`,
-      `Application: ${d.application || ''}`,
-      `Media: ${d.applicationMedia || ''}`,
-      `Operating Temp: ${d.opTemperature || ''}`,
-      `Operating Pressure: ${d.opPressure || ''}`,
-      `Flow Range: ${d.flowRange || ''}`,
-      `Message: ${d.message || ''}`
-    ].join('\n')
-  });
+ const buildPayload = (d) => ({
+  productName: d.productName.trim(),   // backend expects productName
+  name: d.name.trim(),
+  email: d.email.trim(),
+  phone: d.phone.trim(),               // backend expects phone (not number)
+  quantity: d.quantity,                // ok to send as string; server casts/saves
+  company: d.company.trim(),
+  lineSize: d.lineSize.trim(),
+  application: d.application.trim(),
+  applicationMedia: d.applicationMedia.trim(),
+  opTemperature: d.opTemperature.trim(),
+  opPressure: d.opPressure.trim(),
+  flowRange: d.flowRange.trim(),
+  message: d.message.trim()
+});
+
 
   // Step 2: Confirm & Submit -> actually POST to backend
   const handleFinalSubmit = async () => {
