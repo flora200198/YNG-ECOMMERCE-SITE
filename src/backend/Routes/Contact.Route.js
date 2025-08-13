@@ -1,42 +1,66 @@
-const router = require('express').Router();
-const {sendAdminEmail, sendUserEmail} = require('../controller/mailer');
-// const { validateContact } = require('../Middlewares/Contact.Middleware');
+const express = require('express');
+const router = express.Router();
 const Contact = require('../models/contact');
+const { sendAdminEmail, sendUserEmail } = require('../controller/mailer');
 
-
-// POST route to handle contact form submission
+// POST /contact
 router.post('/contact', async (req, res) => {
-const {  name, address, number, message } = req.body;
-    // Check if all required fields are present
-  
-try {
-    const contact = new Contact ({name, address, number, message });
-    await contact.save();
+  const { name, address, number, message } = req.body || {};
 
-try {
-      await sendAdminEmail(req.body);
-      console.log("✅ Admin email sent");
-    } catch (err) {
-      console.error("❌ Failed to send admin email:", err);
+  // 1) Validate input (return 400 instead of vague 500s)
+  if (!name || !number || !message) {
+    return res.status(400).json({
+      ok: false,
+      message: 'name, number, and message are required',
+      missing: {
+        name: !name,
+        number: !number,
+        message: !message,
+      },
+    });
+  }
+
+  // Optional: basic phone check, trim strings
+  const clean = {
+    name: String(name).trim(),
+    address: address ? String(address).trim() : '',
+    number: String(number).trim(),
+    message: String(message).trim(),
+  };
+
+  try {
+    // 2) Save to DB
+    const contact = await Contact.create(clean);
+    console.log('✅ Contact saved:', contact._id);
+
+    // 3) Respond first (fast UX). Emails run in background.
+    res.status(201).json({ ok: true, message: 'Contact form submitted' });
+    console.log('📬 Contact form submitted:', contact);
+
+    // 4) Fire-and-forget emails (don’t block the response)
+    setImmediate(async () => {
+      try {
+        await sendAdminEmail(contact.toObject());
+        console.log('📧 Admin email sent', contact);
+      } catch (err) {
+        console.error('❌ Admin email failed:', err);
+      }
+      try {
+        await sendUserEmail(contact.toObject());
+        console.log('📧 User email sent');
+      } catch (err) {
+        console.error('❌ User email failed:', err);
+      }
+    });
+  } catch (error) {
+    // 5) Clear error for DB failures
+    console.error('❌ POST /contact error:', error);
+    // Common: validation errors on schema fields
+    if (error.name === 'ValidationError') {
+      return res.status(400).json({ ok: false, message: error.message });
     }
-
-    // 2️⃣ Thank-you email to user
-    try {
-      await sendUserEmail(req.body);
-      console.log("✅ Thank-you email sent to user");
-    } catch (err) {
-      console.error("❌ Failed to send user email:", err);
-    }
-
-    res.status(201).json({ message: 'Contact form submitted successfully' });    
-    console.log('Contact saved:', contact);
-}
-catch (error) {
-    console.error('Error saving contact:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ ok: false, message: 'Internal server error' });
   }
 });
 
-// Route to get all contacts
 module.exports = router;
-    

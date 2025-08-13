@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 // const fs = require('fs');
 // const path = require('path');
-
+const dbName = process.env.DB_NAME;
 const connectDB = async () => {
     try {
         const uri = `${process.env.MONGO_BASE_URI}/${dbName}${process.env.MONGO_OPTIONS}`;

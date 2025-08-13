@@ -1,5 +1,5 @@
 const express = require('express');
-// const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 // const path = require('path');
 const cors = require('cors');
 const connectDB = require('./Config/configdB').connectDB;
@@ -18,8 +18,8 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 connectDB(); // Connect to MongoDB
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 // Import routes
 app.use('/api', Joinus);
 app.use('/api', Getquote);

@@ -35,7 +35,8 @@ const JoinUs = () => {
       if (res.status === 201 || res.status === 200) {
         setSubmitted(true);
         setFormData({ vendor_name: "", company_name: "", number: "" });
-        e.currentTarget.reset(); // optional
+        // e.currentTarget.reset(); // optional
+        console.log("Join Us form submitted successfully:", res.data);
       } else {
         setError("Failed to submit form. Please try again.");
       }
@@ -99,7 +100,7 @@ const JoinUs = () => {
                   name="number"
                   placeholder="Phone"
                   inputMode="tel"
-                  pattern="[-0-9()+ ]{7,15}"   
+                  pattern = "[0-9\-\+ ]{7,15}"
                   title="7–15 characters: digits, space, + ( ) -"
                   required
                   value={formData.number}
