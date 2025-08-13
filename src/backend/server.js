@@ -7,11 +7,12 @@ const Getquote = require('./Routes/Getquote.Route');
 const Contact  = require('./Routes/Contact.Route');
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3000;
 
 // ✅ Exact origins (no trailing slash). Add ALL frontends you actually use.
 const allowed = new Set([
-  'http://localhost:3001',
+  'http://localhost:3000',
+  'http://localhost:3000',
   'https://yng-ecommerce-site.vercel.app', // add if your prod frontend is on Render
 ]);
 
