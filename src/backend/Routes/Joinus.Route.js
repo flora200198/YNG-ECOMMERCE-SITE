@@ -45,9 +45,8 @@ router.post('/join', async (req, res) => {
     res.status(201).json({ ok: true, message: 'Join Us form submitted successfully' });
 
     // 6) Fire-and-forget emails
-    setImmediate(async () => {
+      setImmediate(async () => {
       try {
-        // Send admin notification
         await sendAdminEmail('join', joinDoc.toObject());
         console.log('📧 Admin email sent for', joinDoc._id);
       } catch (err) {
@@ -55,9 +54,7 @@ router.post('/join', async (req, res) => {
       }
 
       try {
-        // Send user thank-you only if we have an email
         if (email) {
-          // user email expects { name, email } at minimum — map vendor_name -> name
           await sendUserEmail({ name: vendor_name, email }, 'join');
           console.log('📧 User email sent for', joinDoc._id);
         } else {

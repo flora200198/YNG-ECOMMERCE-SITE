@@ -1,33 +1,55 @@
+// Routes/GetQuote.Route.js
 const router = require('express').Router();
-const GetQuote = require('../models/getquote'); // Ensure correct import based on your file structure
-const { sendAdminEmail, sendUserEmail } = require('../controller/mailer');
+const GetQuote = require('../models/getquote'); // make sure schema matches fields below
+// Use the path where your UPDATED mailer lives:
+const { sendAdminEmail, sendUserEmail } = require('../utils/mailer'); // or '../controller/mailer'
 
-// POST /get-quote
+const PHONE_RE = /^[0-9()\-\+ ]{7,15}$/;
+
 router.post('/get-quote', async (req, res) => {
-  const {
-    productName,
-    quantity,
-    name,
-    email,
-    phone,
-    company,
-    lineSize,
-    application,
-    applicationMedia,
-    opTemperature,
-    opPressure,
-    flowRange,
-    message
-  } = req.body;
-
   try {
-    // 1) Save to DB (Mongoose will validate required fields)
-    const quote = new GetQuote({
+    // 1) Extract & normalize
+    const productName      = (req.body?.productName ?? '').trim();
+    const quantity         = req.body?.quantity ?? '';
+    const name             = (req.body?.name ?? '').trim();
+    const email            = (req.body?.email ?? '').trim();
+    const phone            = (req.body?.phone ?? '').trim(); // stored as phone in DB
+    const company          = (req.body?.company ?? '').trim();
+    const lineSize         = (req.body?.lineSize ?? '').trim();
+    const application      = (req.body?.application ?? '').trim();
+    const applicationMedia = (req.body?.applicationMedia ?? '').trim();
+    const opTemperature    = (req.body?.opTemperature ?? '').trim();
+    const opPressure       = (req.body?.opPressure ?? '').trim();
+    const flowRange        = (req.body?.flowRange ?? '').trim();
+    const message          = (req.body?.message ?? '').trim();
+
+    // 2) Validate requireds before DB (clear 400s for the client)
+    const missing = {
+      productName: !productName,
+      name: !name,
+      email: !email,
+    };
+    if (missing.productName || missing.name || missing.email) {
+      return res.status(400).json({
+        ok: false,
+        message: 'productName, name, and email are required',
+        missing,
+      });
+    }
+    if (phone && !PHONE_RE.test(phone)) {
+      return res.status(400).json({
+        ok: false,
+        message: 'Invalid phone number format. Use 7–15 characters: digits, space, + ( ) -',
+      });
+    }
+
+    // 3) Save to DB (schema should have these fields)
+    const quote = await GetQuote.create({
       productName,
       quantity,
       name,
       email,
-      phone,
+      phone, // kept as 'phone' in DB
       company,
       lineSize,
       application,
@@ -35,49 +57,52 @@ router.post('/get-quote', async (req, res) => {
       opTemperature,
       opPressure,
       flowRange,
-      message
+      message,
     });
-    await quote.save();
+    console.log('✅ Quote saved:', quote._id);
 
-    // 2) Email admin (reuse contact mailer API by mapping fields)
-    //    - address := company
-    //    - number  := phone
-    //    - message := formatted quote summary
-    const adminPayload = {
-      name,
-      email,
-      address: company,
-      number: phone,
-      message: `
-Product: ${productName} (Qty: ${quantity})
-Line Size: ${lineSize || '-'}
-Application: ${application || '-'}
-Media: ${applicationMedia || '-'}
-Operating Temp: ${opTemperature ?? '-'}
-Operating Pressure: ${opPressure ?? '-'}
-Flow Range: ${flowRange || '-'}
-Notes: ${message || '-'}
-      `.trim()
-    };
+    // 4) Respond fast (don’t block on email)
+    res.status(201).json({ ok: true, message: 'Quote submitted successfully', id: quote._id });
 
-    sendAdminEmail(adminPayload).catch(err =>
-      console.error('❌ Failed to send admin email:', err)
-    );
+    // 5) Email admin + user asynchronously
+    setImmediate(async () => {
+      try {
+        // Build payload for the mailer (mailer expects 'number'; map phone -> number)
+        const payload = {
+          name,
+          email,
+          number: phone,         // mailer uses 'number'
+          productName,
+          quantity,
+          company,
+          lineSize,
+          application,
+          applicationMedia,
+          opTemperature,
+          opPressure,
+          flowRange,
+          message,
+        };
 
-    // 3) Acknowledge user (if email present)
-    if (email) {
-      sendUserEmail({ name, email }).catch(err =>
-        console.error('❌ Failed to send user email:', err)
-      );
-    }
+        await sendAdminEmail('getQuote', payload); // <-- correct signature with formType
+        console.log('📧 Admin email sent for', quote._id);
+      } catch (err) {
+        console.error('❌ Admin email failed:', err);
+      }
 
-    res.status(201).json({ message: 'Quote submitted successfully', id: quote._id });
+      try {
+        await sendUserEmail({ name, email }, 'getQuote'); // <-- correct signature
+        console.log('📧 User email sent for', quote._id);
+      } catch (err) {
+        console.error('❌ User email failed:', err);
+      }
+    });
   } catch (error) {
+    console.error('❌ Error saving quote:', error);
     if (error.name === 'ValidationError') {
-      return res.status(400).json({ message: 'Validation failed', errors: error.errors });
+      return res.status(400).json({ ok: false, message: 'Validation failed', errors: error.errors });
     }
-    console.error('Error saving quote:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    res.status(500).json({ ok: false, message: 'Internal server error' });
   }
 });
 
