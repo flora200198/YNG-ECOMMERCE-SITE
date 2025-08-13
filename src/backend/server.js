@@ -7,7 +7,7 @@ const Getquote = require('./Routes/Getquote.Route');
 const Contact  = require('./Routes/Contact.Route');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 10000;
 
 // ✅ Exact origins (no trailing slash). Add ALL frontends you actually use.
 const allowed = new Set([
