@@ -15,8 +15,20 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 
-app.use(cors());
+app.use(cors({
+  origin: function (origin, cb) {
+    // allow non-browser tools (no origin) and your allowlist
+    if (!origin || allowed.includes(origin)) return cb(null, true);
+    cb(new Error('Not allowed by CORS'));
+  },
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false // set true only if you use cookies; then must NOT use '*'
+}));
 app.use(express.json());
+
+app.options('*', cors());
+
 connectDB(); // Connect to MongoDB
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
