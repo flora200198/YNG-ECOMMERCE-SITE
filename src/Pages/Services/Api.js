@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: "https://yng-ecommerce-site.onrender.com/api",
   headers: { "Content-Type": "application/json" },
   // withCredentials: true, // enable if you use cookies/sessions
 });
