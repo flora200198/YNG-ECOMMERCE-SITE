@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  // baseURL: "https://yng-ecommerce-site.onrender.com/api",
-  baseURL: "http://localhost:3000/api", // use this for local development
+  baseURL: "https://yng-ecommerce-site.onrender.com/api",
+  // baseURL: "http://localhost:3000/api", // use this for local development
   headers: { "Content-Type": "application/json" },
   // withCredentials: true, // enable if you use cookies/sessions
 });
