@@ -107,6 +107,8 @@ const Getquote = ({ selectedProduct, onClose }) => {
           });
           onClose && onClose();
         }, 1500);
+        console.log('Quote request submitted successfully:', res.data);
+        
       } else {
         setError(res?.data?.message || 'Failed to submit quote request. Please try again.');
       }
