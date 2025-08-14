@@ -2,14 +2,26 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const { connectDB } = require('./Config/configdB'); // check exact filename case
-const Joinus   = require('./Routes/Joinus.Route');
+// const Joinus   = require('./Routes/Joinus.Route');
+// const Getquote = require('./Routes/Getquote.Route');
+// const Contact  = require('./Routes/Contact.Route');
+
+console.log('Loading Joinus.Route...');
+const Joinus = require('./Routes/Joinus.Route');
+console.log('Loaded Joinus.Route');
+
+console.log('Loading Getquote.Route...');
 const Getquote = require('./Routes/Getquote.Route');
-const Contact  = require('./Routes/Contact.Route');
+console.log('Loaded Getquote.Route');
+
+console.log('Loading Contact.Route...');
+const Contact = require('./Routes/Contact.Route');
+console.log('Loaded Contact.Route');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// ✅ Exact origins (no trailing slash). Add ALL frontends you actually use.
+
 
 
 // Allow only the official frontend domain

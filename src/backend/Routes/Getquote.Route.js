@@ -2,7 +2,7 @@
 const router = require('express').Router();
 const GetQuote = require('../models/getquote'); // make sure schema matches fields below
 // Use the path where your UPDATED mailer lives:
-const { sendAdminEmail, sendUserEmail } = require('../utils/mailer'); // or '../controller/mailer'
+const { sendAdminEmail, sendUserEmail } = require('../controller/mailer'); // or '../controller/mailer'
 
 const PHONE_RE = /^[0-9()\-\+ ]{7,15}$/;
 

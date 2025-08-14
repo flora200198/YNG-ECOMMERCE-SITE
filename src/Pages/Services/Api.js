@@ -1,16 +1,16 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://yng-ecommerce-site.onrender.com/api",
-  // baseURL: "http://localhost:3000/api", // use this for local development
+  // baseURL: "https://yng-ecommerce-site.onrender.com/api",
+  baseURL: "http://localhost:3000/api", // use this for local development
   headers: { "Content-Type": "application/json" },
   // withCredentials: true, // enable if you use cookies/sessions
 });
 
 // POSTs
-export const postContactForm = (data) => API.post("/contact", data);
-export const postJoinForm    = (data) => API.post("/join", data);
-export const postGetquoteForm = (data) => API.post("/get-quote", data);
+export const postContactForm = (formData) => API.post("/contact", formData);
+export const postJoinForm    = (formData) => API.post("/join", formData);
+export const postGetquoteForm = (formData) => API.post("/get-quote", formData);
 
 // // GETs (make sure these routes exist on backend)
 // export const getApplyForms = () => API.get("/products");      // change if incorrect

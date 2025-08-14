@@ -100,8 +100,6 @@ const JoinUs = () => {
                   name="number"
                   placeholder="Phone"
                   inputMode="tel"
-                  pattern = "[0-9\-\+ ]{7,15}"
-                  title="7–15 characters: digits, space, + ( ) -"
                   required
                   value={formData.number}
                   onChange={handleChange}
