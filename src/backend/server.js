@@ -18,14 +18,19 @@ console.log('Loaded Getquote.Route');
 console.log('Loading Contact.Route...');
 const Contact = require('./Routes/Contact.Route');
 console.log('Loaded Contact.Route');
-const PORT = process.env.PORT || 10000;
+
 const app = express();
-app.use(cors());
+const PORT = process.env.PORT || 10000;
+// app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:3000', // or use '*' to allow all (not recommended in production)
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  credentials: true
+}));
 
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true })); // replaces bodyParser
 connectDB();
-
 // Routes
 app.use('/api', Joinus);
 app.use('/api', Getquote);
@@ -33,6 +38,10 @@ app.use('/api', Contact);
 
 // Simple health check
 app.get('/healthz', (_req, res) => res.send('ok'));
+
+app.get('/', (req, res) => {
+  res.send('Welcome to YNG Infra'); 
+});
 
 // Helpful request logger while debugging CORS
 app.use((req, _res, next) => {
