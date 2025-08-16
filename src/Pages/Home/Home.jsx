@@ -161,21 +161,23 @@ const Home = () => {
       </section>
 
       {/* Product Overview */}
-      <section className="mb-5 d-flex justify-content-between align-items-center mb-2 " data-aos="zoom-in-up">
-        {/* <div className="d-flex justify-content-between align-items-center mb-2"> */}
-        <h3 className="mb-0">Our Business</h3>
+      <section className="mb-5" data-aos="zoom-in-up">
+        {/* Row 1: title + button (same line) */}
+        <div className="d-flex justify-content-between align-items-center mb-2">
+          <h3 className="mb-0">Our Business</h3>
+          <button
+            type="button"
+            className="btn btn-outline-primary d-inline-flex align-items-center"
+            onClick={() => navigate('/business')}
+            aria-label="View all businesses"
+          >
+            View All
+            <i className="bi bi-arrow-right-circle ms-2" aria-hidden="true" />
+          </button>
+        </div>
 
-        {/* Desktop/tablet: button on the right */}
-        <button
-          type="button"
-          className="btn btn-outline-primary d-none d-md-inline-flex align-items-center"
-          onClick={() => navigate('/business')}
-          aria-label="View all businesses"
-        >
-          View All
-          <i className="bi bi-arrow-right-circle ms-2" aria-hidden="true" />
-        </button>
-        <Slider {...settings} className="mt-4">
+        {/* Row 2: slider */}
+        <Slider {...settings} className="mt-2">
           {Array.isArray(businesses) &&
             businesses.map((business, index) => (
               <div key={index} className="p-2">
@@ -183,27 +185,25 @@ const Home = () => {
                   <img
                     src={business?.image}
                     className="card-img-top p-3"
-                    alt={business?.title || ''}
+                    alt={business?.title || 'Business image'}
                   />
                   <div className="card-body">
-                    <h5 className="card-title">{business?.title}</h5>
-                    {/* <p className="card-text">{business?.description}</p> */}
+                    <h5 className="card-title mb-0">{business?.title}</h5>
                   </div>
                 </div>
               </div>
             ))}
+
+          {/* optional "View All" card inside the slider */}
           <div className="p-2">
             <div
               className="card shadow-sm border-0 h-100 equal-card view-all-card"
-              style={{ cursor: "pointer", background: "#f8f9fa" }}
+              style={{ cursor: 'pointer', background: '#f8f9fa' }}
               onClick={() => navigate('/business')}
               role="button"
               tabIndex={0}
             >
-              {/* 200px placeholder to match .card-img-top on other cards */}
               <div className="card-img-top view-all-placeholder" />
-
-              {/* Centered body content */}
               <div className="card-body d-flex flex-column align-items-center justify-content-center text-center">
                 <h5 className="text-primary mb-2">View All</h5>
                 <i className="bi bi-arrow-right-circle display-5 text-primary"></i>
