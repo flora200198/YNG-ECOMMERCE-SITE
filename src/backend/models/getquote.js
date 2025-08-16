@@ -12,13 +12,13 @@ const getQuoteSchema = new Schema(
       type: String,
       trim: true, 
       lowercase: true,
-      match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Invalid email address']
+      // match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Invalid email address']
     },
     phone:         { 
       type: String, 
       required: true, 
       trim: true,
-      match: [/^\+?[0-9\s\-()]{7,15}$/, 'Invalid phone number'] 
+      // match: [/^\+?[0-9\s\-()]{7,15}$/, 'Invalid phone number'] 
     },
 
     company:       { type: String, required: true, trim: true },

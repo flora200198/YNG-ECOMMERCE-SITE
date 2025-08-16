@@ -1,7 +1,8 @@
 const express = require('express');
+const { connectDB } = require('./Config/configdB');
 const cors = require('cors');
 require('dotenv').config();
-const { connectDB } = require('./Config/configdB'); // check exact filename case
+ // check exact filename case
 // const Joinus   = require('./Routes/Joinus.Route');
 // const Getquote = require('./Routes/Getquote.Route');
 // const Contact  = require('./Routes/Contact.Route');
@@ -17,24 +18,12 @@ console.log('Loaded Getquote.Route');
 console.log('Loading Contact.Route...');
 const Contact = require('./Routes/Contact.Route');
 console.log('Loaded Contact.Route');
-
+const PORT = process.env.PORT || 10000;
 const app = express();
-const PORT = process.env.PORT || 3000;
-
-
-
-
-// Allow only the official frontend domain
-app.use(cors({
-  origin: 'https://yng-ecommerce-site.vercel.app',
-  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: false // set to true only if you use cookies/credentials
-}));
-app.options('*', cors());
+app.use(cors());
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); // replaces bodyParser
+// app.use(express.urlencoded({ extended: true })); // replaces bodyParser
 connectDB();
 
 // Routes
