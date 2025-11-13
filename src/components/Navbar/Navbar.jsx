@@ -31,10 +31,45 @@ const Navbar = () => {
             <li className="nav-item"><Link className="nav-link" to="/about">About</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/business">Our Business</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/products">Products</Link></li>
+                <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                id="calibrationDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Calibration Services
+              </Link>
+              <ul className="dropdown-menu" aria-labelledby="calibrationDropdown">
+                <li>
+                  <Link className="dropdown-item" to="/calibration">
+                    Calibration Services
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/calibration/electro">
+                    Electro-Technical Calibration
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/calibration/thermal">
+                    Thermal Calibration
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item" to="/calibration/mechanical">
+                    Mechanical Calibration
+                  </Link>
+                </li>
+              </ul>
+            </li>
             <li className="nav-item"><Link className="nav-link" to="/blog">Blog</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/shop">Get Quote</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/contact">Contact Us</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/join">Join Us</Link></li>
+            
           </ul>
         </div>
       </div>

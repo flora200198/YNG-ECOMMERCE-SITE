@@ -21,6 +21,7 @@ import { CheckoutProvider } from './Pages/Context/Context';
 import ProductDetailCard from './components/ProductDetailcard/ProductDetailcard';
 import OurBusiness from './Pages/OurBusiness/OurBusiness';
 import BusinessDetails from './Pages/BusinessDetails/BusinessDetails';
+import MechanicalCalibration from './Pages/Calibration/MechanicalCalibration';
 
 function App() {
   useEffect(() => {
@@ -46,6 +47,7 @@ function App() {
         <Route path="/product-details" element={<ProductDetailCard />} />
         <Route path="/business" element={<OurBusiness />} />
         <Route path="/business/:slug" element={<BusinessDetails />} />
+        <Route path="/calibration/mechanical" element={<MechanicalCalibration />} />
       </Routes>
       <Footer />
     </Router>

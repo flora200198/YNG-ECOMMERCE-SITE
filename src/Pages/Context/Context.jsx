@@ -1433,6 +1433,94 @@ export const businessDetails = [
 
 ];
 
+// src/context/MechanicalCalibrationContext.js
+export const MechanicalCalibrations = {
+  title: "Mechanical Calibration Services – Precision You Can Trust",
+  breadcrumb:
+    "YNG Infra > Precision Calibration Instruments and Services > Mechanical Calibration Services – Precision You Can Trust",
+  searchPlaceholder: "Search …",
+
+  sections: [
+    {
+      heading: "Why Choose YNG Infra for Mechanical Calibration Services?",
+      text: `At YNG Infra, we provide specialized mechanical calibration services for a wide range of instruments, including micrometers, vernier calipers, dial gauges, torque wrenches, and more. Our ISO-compliant processes ensure traceability to national and international standards, guaranteeing measurement confidence and reliability.
+
+Backed by advanced equipment and skilled technicians, we deliver quick turnarounds without compromising quality. Enhance the performance and longevity of your tools while meeting regulatory requirements. Partner with us for dependable calibration services tailored to your industry needs.`,
+    },
+    {
+      heading: "Our Mechanical Calibration Facilities",
+      items: [
+        "Dimension",
+        "Precision",
+        "Torque and RPM",
+        "Torque & RPM Calibration",
+        "Mass and Volume",
+        "Sound Level Meters",
+        "Vernier Calipers, Micrometers, Height Gauges, Leg Calipers, Plunger & Lever Dials",
+        "Bore Gauges, Plug Gauges, Feeler Gauges, Pitch Gauges, Pressure Gauges, Vacuum Gauges, Radius Gauges",
+        "Coating Thickness Gauges, Taper Gauges, Thread Ring Gauges, Thread Plug Gauges, Plain Ring Gauges, Plain Plug Gauges",
+        "Roughness Specimens",
+        "Steel Scales, Measuring Tapes, Pie Tape",
+        "Profile Projector, Video Measuring System, 2D Height Measuring System",
+        "Pressure Gauges, Pressure Transmitters, Pressure Switches, Pressure Indicators, Vacuum Gauges, Compound Gauges",
+        "Vernier Calipers, Magnetic V-Blocks, Granite Surface Plate, Electronic Level, Spirit Level, Inclinometer, Micrometers, Height Gauges, Leg Calipers, Plunger & Lever Dials",
+        "Radius Gauges, Pitch Gauges, Bevel Protractor, Combination Sets, Test Sieves, Special and Inspection Gauges",
+      ],
+    },
+    {
+      heading: "Our Process",
+      points: [
+        "Initial Assessment: We evaluate your equipment to determine the appropriate calibration procedures.",
+        "Verification: Our team performs in-depth testing to verify the performance of all systems.",
+        "Adjustments and Repairs: If necessary, we make adjustments or repairs to ensure optimal functionality.",
+        "Certification: Once calibrated, your equipment is certified to meet industry standards.",
+      ],
+    },
+    {
+      heading: "Key Benefits of YNG Infra Mechanical Calibration Services",
+      points: [
+        "High precision and traceability – Our calibration processes are traceable to national and international standards, ensuring the highest level of accuracy.",
+        "Quick Service Turnaround – We deliver fast and efficient calibration services without compromising quality.",
+        "Comprehensive calibration reports – Detailed documentation for every calibration, ensuring compliance and peace of mind.",
+      ],
+    },
+    {
+      heading: "Applications of Mechanical Calibration Services",
+      items: [
+        "Micrometers – Used for precise dimensional measurements in manufacturing and engineering.",
+        "Vernier Calipers – Essential for measuring internal and external dimensions.",
+        "Dial Gauges – Used to measure small linear distances in mechanical systems.",
+        "Torque Wrenches – Ensuring accurate torque application in automotive and industrial applications.",
+        "Pressure Gauges – Used to measure pressure in various industrial processes.",
+        "Coating Thickness Gauges – Essential for measuring coating thickness in manufacturing.",
+        "Thread Gauges – Used to verify the accuracy of threaded components.",
+        "Granite Surface Plates – Ensuring flatness and level measurements in precision engineering.",
+        "Test Sieves – Used to measure particle size in material testing.",
+      ],
+    },
+    {
+      heading: "Why Regular Calibration is Essential",
+      text: `Regular calibration ensures that your instruments remain accurate and reliable over time. Without proper calibration, equipment can drift, leading to:
+
+- Inaccurate Measurements: Affecting the quality and safety of your operations.
+- Increased Downtime: Due to equipment failures or frequent repairs.
+- Non-Compliance: Failing to meet industry regulations and standards.
+
+By choosing YNG Infra for your calibration needs, you can avoid these issues and ensure long-term reliability.`,
+    },
+    {
+      heading: "NABL Scope and Compliance",
+      text: `Our mechanical calibration services comply with NABL (National Accreditation Board for Testing and Calibration Laboratories) standards, ensuring the highest level of accuracy and reliability. We provide detailed documentation for every calibration, giving you peace of mind and ensuring compliance with industry regulations.`,
+    },
+  ],
+
+  contact: {
+    cta: "Ready to Ensure Precision and Reliability?",
+    text: `At YNG Infra, we’re committed to delivering precision, reliability, and compliance in every service we offer. Whether you need calibration for a single instrument or an entire fleet, our team is here to help.`,
+    button: "Get In Touch!",
+  },
+};
+
 
 // 3. Provider component
 export const CheckoutProvider = ({ children }) => {
@@ -1443,7 +1531,7 @@ export const CheckoutProvider = ({ children }) => {
   
 
   return (
-    <CheckoutContext.Provider value={{ businessDetails, businesses,ProductDetails, selectedProduct, setSelectedProduct, products, cartItems, setCartItems, shippingAddress, setShippingAddress }}>
+    <CheckoutContext.Provider value={{ businessDetails, businesses,ProductDetails, selectedProduct, setSelectedProduct, products, cartItems, setCartItems, shippingAddress, setShippingAddress, MechanicalCalibrations }}>
       {children}
     </CheckoutContext.Provider>
   );
