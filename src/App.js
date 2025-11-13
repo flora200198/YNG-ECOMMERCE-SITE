@@ -21,7 +21,6 @@ import { CheckoutProvider } from './Pages/Context/Context';
 import ProductDetailCard from './components/ProductDetailcard/ProductDetailcard';
 import OurBusiness from './Pages/OurBusiness/OurBusiness';
 import BusinessDetails from './Pages/BusinessDetails/BusinessDetails';
-import MechanicalCalibration from './Pages/Calibration/MechanicalCalibration';
 import CalibrationServices from "./Pages/Calibration/CalibrationServices"
 
 function App() {
