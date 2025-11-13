@@ -44,22 +44,22 @@ const Navbar = () => {
               </Link>
               <ul className="dropdown-menu" aria-labelledby="calibrationDropdown">
                 <li>
-                  <Link className="dropdown-item" to="/calibration">
+                  <Link className="dropdown-item" to="/calibration/calibration-services">
                     Calibration Services
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/calibration/electro">
+                  <Link className="dropdown-item" to="/calibration/electro-technical-calibration">
                     Electro-Technical Calibration
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/calibration/thermal">
+                  <Link className="dropdown-item" to="/calibration/thermal-calibration">
                     Thermal Calibration
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/calibration/mechanical">
+                  <Link className="dropdown-item" to="/calibration/mechanical-calibration">
                     Mechanical Calibration
                   </Link>
                 </li>

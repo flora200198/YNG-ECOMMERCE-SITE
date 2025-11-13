@@ -1,83 +1,75 @@
-// CalibrationServices.js
-import React from "react";
-import { calibrationContent } from "../context/CalibrationContext";
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { useCheckout } from "../Context/Context"; // your context file
 
-const CalibrationServices = () => {
-  const content = calibrationContent;
+
+const CalibrationPage = () => {
+  const { category } = useParams();
+  const { calibrationServicesData } = useCheckout();
+
+  // find the data for the current category
+  const data = calibrationServicesData.find(
+    (item) => item.category === category
+  );
+
+  if (!data) {
+    return (
+      <div className="container mt-5 text-center">
+        <h4>Calibration Service not found</h4>
+      </div>
+    );
+  }
 
   return (
-    <div className="container mt-4 mb-5">
-      <h2 className="fw-bold text-center mb-2">{content.title}</h2>
-      <p className="text-center text-muted mb-4">{content.breadcrumb}</p>
+    <div className="container my-5">
+      {/* Header */}
+      <h2 className="fw-bold">{data.title}</h2>
+      <p className="text-muted mb-4">{data.breadcrumb}</p>
+      {data.intro && <p>{data.intro}</p>}
 
-      <input
-        type="text"
-        placeholder={content.searchPlaceholder}
-        className="form-control mb-5"
-      />
-
-      {content.sections.map((section, index) => (
-        <div key={index} className="mb-4">
+      {/* Sections */}
+      {data.sections.map((section, index) => (
+        <div key={index} className="mt-4">
           <h4 className="fw-semibold">{section.heading}</h4>
-          {section.text && <p>{section.text}</p>}
 
-          {section.subtopics &&
-            section.subtopics.map((sub, i) => (
-              <div key={i} className="ms-3">
-                <h6 className="fw-semibold mt-3">{sub.subheading}</h6>
-                <p>{sub.text}</p>
-              </div>
+          {/* Content paragraphs */}
+          {section.content &&
+            section.content.map((para, i) => (
+              <p key={i} className="text-secondary">
+                {para}
+              </p>
             ))}
 
-          {section.points && (
+          {/* List items */}
+          {section.list && (
             <ul>
-              {section.points.map((point, i) => (
-                <li key={i}>{point}</li>
+              {section.list.map((item, i) => (
+                <li key={i}>{item}</li>
               ))}
             </ul>
           )}
 
-          {section.labs && (
-            <ul>
-              {section.labs.map((lab, i) => (
-                <li key={i}>{lab}</li>
-              ))}
-            </ul>
+          {/* Action button */}
+          {section.actionButton && (
+            <button className="btn btn-outline-primary mt-2">
+              {section.actionButton}
+            </button>
           )}
         </div>
       ))}
 
-      <hr />
-      <div className="mt-5">
-        <h4>{content.contact.cta}</h4>
-        <p>{content.contact.text}</p>
-
-        <form className="row g-3">
-          {content.contact.formFields.map((field, i) => (
-            <div className="col-md-6" key={i}>
-              <label className="form-label">{field}</label>
-              <input type="text" className="form-control" />
-            </div>
-          ))}
-
-          <div className="col-12">
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" />
-              <label className="form-check-label">
-                {content.contact.consentText}
-              </label>
-            </div>
-          </div>
-
-          <div className="col-12">
-            <button type="submit" className="btn btn-primary">
-              Submit Inquiry
-            </button>
-          </div>
-        </form>
-      </div>
+      {/* Call to Action */}
+      {data.callToAction && (
+        <div className="mt-5 p-4 bg-light border rounded">
+          <h4>{data.callToAction.title}</h4>
+          <p>{data.callToAction.description}</p>
+          <button className="btn btn-primary">
+            {data.callToAction.buttonText}
+          </button>
+        </div>
+      )}
     </div>
   );
 };
 
-export default CalibrationServices;
+export default CalibrationPage;

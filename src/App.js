@@ -22,6 +22,7 @@ import ProductDetailCard from './components/ProductDetailcard/ProductDetailcard'
 import OurBusiness from './Pages/OurBusiness/OurBusiness';
 import BusinessDetails from './Pages/BusinessDetails/BusinessDetails';
 import MechanicalCalibration from './Pages/Calibration/MechanicalCalibration';
+import CalibrationServices from "./Pages/Calibration/CalibrationServices"
 
 function App() {
   useEffect(() => {
@@ -47,7 +48,7 @@ function App() {
         <Route path="/product-details" element={<ProductDetailCard />} />
         <Route path="/business" element={<OurBusiness />} />
         <Route path="/business/:slug" element={<BusinessDetails />} />
-        <Route path="/calibration/mechanical" element={<MechanicalCalibration />} />
+        <Route path="/calibration/:category" element={<CalibrationServices />} />
       </Routes>
       <Footer />
     </Router>
