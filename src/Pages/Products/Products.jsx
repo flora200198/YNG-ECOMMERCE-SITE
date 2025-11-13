@@ -1,6 +1,3 @@
-import React from 'react';
-import { useState } from 'react';
-import { Carousel } from 'react-bootstrap';
 import 'aos/dist/aos.css';
 import Flowmeter from './Flowmeter';
 import './Products.css';

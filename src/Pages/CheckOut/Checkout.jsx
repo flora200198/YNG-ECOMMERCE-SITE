@@ -1,31 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import GenerateInvoice from "../../components/Invoice/Invoice";
-import { bottom } from "@popperjs/core";
+
 
 const Checkout = () => {
   const [cartItems, setCartItems] = useState(() => {
   return JSON.parse(localStorage.getItem("cart")) || [];
 });
   const navigate = useNavigate();
-  
-  // Sample cart items (replace with your actual state or props)
-  // const cartItems = [
-  //   {
-  //     id: 1,
-  //     title: "Product A",
-  //     image: "https://via.placeholder.com/60",
-  //     quantity: 2,
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "Product B",
-  //     image: "https://via.placeholder.com/60",
-  //     quantity: 1,
-  //   },
-  // ];
-
   const [addresses, setAddresses] = useState([]);
   const [currentAddress, setCurrentAddress] = useState({
     name: "",

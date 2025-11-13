@@ -7,7 +7,6 @@ import { useCheckout } from '../Context/Context';
 
 const Home = () => {
   const navigate = useNavigate();
-  const { products } = useCheckout();
   const { businesses } = useCheckout();
 
   const NextArrow = ({ onClick }) => (
