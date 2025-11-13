@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import ProductDetailCard from "../../components/ProductDetailcard/ProductDetailcard";
+
 
 // 1. Create the context
 const CheckoutContext = createContext();
