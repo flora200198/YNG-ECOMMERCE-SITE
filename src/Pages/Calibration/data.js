@@ -296,22 +296,83 @@ export const mechanicalCalibrationData = {
       heading: "Our Mechanical Calibration Facilities",
       type: "boxed-list",
       list: [
-        "Dimension",
-        "Precision",
-        "Torque and RPM",
-        "Torque & RPM Calibration",
-        "Mass and Volume",
-        "Sound Level Meters",
-        "Vernier Calipers, Micrometers, Height Gauges, Leg Calipers, Plunger & Lever Dials",
-        "Bore Gauges, Plug Gauges, Feeler Gauges, Pitch Gauges, Pressure Gauges, Vacuum Gauges, Radius Gauges",
-        "Coating Thickness Gauges, Taper Gauges, Thread Ring Gauges, Thread Plug Gauges, Plain Ring Gauges, Plain Plug Gauges",
-        "Roughness Specimens",
-        "Steel Scales, Measuring Tapes, Pie Tape",
-        "Profile Projector, Video Measuring System, 2D Height Measuring System",
-        "Pressure Gauges, Pressure Transmitters, Pressure Switches, Pressure Indicators, Vacuum Gauges, Compound Gauges",
-        "Vernier Calipers, Magnetic V-Blocks, Granite Surface Plate, Electronic Level, Spirit Level, Inclinometer, Micrometers, Height Gauges, Leg Calipers, Plunger & Lever Dials",
-        "Radius Gauges, Pitch Gauges, Bevel Protractor, Combination Sets, Test Sieves, Special and Inspection Gauges",
-      ],
+  {
+    title: "Dimension",
+    image: "/assets/Dimension.png",
+    description: "Used for dimensional measurements essential in engineering and manufacturing applications."
+  },
+  {
+    title: "Precision",
+    image: "/assets/Precision.png",
+    description: "High-precision tools designed for highly accurate measurement and calibration tasks."
+  },
+  {
+    title: "Torque and RPM",
+    image: "/assets/Torque&RPM.png",
+    description: "Instruments used for torque and rotational speed measurements in industrial environments."
+  },
+  {
+    title: "Torque & RPM Calibration",
+    image: "/assets/mechanical/torque-calibration.png",
+    description: "Ensures torque tools and RPM measurement devices maintain peak accuracy."
+  },
+  {
+    title: "Mass and Volume",
+    image: "/assets/mechanical/mass-volume.png",
+    description: "Calibration services for mass, weight, and volumetric measuring instruments."
+  },
+  {
+    title: "Sound Level Meters",
+    image: "/assets/mechanical/sound-meter.png",
+    description: "Used for noise level monitoring in environmental, industrial, and compliance testing."
+  },
+  {
+    title: "Vernier Calipers, Micrometers & Height Gauges",
+    image: "/assets/mechanical/vernier-micrometer.png",
+    description: "Precision tools for internal, external, and step measurements across industries."
+  },
+  {
+    title: "Bore, Plug, Feeler & Pitch Gauges",
+    image: "/assets/mechanical/gauges.png",
+    description: "Comprehensive range of gauges for dimensional inspection and tolerance verification."
+  },
+  {
+    title: "Coating Thickness & Thread Gauges",
+    image: "/assets/mechanical/coating-thickness.png",
+    description: "Ensures accurate coating layers and thread consistency in manufactured components."
+  },
+  {
+    title: "Roughness Specimens",
+    image: "/assets/mechanical/roughness.png",
+    description: "Reference specimens used to compare and assess surface roughness and finish quality."
+  },
+  {
+    title: "Steel Scales, Measuring Tapes & Pie Tapes",
+    image: "/assets/mechanical/scales.png",
+    description: "Standard tools for length measurement and circumference checks in industrial applications."
+  },
+  {
+    title: "Profile Projector & Video Measuring System",
+    image: "/assets/mechanical/profile-projector.png",
+    description: "Advanced measuring equipment for accurate inspection of small and complex components."
+  },
+  {
+    title: "Pressure Gauges & Transmitters",
+    image: "/assets/mechanical/pressure-gauge.png",
+    description: "Used for calibration of pressure measurement tools across critical applications."
+  },
+  {
+    title: "Granite Surface Plate & Electronic Level",
+    image: "/assets/mechanical/granite-plate.png",
+    description: "Flat reference systems for precision measurements and instrument alignment."
+  },
+  {
+    title: "Bevel Protractor, Combination Sets & Test Sieves",
+    image: "/assets/mechanical/bevel-protractor.png",
+    description: "Tools for angle measurement, component inspection, and material particle size evaluation."
+  }
+],
+
     },
 
     // -----------------------------------------

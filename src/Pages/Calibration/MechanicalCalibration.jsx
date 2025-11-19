@@ -1,7 +1,9 @@
 import React from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./Calibration.css";
 
 const MechanicalCalibrationPage = ({ data }) => {
+
   return (
     <div className="container my-5 engineering-bg p-4 rounded text-dark">
 
@@ -9,7 +11,7 @@ const MechanicalCalibrationPage = ({ data }) => {
         <h2 className="fw-bold section-heading">{data.title}</h2>
       </div>
 
-      {data.intro && <p>{data.intro}</p>}
+      {data.intro && <p className="text-secondary">{data.intro}</p>}
 
       {data.sections.map((section, index) => {
         const type = section.type;
@@ -17,7 +19,6 @@ const MechanicalCalibrationPage = ({ data }) => {
         return (
           <div key={index} className="mt-5">
 
-            {/* HIGHLIGHT PARAGRAPH */}
             {type === "highlight-paragraph" && (
               <div className="p-4 bg-warning bg-opacity-25 rounded">
                 <h4 className="section-heading">{section.heading}</h4>
@@ -27,23 +28,19 @@ const MechanicalCalibrationPage = ({ data }) => {
               </div>
             )}
 
-            {/* BOXED LIST */}
             {type === "boxed-list" && (
               <>
-                <h4 className="section-heading">{section.heading}</h4>
-                <div className="row g-3">
+                <h4 className="section-heading mb-3">{section.heading}</h4>
+
+                <div className="row g-4">
                   {section.list.map((item, i) => (
-                    <div key={i} className="col-md-2">
-                      <div className="p-3 bg-white shadow-sm rounded text-center fw-semibold">
-                        {item}
-                      </div>
-                    </div>
+                    <BoxItem key={i} item={item} />
                   ))}
                 </div>
               </>
             )}
 
-            {/* PROCESS HIGHLIGHT */}
+            {/* Process Highlight */}
             {type === "process-highlight" && (
               <div className="card p-4 shadow-sm">
                 <h4 className="section-heading">{section.heading}</h4>
@@ -53,21 +50,32 @@ const MechanicalCalibrationPage = ({ data }) => {
                   ))}
                 </ul>
               </div>
-            )}
+            )} 
 
-            {/* BENEFITS SLIDER (content left, image right) */}
+            {/* Benefits Slider */}
             {type === "benefits-slider" && (
-              <div id={`benefits-mech-${index}`} className="carousel slide shadow p-3 rounded bg-white">
+              <div
+                id={`benefits-mech-${index}`}
+                className="carousel slide shadow p-3 rounded bg-white"
+                data-bs-ride="carousel"
+              >
                 <div className="carousel-inner">
                   {section.slides.map((slide, i) => (
-                    <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
+                    <div
+                      key={i}
+                      className={`carousel-item ${i === 0 ? "active" : ""}`}
+                    >
                       <div className="row align-items-center">
                         <div className="col-md-6">
                           <h4 className="section-heading">{section.heading}</h4>
                           <p className="text-secondary">{slide.text}</p>
                         </div>
                         <div className="col-md-6">
-                          <img src={slide.image} className="img-fluid rounded shadow" alt="" />
+                          <img
+                            src={slide.image}
+                            className="img-fluid rounded shadow"
+                            alt=""
+                          />
                         </div>
                       </div>
                     </div>
@@ -78,6 +86,7 @@ const MechanicalCalibrationPage = ({ data }) => {
                   data-bs-target={`#benefits-mech-${index}`} data-bs-slide="prev">
                   <span className="carousel-control-prev-icon"></span>
                 </button>
+
                 <button className="carousel-control-next" type="button"
                   data-bs-target={`#benefits-mech-${index}`} data-bs-slide="next">
                   <span className="carousel-control-next-icon"></span>
@@ -85,7 +94,7 @@ const MechanicalCalibrationPage = ({ data }) => {
               </div>
             )}
 
-            {/* CARD GRID (Applications) */}
+            {/* Card Grid */}
             {type === "card-grid" && (
               <>
                 <h4 className="section-heading">{section.heading}</h4>
@@ -101,7 +110,7 @@ const MechanicalCalibrationPage = ({ data }) => {
               </>
             )}
 
-            {/* PARAGRAPH */}
+            {/* Paragraph */}
             {type === "paragraph" && (
               <>
                 <h4 className="section-heading">{section.heading}</h4>
@@ -128,3 +137,45 @@ const MechanicalCalibrationPage = ({ data }) => {
 };
 
 export default MechanicalCalibrationPage;
+
+
+// ========== BoxItem COMPONENT (inside same file) ==========
+const BoxItem = ({ item }) => {
+  const [expanded, setExpanded] = React.useState(false);
+
+  return (
+    <div className="col-md-4 d-flex">
+      <div className="box-item shadow-sm rounded p-3 text-center d-flex flex-column">
+
+        {/* IMAGE */}
+        {item.image && (
+          <img
+            src={item.image}
+            alt={item.title}
+            className="img-fluid mb-2 rounded"
+            style={{ height: "70px", objectFit: "contain" }}
+          />
+        )}
+
+        {/* TITLE */}
+        <h6 className="fw-bold">{item.title}</h6>
+
+        {/* DESCRIPTION */}
+     <p className={`text-secondary description ${expanded ? "expanded" : ""}`}>
+  {item.description}
+</p>
+
+{item.description.split(" ").length > 10 && (
+  <button
+    className="btn btn-sm btn-link p-0 mt-auto"
+    onClick={() => setExpanded(!expanded)}
+  >
+    {expanded ? "Read Less" : "Read More"}
+  </button>
+)}
+
+
+      </div>
+    </div>
+  );
+};
