@@ -1,0 +1,99 @@
+/* Engineering animated background */
+.engineering-bg {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.engineering-bg::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(255,195,0,0.25) 2px, transparent 2px);
+  background-size: 40px 40px;
+  animation: moveBg 15s linear infinite;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+@keyframes moveBg {
+  from { transform: translate(0, 0); }
+  to { transform: translate(40px, 40px); }
+}
+
+/* Yellow theme headings */
+.section-heading {
+  color: #e5b200; /* golden-yellow */
+  font-weight: 700;
+}
+
+
+/* ALL normal text = dark black */
+.text-secondary,
+p,
+ul li,
+.card p,
+.card ul li {
+  color: #000000 !important;
+}
+
+/* Headings = dark yellow */
+.section-heading,
+h2.fw-bold,
+h4.fw-semibold {
+  color: #d4a300 !important; /* dark golden yellow */
+}
+
+/* In case Bootstrap overrides something */
+.text-muted {
+  color: #000 !important;
+}
+
+/* ENGINEERING THEMED ANIMATED BACKGROUND */
+.engineering-bg {
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+/* Moving dotted grid */
+.engineering-bg::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(rgba(212, 163, 0, 0.3) 1.5px, transparent 1.5px);
+  background-size: 35px 35px;
+  animation: engineeringMove 25s linear infinite;
+  opacity: 0.35;
+  z-index: -2;
+}
+
+/* Soft rotating gear-like pattern */
+.engineering-bg::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(212, 163, 0, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: slowRotate 35s linear infinite;
+  z-index: -3;
+}
+
+@keyframes engineeringMove {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50px, 50px); }
+}
+
+@keyframes slowRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

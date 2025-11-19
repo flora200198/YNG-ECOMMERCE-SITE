@@ -1,76 +1,45 @@
 import { useParams } from "react-router-dom";
-import { useCheckout } from "../Context/Context"; 
-import './Calibration.css';
 
+// data imports
+import { calibrationServicesData } from "./data"; 
+import { thermalCalibrationData } from "./data";
+import { electroTechnicalCalibrationData } from "./data";
+import { mechanicalCalibrationData } from "./data";
 
-const CalibrationPage = () => {
+// component imports
+import CalibrationMainPage from "./CalibrationMainPage"
+import ThermalCalibrationPage from "./ThermalCalibration"
+import ElectroTechnicalPage from "./ElectroTechnicalPage";
+import MechanicalCalibrationPage from "./MechanicalCalibration";
+
+export default function CalibrationPage() {
   const { category } = useParams();
-  const { calibrationServicesData } = useCheckout();
 
-  // find the data for the current category
-  const data = calibrationServicesData.find(
-    (item) => item.category === category
-  );
+  // map categories to components + data
+  const pageMap = {
+    "calibration-services": {
+      component: CalibrationMainPage,
+      data: calibrationServicesData,
+    },
+    "thermal-calibration": {
+      component: ThermalCalibrationPage,
+      data: thermalCalibrationData,
+    },
+    "electro-technical-calibration": {
+      component: ElectroTechnicalPage,
+      data: electroTechnicalCalibrationData,
+    },
+    "mechanical-calibration": {
+      component: MechanicalCalibrationPage,
+      data: mechanicalCalibrationData,
+    },
+  };
 
-  if (!data) {
-    return (
-      <div className="container mt-5 text-center">
-        <h4>Calibration Service not found</h4>
-      </div>
-    );
-  }
+  const selected = pageMap[category];
 
-  return (
-    <div className="container my-5">
-      {/* Header */}
-      <h2 className="fw-bold">{data.title}</h2>
-      <p className="text-muted mb-4">{data.breadcrumb}</p>
-      {data.intro && <p>{data.intro}</p>}
+  if (!selected) return <h2 className="text-center mt-5">404 Page Not Found</h2>;
 
-      {/* Sections */}
-      {data.sections.map((section, index) => (
-        <div key={index} className="mt-4">
-          <h4 className="fw-semibold">{section.heading}</h4>
+  const Component = selected.component;
 
-          {/* Content paragraphs */}
-          {section.content &&
-            section.content.map((para, i) => (
-              <p key={i} className="text-secondary">
-                {para}
-              </p>
-            ))}
-
-          {/* List items */}
-          {section.list && (
-            <ul>
-              {section.list.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
-          )}
-
-          {/* Action button */}
-          {section.actionButton && (
-            <button className="btn btn-outline-primary mt-2">
-              {section.actionButton}
-            </button>
-          )}
-        </div>
-      ))}
-
-      {/* Call to Action */}
-      {data.callToAction && (
-        <div className="mt-5 p-4 bg-light border rounded">
-          <h4>{data.callToAction.title}</h4>
-          <p>{data.callToAction.description}</p>
-          <button className="btn btn-primary">
-            {data.callToAction.buttonText}
-          </button>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default CalibrationPage;
-
+  return <Component data={selected.data} />;
+}

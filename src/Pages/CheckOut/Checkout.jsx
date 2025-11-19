@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 const Checkout = () => {
   const [cartItems, setCartItems] = useState(() => {
   return JSON.parse(localStorage.getItem("cart")) || [];
@@ -95,7 +94,6 @@ const Checkout = () => {
       alert("Please select a shipping address.");
       return;
     }
-
     navigate("/thankyou");
   };
 
