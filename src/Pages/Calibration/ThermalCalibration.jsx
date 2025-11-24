@@ -1,26 +1,42 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { useNavigate } from "react-router-dom";
 
+// AOS animation
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const ThermalCalibrationPage = ({ data }) => {
   const navigate = useNavigate();
+
+  // Initialize animation
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+    });
+  }, []);
 
   return (
     <div className="container my-5 engineering-bg p-4 rounded text-dark">
 
       {/* HEADER */}
-      <div className="text-center mb-4">
+      <div className="text-center mb-4" data-aos="fade-down">
         <h2 className="fw-bold section-heading">{data.title}</h2>
       </div>
 
-      {data.intro && <p className="text-secondary">{data.intro}</p>}
+      {data.intro && (
+        <p className="text-secondary" data-aos="fade-up">
+          {data.intro}
+        </p>
+      )}
 
       {/* SECTIONS */}
       {data.sections.map((section, index) => {
         const type = section.type;
 
         return (
-          <div key={index} className="mt-5">
+          <div key={index} className="mt-5" data-aos="fade-up">
 
             {/* HIGHLIGHT PARAGRAPH */}
             {type === "highlight-paragraph" && (
@@ -42,43 +58,43 @@ const ThermalCalibrationPage = ({ data }) => {
               </>
             )}
 
-            {/* LIST */}
-           {type === "list" && (
-  <>
-    <h4 className="section-heading">{section.heading}</h4>
+            {/* LIST WITH IMAGES */}
+            {type === "list" && (
+              <>
+                <h4 className="section-heading">{section.heading}</h4>
 
-    <div className="row g-3 mt-2">
-      {section.list.map((item, i) => (
-        <div className="col-md-4" key={i}>
-          <div className="card shadow-sm h-100">
+                <div className="row g-3 mt-2">
+                  {section.list.map((item, i) => (
+                    <div className="col-md-4" key={i} data-aos="zoom-in">
+                      <div className="card shadow-sm h-100">
 
-            <img
-              src={item.image}
-              alt={item.text}
-              className="card-img-top"
-              style={{
-  width: "100%",
-  height: "180px",
-  objectFit: "contain",   // shows full image
-  backgroundColor: "#f8f8f8", // optional: fill empty space
-}}
+                        <img
+                          src={item.image}
+                          alt={item.text}
+                          className="card-img-top"
+                          style={{
+                            width: "100%",
+                            height: "180px",
+                            objectFit: "contain",
+                            backgroundColor: "#f8f8f8",
+                            padding: "10px"
+                          }}
+                        />
 
-            />
+                        <div className="card-body text-center">
+                          <p className="card-text text-secondary">{item.text}</p>
+                        </div>
 
-            <div className="card-body text-center">
-              <p className="card-text text-secondary">{item.text}</p>
-            </div>
-
-          </div>
-        </div>
-      ))}
-    </div>
-  </>
-)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
 
             {/* PROCESS HIGHLIGHT */}
             {type === "process-highlight" && (
-              <div className="card shadow-sm p-4 bg-white">
+              <div className="card shadow-sm p-4 bg-white" data-aos="fade-right">
                 <h4 className="section-heading">{section.heading}</h4>
                 <ul>
                   {section.list.map((item, i) => (
@@ -93,10 +109,13 @@ const ThermalCalibrationPage = ({ data }) => {
       })}
 
       {/* CTA */}
-      <div className="mt-5 p-4 bg-light border rounded shadow-sm">
+      <div className="mt-5 p-4 bg-light border rounded shadow-sm" data-aos="fade-up">
         <h4 className="section-heading">{data.callToAction.title}</h4>
         <p>{data.callToAction.description}</p>
-        <button className="btn btn-warning text-dark fw-semibold" onClick={() => navigate("/contact")}>
+        <button
+          className="btn btn-warning text-dark fw-semibold"
+          onClick={() => navigate("/contact")}
+        >
           {data.callToAction.buttonText}
         </button>
       </div>

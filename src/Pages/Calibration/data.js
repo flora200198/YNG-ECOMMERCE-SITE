@@ -115,7 +115,7 @@ export const thermalCalibrationData = {
       text: "Hot Air Oven",
     },
     {
-      image: "/assets/Auto-clave.png",
+      image: "/assets/Auto-Clave.png",
       text: "Auto Claves",
     },
     {
