@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ElectroTechnicalPage = ({ data }) => {
+  const navigate = useNavigate();
   return (
     <div className="container my-5 engineering-bg p-4 rounded text-dark">
 
@@ -71,7 +73,7 @@ const ElectroTechnicalPage = ({ data }) => {
       <div className="mt-5 p-4 bg-light border rounded shadow-sm">
         <h4 className="section-heading">{data.callToAction.title}</h4>
         <p>{data.callToAction.description}</p>
-        <button className="btn btn-warning text-dark fw-semibold">
+        <button className="btn btn-warning text-dark fw-semibold" onClick={() => navigate("/contact")}>
           {data.callToAction.buttonText}
         </button>
       </div>
