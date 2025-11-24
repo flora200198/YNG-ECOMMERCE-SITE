@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 const CalibrationMainPage = ({ data }) => {
   const navigate = useNavigate();
 
-  // Initialize Animation Library
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -68,18 +68,17 @@ const CalibrationMainPage = ({ data }) => {
                 </div>
 
                 <div className="col-md-4 p-2" data-aos="fade-left">
-                  <img
-                    src={section.image}
-                    className="img-fluid rounded"
-                    alt=""
-                  />
+                  <img src={section.image} className="img-fluid rounded" alt="" />
                 </div>
               </div>
             )}
 
             {/* IMAGE-LEFT SECTION */}
             {type === "image-left" && (
-              <div className="row shadow-sm p-4 bg-white rounded" data-aos="fade-right">
+              <div
+                className="row shadow-sm p-4 bg-white rounded"
+                data-aos="fade-right"
+              >
                 <div className="col-md-4">
                   <img src={section.image} className="img-fluid rounded" alt="" />
                 </div>
@@ -179,6 +178,7 @@ const CalibrationMainPage = ({ data }) => {
           {data.callToAction.buttonText}
         </button>
       </div>
+
     </div>
   );
 };
