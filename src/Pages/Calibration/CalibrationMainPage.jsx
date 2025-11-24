@@ -67,36 +67,66 @@ const CalibrationMainPage = ({ data }) => {
 
             {/* BENEFITS SLIDER */}
             {type === "benefits-slider" && (
-              <div id={`benefits-carousel-${index}`} className="carousel slide shadow rounded p-3 bg-white">
-                <div className="carousel-inner">
-                  {section.slides.map((slide, i) => (
-                    <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
-                      <div className="row align-items-center">
-                        <div className="col-md-6 p-4">
-                          <h4 className="section-heading">{section.heading}</h4>
-                          <p className="text-secondary">{slide.text}</p>
-                        </div>
-                        <div className="col-md-6 p-4">
-                          <img src={slide.image} className="img-fluid rounded shadow" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+  <div className="mb-4">
+
+    {/* ⭐ Section Heading (shows once) */}
+    <h4 className="section-heading mb-3">{section.heading}</h4>
+
+    <div id={`benefits-carousel-${index}`} className="carousel slide shadow rounded p-3 bg-white">
+      <div className="carousel-inner">
+
+        {section.slides.map((slide, i) => {
+          const [title, description] = slide.text.split(":"); // split at colon
+
+          return (
+            <div key={i} className={`carousel-item ${i === 0 ? "active" : ""}`}>
+              <div className="row align-items-center">
+
+                <div className="col-md-6 p-4">
+
+                  {/* ⭐ Card Title */}
+                  <h5 className="fw-bold text-dark">{title.trim()}</h5>
+
+                  {/* ⭐ Card Description */}
+                  <p className="text-secondary">{description?.trim()}</p>
                 </div>
 
-                <button className="carousel-control-prev" type="button"
-                  data-bs-target={`#benefits-carousel-${index}`}
-                  data-bs-slide="prev">
-                  <span className="carousel-control-prev-icon"></span>
-                </button>
+                <div className="col-md-6 p-4 d-flex justify-content-center">
+  <img
+    src={slide.image}
+    className="img-fluid rounded shadow"
+    alt=""
+    style={{
+      height: "260px",       // fixed height for all images
+      width: "100%",         // keep full width
+      objectFit: "cover",    // crop instead of stretching
+      objectPosition: "center",
+      borderRadius: "10px"
+    }}
+  />
+                </div>
 
-                <button className="carousel-control-next" type="button"
-                  data-bs-target={`#benefits-carousel-${index}`}
-                  data-bs-slide="next">
-                  <span className="carousel-control-next-icon"></span>
-                </button>
               </div>
-            )}
+            </div>
+          );
+        })}
+
+      </div>
+
+      <button className="carousel-control-prev" type="button"
+        data-bs-target={`#benefits-carousel-${index}`} data-bs-slide="prev">
+        <span className="carousel-control-prev-icon"></span>
+      </button>
+
+      <button className="carousel-control-next" type="button"
+        data-bs-target={`#benefits-carousel-${index}`} data-bs-slide="next">
+        <span className="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+)}
+
 
           </div>
         );

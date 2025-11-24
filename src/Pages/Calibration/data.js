@@ -33,7 +33,7 @@ export const calibrationServicesData = {
         "Trust us to handle your instrument procurement needs with professionalism and precision. We source, negotiate, and deliver instruments that align with your requirements, ensuring optimal performance and cost-efficiency. Experience stress-free procurement with our expert services.",
       ],
       actionButton: "Request Procurement Assistance",
-      image: "/assets/procurement.png"
+      image: "/assets/Procurement.png"
     },
     {
       heading: "Master Your Calibration Instruments with Our Training Support",
@@ -49,19 +49,19 @@ export const calibrationServicesData = {
       slides: [
         {
           text: "Reduced Downtime: Keep your operations running smoothly with minimal interruptions.",
-          image: "/assets/benefits/downtime.png"
+          image: "/assets/Productivity.png"
         },
         {
           text: "Increased Efficiency: Ensure your equipment performs at its best, boosting productivity.",
-          image: "/assets/benefits/efficiency.png"
+          image: "/assets/Efficiency.png"
         },
         {
           text: "Cost Savings: Extend the life of your instruments and avoid costly replacements.",
-          image: "/assets/benefits/cost-saving.png"
-        },
+          image: "/assets/Saving.png"
+        }, 
         {
           text: "Expert Support: Rely on our certified professionals for precision and reliability.",
-          image: "/assets/benefits/expert-support.png"
+          image: "/assets/Support.png"
         }
       ]
     }
@@ -85,7 +85,14 @@ export const thermalCalibrationData = {
   intro:
     "Keep your thermal instruments at peak performance with professional calibration services. Whether it's furnaces, thermocouples, or data loggers, our expertise ensures compliance and precision. Invest in reliable calibration to protect your process integrity and operational efficiency.",
   sections: [
-
+{
+  heading: "Why Choose YNG Infra for Electrotechnical Calibration",
+  type: "highlight-paragraph",
+  content: [
+    "At YNG Infra, we offer expert electrotechnical calibration services to ensure the accuracy and reliability of your electrical and electronic measuring instruments. From multimeters and clamp meters to oscilloscopes and power analyzers, our advanced calibration methods guarantee compliance with national and international standards.",
+    "Accurate electrotechnical calibration helps maintain safety, improve efficiency, and ensure consistent performance across your electrical systems and equipment.",
+  ],
+},
     {
       heading: "Why Choose YNG Infra for Thermal Calibration",
       type: "highlight-paragraph",

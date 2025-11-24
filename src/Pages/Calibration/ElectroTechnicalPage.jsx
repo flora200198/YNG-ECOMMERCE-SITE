@@ -39,20 +39,24 @@ const ElectroTechnicalPage = ({ data }) => {
             )}
 
             {/* BOXED LIST */}
-            {type === "boxed-list" && (
-              <>
-                <h4 className="section-heading">{section.heading}</h4>
-                <div className="row g-3">
-                  {section.list.map((item, i) => (
-                    <div key={i} className="col-md-3">
-                      <div className="p-3 bg-white shadow-sm rounded text-center fw-semibold">
-                        {item}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
+           {type === "boxed-list" && (
+  <>
+    <h4 className="section-heading">{section.heading}</h4>
+    <div className="row g-3">
+      {section.list.map((item, i) => (
+        <div key={i} className="col-md-3">
+          <div
+            className="p-3 shadow-sm rounded text-center fw-semibold"
+            style={{ backgroundColor: "#f0f8ff" }} // your card color here
+          >
+            {item}
+          </div>
+        </div>
+      ))}
+    </div>
+  </>
+)}
+
 
           </div>
         );
