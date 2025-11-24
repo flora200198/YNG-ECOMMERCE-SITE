@@ -1,8 +1,3 @@
-// data.js
-
-// ======================================================
-// 1) MAIN CALIBRATION SERVICES (calibrationServicesData)
-// ======================================================
 export const calibrationServicesData = {
   category: "calibration-services",
   title: "Calibration Services – Precision You Can Trust",

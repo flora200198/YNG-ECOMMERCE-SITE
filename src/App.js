@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Products from './Pages/Products/Products';
+import ShopNow from './Pages/ShopNow/ShopNow';
 import Blog from './Pages/Blog/Blog';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import JoinUs from './Pages/JoinUs/JoinUs';
@@ -36,7 +37,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/products" element={<Products />} />
         <Route path="/blog" element={<Blog />} />
-        {/* <Route path="/shop" element={<ShopNow />} /> */}
+        <Route path="/shop" element={<ShopNow />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/join" element={<JoinUs />} />
         <Route path="/cart" element={<Cart />} />
