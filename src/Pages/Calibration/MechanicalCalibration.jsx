@@ -41,74 +41,111 @@ const MechanicalCalibrationPage = ({ data }) => {
             )}
 
             {/* Process Highlight */}
-            {type === "process-highlight" && (
-              <div className="card p-4 shadow-sm">
-                <h4 className="section-heading">{section.heading}</h4>
-                <ul>
-                  {section.list.map((item, i) => (
-                    <li key={i} className="fw-bold">{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )} 
+           {type === "process-highlight" && (
+  <div className="card p-4 shadow-sm">
+    <h4 className="section-heading">{section.heading}</h4>
+    <ul>
+      {section.list.map((item, i) => {
+        const [title, ...rest] = item.split(":");
+        return (
+          <li key={i}>
+            <strong>{title}:</strong> {rest.join(":")}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+)}
+
 
             {/* Benefits Slider */}
-            {type === "benefits-slider" && (
-              <div
-                id={`benefits-mech-${index}`}
-                className="carousel slide shadow p-3 rounded bg-white"
-                data-bs-ride="carousel"
-              >
-                <div className="carousel-inner">
-                  {section.slides.map((slide, i) => (
-                    <div
-                      key={i}
-                      className={`carousel-item ${i === 0 ? "active" : ""}`}
-                    >
-                      <div className="row align-items-center">
-                        <div className="col-md-6">
-                          <h4 className="section-heading">{section.heading}</h4>
-                          <p className="text-secondary">{slide.text}</p>
-                        </div>
-                        <div className="col-md-6">
-                          <img
-                            src={slide.image}
-                            className="img-fluid rounded shadow"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+         {type === "benefits-slider" && (
+  <div className="mb-4">
+
+    {/* ✅ Section Heading ABOVE the carousel */}
+    <h4 className="section-heading mb-3">{section.heading}</h4>
+
+    <div
+      id={`benefits-mech-${index}`}
+      className="carousel slide shadow p-3 rounded bg-white"
+      data-bs-ride="carousel"
+    >
+      <div className="carousel-inner">
+        {section.slides.map((slide, i) => {
+          const [title, description] = slide.text.split("–");
+
+          return (
+            <div
+              key={i}
+              className={`carousel-item ${i === 0 ? "active" : ""}`}
+            >
+              <div className="row align-items-center">
+
+                <div className="col-md-6">
+
+                  {/* Only the BENEFIT TITLE inside each slide */}
+                  <h5 className="fw-bold">{title.trim()}</h5>
+
+                  <p className="text-secondary">
+                    {description?.trim()}
+                  </p>
+
                 </div>
 
-                <button className="carousel-control-prev" type="button"
-                  data-bs-target={`#benefits-mech-${index}`} data-bs-slide="prev">
-                  <span className="carousel-control-prev-icon"></span>
-                </button>
+                <div className="col-md-6">
+                  <img
+                    src={slide.image}
+                    className="img-fluid rounded shadow"
+                    alt=""
+                  />
+                </div>
 
-                <button className="carousel-control-next" type="button"
-                  data-bs-target={`#benefits-mech-${index}`} data-bs-slide="next">
-                  <span className="carousel-control-next-icon"></span>
-                </button>
               </div>
-            )}
+            </div>
+          );
+        })}
+      </div>
+
+      <button
+        className="carousel-control-prev"
+        type="button"
+        data-bs-target={`#benefits-mech-${index}`}
+        data-bs-slide="prev"
+      >
+        <span className="carousel-control-prev-icon"></span>
+      </button>
+
+      <button
+        className="carousel-control-next"
+        type="button"
+        data-bs-target={`#benefits-mech-${index}`}
+        data-bs-slide="next"
+      >
+        <span className="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+)}
 
             {/* Card Grid */}
-            {type === "card-grid" && (
-              <>
-                <h4 className="section-heading">{section.heading}</h4>
-                <div className="row g-3">
-                  {section.list.map((item, i) => (
-                    <div className="col-md-2" key={i}>
-                      <div className="p-3 shadow-sm rounded bg-white text-center">
-                        {item}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
+           {type === "card-grid" && (
+  <>
+    <h4 className="section-heading">{section.heading}</h4>
+    <div className="row g-3">
+
+      {section.list.map((item, i) => (
+        <div className="col-md-4 " key={i}>
+         <div className="p-3 shadow-sm rounded text-center h-100 d-flex align-items-center justify-content-center"
+     style={{ backgroundColor: "#e9f5ff" }}>
+            {item}
+          </div>
+        </div>
+      ))}
+
+    </div>
+  </>
+)}
+
 
             {/* Paragraph */}
             {type === "paragraph" && (

@@ -85,6 +85,15 @@ export const thermalCalibrationData = {
   intro:
     "Keep your thermal instruments at peak performance with professional calibration services. Whether it's furnaces, thermocouples, or data loggers, our expertise ensures compliance and precision. Invest in reliable calibration to protect your process integrity and operational efficiency.",
   sections: [
+
+    {
+      heading: "Why Choose YNG Infra for Thermal Calibration",
+      type: "highlight-paragraph",
+      content: [
+        "At YNG Infra, we provide professional thermal calibration services to keep your temperature instruments at peak performance. From furnaces and thermocouples to data loggers, our expertise ensures compliance, precision, and operational efficiency.",
+        "Invest in reliable calibration to protect your process integrity and maintain superior product quality.",
+      ],
+    },
     {
       heading: "Why Thermal Calibration Matters",
       type: "paragraph",
@@ -96,14 +105,7 @@ export const thermalCalibrationData = {
         "Gaining a clear understanding of calibration techniques, the instruments involved, and the importance of proper documentation and traceability is key to upholding consistent measurement accuracy and reliability.",
       ],
     },
-    {
-      heading: "Why Choose YNG Infra for Thermal Calibration",
-      type: "highlight-paragraph",
-      content: [
-        "At YNG Infra, we provide professional thermal calibration services to keep your temperature instruments at peak performance. From furnaces and thermocouples to data loggers, our expertise ensures compliance, precision, and operational efficiency.",
-        "Invest in reliable calibration to protect your process integrity and maintain superior product quality.",
-      ],
-    },
+    
     {
       heading: "Thermal Calibration Features",
       type: "list",
@@ -313,22 +315,22 @@ export const mechanicalCalibrationData = {
   },
   {
     title: "Torque & RPM Calibration",
-    image: "/assets/mechanical/torque-calibration.png",
+    image: "/assets/Torque.png",
     description: "Ensures torque tools and RPM measurement devices maintain peak accuracy."
   },
   {
     title: "Mass and Volume",
-    image: "/assets/mechanical/mass-volume.png",
+    image: "/assets/Mass&Volume.png",
     description: "Calibration services for mass, weight, and volumetric measuring instruments."
   },
   {
     title: "Sound Level Meters",
-    image: "/assets/mechanical/sound-meter.png",
+    image: "/assets/SoundLevel.png",
     description: "Used for noise level monitoring in environmental, industrial, and compliance testing."
   },
   {
     title: "Vernier Calipers, Micrometers & Height Gauges",
-    image: "/assets/mechanical/vernier-micrometer.png",
+    image: "/assets/Vernier.png",
     description: "Precision tools for internal, external, and step measurements across industries."
   },
   {
@@ -372,20 +374,16 @@ export const mechanicalCalibrationData = {
     description: "Tools for angle measurement, component inspection, and material particle size evaluation."
   }
 ],
-
     },
 
-    // -----------------------------------------
-    // 3) OUR PROCESS → process-highlight
-    // -----------------------------------------
     {
       heading: "Our Process",
       type: "process-highlight",
       list: [
         "Initial Assessment: We evaluate your equipment to determine the appropriate calibration procedures.",
-        "Verification: Our team performs in-depth testing to verify the performance of all systems.",
-        "Adjustments and Repairs: If necessary, we make adjustments or repairs to ensure optimal functionality.",
-        "Certification: Once calibrated, your equipment is certified to meet industry standards.",
+    "Verification: Our team performs in-depth testing to verify the performance of all systems.",
+    "Adjustments and Repairs:If necessary, we make adjustments or repairs to ensure optimal functionality.",
+    "Certification: Once calibrated, your equipment is certified to meet industry standards.",
       ],
     },
 
@@ -410,7 +408,6 @@ export const mechanicalCalibrationData = {
         },
       ],
     },
-
     // -----------------------------------------
     // 5) APPLICATIONS → card-grid (5 per row)
     // -----------------------------------------
@@ -429,7 +426,6 @@ export const mechanicalCalibrationData = {
         "Test Sieves – Used to measure particle size in material testing.",
       ],
     },
-
     // -----------------------------------------
     // 6) WHY ESSENTIAL → paragraph
     // -----------------------------------------

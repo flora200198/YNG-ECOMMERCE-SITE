@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const ThermalCalibrationPage = ({ data }) => {
+  
   return (
     <div className="container my-5 engineering-bg p-4 rounded text-dark">
 
@@ -19,16 +20,6 @@ const ThermalCalibrationPage = ({ data }) => {
         return (
           <div key={index} className="mt-5">
 
-            {/* PARAGRAPH */}
-            {type === "paragraph" && (
-              <>
-                <h4 className="section-heading">{section.heading}</h4>
-                {section.content.map((p, i) => (
-                  <p key={i} className="text-secondary">{p}</p>
-                ))}
-              </>
-            )}
-
             {/* HIGHLIGHT PARAGRAPH */}
             {type === "highlight-paragraph" && (
               <div className="p-4 bg-warning bg-opacity-25 rounded shadow-sm">
@@ -39,6 +30,16 @@ const ThermalCalibrationPage = ({ data }) => {
               </div>
             )}
 
+            {/* PARAGRAPH */}
+            {type === "paragraph" && (
+              <>
+                <h4 className="section-heading">{section.heading}</h4>
+                {section.content.map((p, i) => (
+                  <p key={i} className="text-secondary">{p}</p>
+                ))}
+              </>
+            )}
+            
             {/* LIST */}
             {type === "list" && (
               <>
