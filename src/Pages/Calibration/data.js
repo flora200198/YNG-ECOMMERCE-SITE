@@ -24,7 +24,7 @@ export const calibrationServicesData = {
         "Extend the life of your instruments with our cost-effective repair services. We diagnose, repair, and test equipment to ensure optimal functionality. Save on replacements and maintain your workflow with our dependable repair solutions for all major instrument brands.",
       ],
       actionButton: "Get Repair Support",
-      image: "/assets/repair.png"
+      image: "/assets/Repair.png"
     },
     {
       heading: "Professional Procurement Support for Precision and Performance",
@@ -85,14 +85,7 @@ export const thermalCalibrationData = {
   intro:
     "Keep your thermal instruments at peak performance with professional calibration services. Whether it's furnaces, thermocouples, or data loggers, our expertise ensures compliance and precision. Invest in reliable calibration to protect your process integrity and operational efficiency.",
   sections: [
-{
-  heading: "Why Choose YNG Infra for Electrotechnical Calibration",
-  type: "highlight-paragraph",
-  content: [
-    "At YNG Infra, we offer expert electrotechnical calibration services to ensure the accuracy and reliability of your electrical and electronic measuring instruments. From multimeters and clamp meters to oscilloscopes and power analyzers, our advanced calibration methods guarantee compliance with national and international standards.",
-    "Accurate electrotechnical calibration helps maintain safety, improve efficiency, and ensure consistent performance across your electrical systems and equipment.",
-  ],
-},
+
     {
       heading: "Why Choose YNG Infra for Thermal Calibration",
       type: "highlight-paragraph",
@@ -101,56 +94,45 @@ export const thermalCalibrationData = {
         "Invest in reliable calibration to protect your process integrity and maintain superior product quality.",
       ],
     },
-    {
-      heading: "Why Thermal Calibration Matters",
-      type: "paragraph",
-      content: [
-        "Temperature calibration is an essential practice to ensure the precision and reliability of temperature measurement instruments across various industries. It involves comparing an instrument’s temperature readings to a certified reference standard and making adjustments as needed to achieve accuracy.",
-        "Precise temperature measurements are vital for quality assurance, safety, and meeting regulatory requirements, influencing industries such as manufacturing, food production, pharmaceuticals, and HVAC systems.",
-        "Routine calibration of temperature sensors and instruments enables businesses to enhance operational efficiency, lower energy usage, and maintain superior product quality.",
-        "It helps avoid problems stemming from inaccurate readings, such as substandard products, inefficient processes, and potential safety risks.",
-        "Gaining a clear understanding of calibration techniques, the instruments involved, and the importance of proper documentation and traceability is key to upholding consistent measurement accuracy and reliability.",
-      ],
-    },
     
-    {
+        {
   heading: "Thermal Calibration Features",
   type: "list",
   list: [
     {
-      image: "/assets/thermal/temperature-recorder.png",
+      image: "/assets/Temperature.png",
       text: "Temperature Recorder / Data Loggers",
     },
     {
-      image: "/assets/thermal/temperature-controller.png",
+      image: "/assets/Temperature-controller.png",
       text: "Temperature Controllers",
     },
     {
-      image: "/assets/thermal/hygrometer.png",
+      image: "/assets/Thermometer.png",
       text: "Thermometer / Hygrometer",
     },
     {
-      image: "/assets/thermal/environment-chamber.png",
+      image: "/assets/Environment-chamber.png",
       text: "Environment Chambers (%RH, °C)",
     },
     {
-      image: "/assets/thermal/hot-air-oven.png",
+      image: "/assets/Hot.png",
       text: "Hot Air Oven",
     },
     {
-      image: "/assets/thermal/autoclave.png",
+      image: "/assets/Auto-clave.png",
       text: "Auto Claves",
     },
     {
-      image: "/assets/thermal/thermocouple.png",
+      image: "/assets/Thermocouple.png",
       text: "Thermocouples (-80°C to +1200°C)",
     },
     {
-      image: "/assets/thermal/ir-thermometer.png",
+      image: "/assets/IR-thermometer.png",
       text: "IR Thermometers",
     },
     {
-      image: "/assets/thermal/rtd.png",
+      image: "/assets/RTD.png",
       text: "RTDs",
     },
   ],
@@ -226,6 +208,14 @@ export const electroTechnicalCalibrationData = {
   intro:
     "At YNG Infra, we provide top-tier calibration solutions for your electrical instruments. Our experts ensure your equipment, such as resistance meters and clamp meters, delivers reliable and accurate results every time. With detailed documentation and compliance with global standards, we offer precision you can count on.",
   sections: [
+    {
+  heading: "Why Choose YNG Infra for Electrotechnical Calibration",
+  type: "highlight-paragraph",
+  content: [
+    "At YNG Infra, we offer expert electrotechnical calibration services to ensure the accuracy and reliability of your electrical and electronic measuring instruments. From multimeters and clamp meters to oscilloscopes and power analyzers, our advanced calibration methods guarantee compliance with national and international standards.",
+    "Accurate electrotechnical calibration helps maintain safety, improve efficiency, and ensure consistent performance across your electrical systems and equipment.",
+  ],
+},
     {
       heading: "Why Electro-Technical Calibration Matters",
       type: "paragraph",

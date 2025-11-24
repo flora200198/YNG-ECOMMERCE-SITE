@@ -54,7 +54,13 @@ const ThermalCalibrationPage = ({ data }) => {
               src={item.image}
               alt={item.text}
               className="card-img-top"
-              style={{ height: "180px", objectFit: "cover" }}
+              style={{
+  width: "100%",
+  height: "180px",
+  objectFit: "contain",   // shows full image
+  backgroundColor: "#f8f8f8", // optional: fill empty space
+}}
+
             />
 
             <div className="card-body text-center">
