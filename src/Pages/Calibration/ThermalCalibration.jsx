@@ -8,6 +8,8 @@ import "aos/dist/aos.css";
 
 const ThermalCalibrationPage = ({ data }) => {
   const navigate = useNavigate();
+  const [showMore, setShowMore] = React.useState(false);
+
 
   // Initialize animation
   useEffect(() => {
@@ -60,37 +62,62 @@ const ThermalCalibrationPage = ({ data }) => {
 
             {/* LIST WITH IMAGES */}
             {type === "list" && (
-              <>
-                <h4 className="section-heading">{section.heading}</h4>
+  <>
+    <h4 className="section-heading">{section.heading}</h4>
 
-                <div className="row g-3 mt-2">
-                  {section.list.map((item, i) => (
-                    <div className="col-md-4" key={i} data-aos="zoom-in">
-                      <div className="card shadow-sm h-100">
+    {(() => {
+      const isMobile = window.innerWidth < 768;
 
-                        <img
-                          src={item.image}
-                          alt={item.text}
-                          className="card-img-top"
-                          style={{
-                            width: "100%",
-                            height: "180px",
-                            objectFit: "contain",
-                            backgroundColor: "#f8f8f8",
-                            padding: "10px"
-                          }}
-                        />
+      // Show only first 4 cards on mobile unless showMore = true
+      const cardsToShow =
+        isMobile && !showMore ? section.list.slice(0, 4) : section.list;
 
-                        <div className="card-body text-center">
-                          <p className="card-text text-secondary">{item.text}</p>
-                        </div>
+      return (
+        <>
+          <div className="row g-3 mt-2">
+            {cardsToShow.map((item, i) => (
+              <div className="col-6 col-md-4" key={i} data-aos="zoom-in">
+                <div className="card shadow-sm h-100">
 
-                      </div>
-                    </div>
-                  ))}
+                  <img
+                    src={item.image}
+                    alt={item.text}
+                    className="card-img-top"
+                    style={{
+                      width: "100%",
+                      height: "180px",
+                      objectFit: "contain",
+                      backgroundColor: "#f8f8f8",
+                      padding: "10px"
+                    }}
+                  />
+
+                  <div className="card-body text-center">
+                    <p className="card-text text-secondary">{item.text}</p>
+                  </div>
+
                 </div>
-              </>
-            )}
+              </div>
+            ))}
+          </div>
+
+          {/* Show More button only on mobile and only if more than 4 items */}
+          {isMobile && section.list.length > 4 && (
+            <div className="text-center mt-3">
+              <button
+                className="btn btn-outline-primary btn-sm fw-semibold"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? "Show Less" : "Show More"}
+              </button>
+            </div>
+          )}
+        </>
+      );
+    })()}
+  </>
+)}
+
 
             {/* PROCESS HIGHLIGHT */}
             {type === "process-highlight" && (

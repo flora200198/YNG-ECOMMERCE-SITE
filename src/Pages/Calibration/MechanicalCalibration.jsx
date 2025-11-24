@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const MechanicalCalibrationPage = ({ data }) => {
+  const [showMore, setShowMore] = React.useState(false);
   const navigate = useNavigate();
 
   // Initialize AOS
@@ -48,18 +49,41 @@ const MechanicalCalibrationPage = ({ data }) => {
             )}
 
             {/* Boxed List */}
-           {type === "boxed-list" && (
+         {type === "boxed-list" && (
   <>
     <h4 className="section-heading mb-3">{section.heading}</h4>
 
-    <div className="row g-4">
-      {section.list.map((item, i) => (
-        <BoxItem key={i} item={item} />  // ✔ FIXED: No wrapper here
-      ))}
-    </div>
+    {(() => {
+      const isMobile = window.innerWidth < 768;
+
+      // 📌 Show ONLY 4 cards on mobile unless "showMore" is true
+      const cardsToShow =
+        isMobile && !showMore ? section.list.slice(0, 4) : section.list;
+
+      return (
+        <>
+          <div className="row g-4">
+            {cardsToShow.map((item, i) => (
+              <BoxItem key={i} item={item} />
+            ))}
+          </div>
+
+          {/* 📌 Show More button only on mobile and only if more than 4 items */}
+          {isMobile && section.list.length > 4 && (
+            <div className="text-center mt-3">
+              <button
+                className="btn btn-outline-primary btn-sm fw-semibold"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? "Show Less" : "Show More"}
+              </button>
+            </div>
+          )}
+        </>
+      );
+    })()}
   </>
 )}
-
 
             {/* Process Highlight */}
             {type === "process-highlight" && (
@@ -149,23 +173,52 @@ const MechanicalCalibrationPage = ({ data }) => {
             )}
 
             {/* Card Grid */}
-            {type === "card-grid" && (
-              <>
-                <h4 className="section-heading">{section.heading}</h4>
-                <div className="row g-3">
-                  {section.list.map((item, i) => (
-                    <div className="col-md-4" key={i} data-aos="zoom-in">
-                      <div
-                        className="p-3 shadow-sm rounded text-center h-100 d-flex align-items-center justify-content-center"
-                        style={{ backgroundColor: "#e9f5ff" }}
-                      >
-                        {item}
-                      </div>
-                    </div>
-                  ))}
+{type === "card-grid" && (
+  <>
+    <h4 className="section-heading">{section.heading}</h4>
+
+    {/* Detect mobile using window.innerWidth */}
+    {(() => {
+      const isMobile = window.innerWidth < 768;
+
+      // Show only first 4 cards on mobile unless showMore = true
+      const cardsToShow = isMobile && !showMore
+        ? section.list.slice(0, 4)
+        : section.list;
+
+      return (
+        <>
+          <div className="row g-3">
+            {cardsToShow.map((item, i) => (
+              <div className="col-6 col-sm-6 col-md-4" key={i} data-aos="zoom-in">
+                <div
+                  className="p-3 shadow-sm rounded text-center h-100 d-flex align-items-center justify-content-center"
+                  style={{ backgroundColor: "#e9f5ff" }}
+                >
+                  {item}
                 </div>
-              </>
-            )}
+              </div>
+            ))}
+          </div>
+
+          {/* Show More Button — only visible on mobile */}
+          {isMobile && section.list.length > 4 && (
+            <div className="text-center mt-3">
+              <button
+                className="btn btn-outline-primary btn-sm fw-semibold"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? "Show Less" : "Show More"}
+              </button>
+            </div>
+          )}
+        </>
+      );
+    })()}
+  </>
+)}
+
+
 
             {/* Paragraph */}
             {type === "paragraph" && (

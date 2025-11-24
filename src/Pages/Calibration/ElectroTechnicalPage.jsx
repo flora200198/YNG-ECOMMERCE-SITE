@@ -5,6 +5,8 @@ import "aos/dist/aos.css";
 
 const ElectroTechnicalPage = ({ data }) => {
   const navigate = useNavigate();
+  const [showMore, setShowMore] = React.useState(false);
+
 
   // Initialize AOS
   useEffect(() => {
@@ -57,23 +59,49 @@ const ElectroTechnicalPage = ({ data }) => {
             )}
 
             {/* BOXED LIST */}
-            {type === "boxed-list" && (
-              <>
-                <h4 className="section-heading">{section.heading}</h4>
-                <div className="row g-3">
-                  {section.list.map((item, i) => (
-                    <div key={i} className="col-md-3" data-aos="zoom-in">
-                      <div
-                        className="p-3 shadow-sm rounded text-center fw-semibold"
-                        style={{ backgroundColor: "#f0f8ff" }}
-                      >
-                        {item}
-                      </div>
-                    </div>
-                  ))}
+           {type === "boxed-list" && (
+  <>
+    <h4 className="section-heading">{section.heading}</h4>
+
+    {(() => {
+      const isMobile = window.innerWidth < 768;
+
+      // Show only first 4 items on mobile unless showMore = true
+      const itemsToShow =
+        isMobile && !showMore ? section.list.slice(0, 4) : section.list;
+
+      return (
+        <>
+          <div className="row g-3">
+            {itemsToShow.map((item, i) => (
+              <div key={i} className="col-6 col-md-3" data-aos="zoom-in">
+                <div
+                  className="p-3 shadow-sm rounded text-center fw-semibold"
+                  style={{ backgroundColor: "#f0f8ff" }}
+                >
+                  {item}
                 </div>
-              </>
-            )}
+              </div>
+            ))}
+          </div>
+
+          {/* Show More button only on Mobile and only if more than 4 items */}
+          {isMobile && section.list.length > 4 && (
+            <div className="text-center mt-3">
+              <button
+                className="btn btn-outline-primary btn-sm fw-semibold"
+                onClick={() => setShowMore(!showMore)}
+              >
+                {showMore ? "Show Less" : "Show More"}
+              </button>
+            </div>
+          )}
+        </>
+      );
+    })()}
+  </>
+)}
+
 
           </div>
         );
