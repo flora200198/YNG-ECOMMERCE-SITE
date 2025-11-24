@@ -328,12 +328,12 @@ export const mechanicalCalibrationData = {
     description: "High-precision tools designed for highly accurate measurement and calibration tasks."
   },
   {
-    title: "Torque and RPM",
+    title: "Torque",
     image: "/assets/Torque&RPM.png",
     description: "Instruments used for torque and rotational speed measurements in industrial environments."
   },
   {
-    title: "Torque & RPM Calibration",
+    title: "RPM Calibration",
     image: "/assets/Torque.png",
     description: "Ensures torque tools and RPM measurement devices maintain peak accuracy."
   },
@@ -354,22 +354,22 @@ export const mechanicalCalibrationData = {
   },
   {
     title: "Bore, Plug, Feeler & Pitch Gauges",
-    image: "/assets/mechanical/gauges.png",
+    image: "/assets/Plug.png",
     description: "Comprehensive range of gauges for dimensional inspection and tolerance verification."
   },
   {
     title: "Coating Thickness & Thread Gauges",
-    image: "/assets/mechanical/coating-thickness.png",
+    image: "/assets/Thickness.png",
     description: "Ensures accurate coating layers and thread consistency in manufactured components."
   },
   {
     title: "Roughness Specimens",
-    image: "/assets/mechanical/roughness.png",
+    image: "/assets/Roughness.png",
     description: "Reference specimens used to compare and assess surface roughness and finish quality."
   },
   {
     title: "Steel Scales, Measuring Tapes & Pie Tapes",
-    image: "/assets/mechanical/scales.png",
+    image: "/assets/Scale.png",
     description: "Standard tools for length measurement and circumference checks in industrial applications."
   },
   {
