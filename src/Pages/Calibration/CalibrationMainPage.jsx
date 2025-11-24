@@ -41,7 +41,7 @@ const CalibrationMainPage = ({ data }) => {
                     <p key={i} className="text-secondary">{p}</p>
                   ))}
                   {section.actionButton && (
-                    <button className="btn btn-outline-warning mt-2" onClick={() => navigate("/contact")}>
+                    <button className="btn btn-warning text-dark fw-semibold" onClick={() => navigate("/contact")}>
                       {section.actionButton}
                     </button>
                   )}

@@ -22,6 +22,7 @@ import ProductDetailCard from './components/ProductDetailcard/ProductDetailcard'
 import OurBusiness from './Pages/OurBusiness/OurBusiness';
 import BusinessDetails from './Pages/BusinessDetails/BusinessDetails';
 import CalibrationServices from "./Pages/Calibration/CalibrationServices"
+import ScrollToTop from './components/Scroll/ScrollToTop';
 
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
   return (
     <CheckoutProvider> 
     <Router>
+       <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
