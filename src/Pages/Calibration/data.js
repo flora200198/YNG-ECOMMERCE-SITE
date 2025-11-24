@@ -107,20 +107,47 @@ export const thermalCalibrationData = {
     },
     
     {
-      heading: "Thermal Calibration Features",
-      type: "list",
-      list: [
-        "Temperature Recorder / Data Loggers",
-        "Temperature Controllers",
-        "Thermometer / Hygrometer",
-        "Environment Chambers (%RH, °C)",
-        "Hot Air Oven",
-        "Auto Claves",
-        "Thermocouples (-80°C to +1200°C)",
-        "IR Thermometers",
-        "RTDs",
-      ],
+  heading: "Thermal Calibration Features",
+  type: "list",
+  list: [
+    {
+      image: "/assets/thermal/temperature-recorder.png",
+      text: "Temperature Recorder / Data Loggers",
     },
+    {
+      image: "/assets/thermal/temperature-controller.png",
+      text: "Temperature Controllers",
+    },
+    {
+      image: "/assets/thermal/hygrometer.png",
+      text: "Thermometer / Hygrometer",
+    },
+    {
+      image: "/assets/thermal/environment-chamber.png",
+      text: "Environment Chambers (%RH, °C)",
+    },
+    {
+      image: "/assets/thermal/hot-air-oven.png",
+      text: "Hot Air Oven",
+    },
+    {
+      image: "/assets/thermal/autoclave.png",
+      text: "Auto Claves",
+    },
+    {
+      image: "/assets/thermal/thermocouple.png",
+      text: "Thermocouples (-80°C to +1200°C)",
+    },
+    {
+      image: "/assets/thermal/ir-thermometer.png",
+      text: "IR Thermometers",
+    },
+    {
+      image: "/assets/thermal/rtd.png",
+      text: "RTDs",
+    },
+  ],
+},
     {
       heading: "Why is Thermal Calibration Important?",
       type: "paragraph",

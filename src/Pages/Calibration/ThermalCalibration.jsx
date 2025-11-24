@@ -39,18 +39,34 @@ const ThermalCalibrationPage = ({ data }) => {
                 ))}
               </>
             )}
-            
+
             {/* LIST */}
-            {type === "list" && (
-              <>
-                <h4 className="section-heading">{section.heading}</h4>
-                <ul>
-                  {section.list.map((item, i) => (
-                    <li key={i} className="text-secondary">{item}</li>
-                  ))}
-                </ul>
-              </>
-            )}
+           {type === "list" && (
+  <>
+    <h4 className="section-heading">{section.heading}</h4>
+
+    <div className="row g-3 mt-2">
+      {section.list.map((item, i) => (
+        <div className="col-md-4" key={i}>
+          <div className="card shadow-sm h-100">
+
+            <img
+              src={item.image}
+              alt={item.text}
+              className="card-img-top"
+              style={{ height: "180px", objectFit: "cover" }}
+            />
+
+            <div className="card-body text-center">
+              <p className="card-text text-secondary">{item.text}</p>
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+  </>
+)}
 
             {/* PROCESS HIGHLIGHT */}
             {type === "process-highlight" && (
