@@ -27,16 +27,21 @@ const ElectroTechnicalPage = ({ data }) => {
             )}
 
             {/* PROCESS HIGHLIGHT */}
-            {type === "process-highlight" && (
-              <div className="card p-4 shadow">
-                <h4 className="section-heading">{section.heading}</h4>
-                <ul>
-                  {section.list.map((item, i) => (
-                    <li key={i} className="fw-semibold">{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
+        {type === "process-highlight" && (
+  <div className="card p-4 shadow-sm">
+    <h4 className="section-heading">{section.heading}</h4>
+    <ul>
+      {section.list.map((item, i) => {
+        const [title, ...rest] = item.split(":");
+        return (
+          <li key={i}>
+            <strong>{title}:</strong> {rest.join(":")}
+          </li>
+        );
+      })}
+    </ul>
+  </div>
+)}
 
             {/* BOXED LIST */}
            {type === "boxed-list" && (

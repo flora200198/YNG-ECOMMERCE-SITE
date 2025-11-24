@@ -56,8 +56,6 @@ const MechanicalCalibrationPage = ({ data }) => {
     </ul>
   </div>
 )}
-
-
             {/* Benefits Slider */}
          {type === "benefits-slider" && (
   <div className="mb-4">
