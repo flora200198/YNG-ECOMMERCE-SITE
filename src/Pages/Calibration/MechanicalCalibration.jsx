@@ -92,10 +92,18 @@ const MechanicalCalibrationPage = ({ data }) => {
 
                 <div className="col-md-6">
                   <img
-                    src={slide.image}
-                    className="img-fluid rounded shadow"
-                    alt=""
-                  />
+  src={slide.image}
+  className="img-fluid rounded shadow d-block mx-auto"
+  alt=""
+  style={{
+    width: "100%",
+    height: "260px",        // fixed height (adjust as you like)
+    objectFit: "contain",   // keeps full image visible, no cropping
+    backgroundColor: "#f8f9fa", // light background for empty space
+    padding: "10px",        // optional: gives clean spacing around image
+    borderRadius: "10px"
+  }}
+/>
                 </div>
 
               </div>

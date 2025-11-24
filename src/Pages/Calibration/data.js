@@ -415,15 +415,15 @@ export const mechanicalCalibrationData = {
       slides: [
         {
           text: "High precision and traceability – Our calibration processes are traceable to national and international standards, ensuring the highest level of accuracy.",
-          image: "/assets/mechanical/precision.png",
+          image: "/assets/HighPrecision.png",
         },
         {
           text: "Quick Service Turnaround – We deliver fast and efficient calibration services without compromising quality.",
-          image: "/assets/mechanical/fast-service.png",
+          image: "/assets/QuickService.png",
         },
         {
           text: "Comprehensive calibration reports – Detailed documentation for every calibration ensures compliance and peace of mind.",
-          image: "/assets/mechanical/reports.png",
+          image: "/assets/CalibrationReport.png",
         },
       ],
     },
