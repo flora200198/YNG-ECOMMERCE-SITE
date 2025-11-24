@@ -374,22 +374,22 @@ export const mechanicalCalibrationData = {
   },
   {
     title: "Profile Projector & Video Measuring System",
-    image: "/assets/mechanical/profile-projector.png",
+    image: "/assets/Profile-projector.png",
     description: "Advanced measuring equipment for accurate inspection of small and complex components."
   },
   {
     title: "Pressure Gauges & Transmitters",
-    image: "/assets/mechanical/pressure-gauge.png",
+    image: "/assets/PG.png",
     description: "Used for calibration of pressure measurement tools across critical applications."
   },
   {
     title: "Granite Surface Plate & Electronic Level",
-    image: "/assets/mechanical/granite-plate.png",
+    image: "/assets/Surface-plate.png",
     description: "Flat reference systems for precision measurements and instrument alignment."
   },
   {
     title: "Bevel Protractor, Combination Sets & Test Sieves",
-    image: "/assets/mechanical/bevel-protractor.png",
+    image: "/assets/Bevel.png",
     description: "Tools for angle measurement, component inspection, and material particle size evaluation."
   }
 ],
