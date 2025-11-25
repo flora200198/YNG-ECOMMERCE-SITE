@@ -59,14 +59,12 @@ const ElectroTechnicalPage = ({ data }) => {
             )}
 
             {/* BOXED LIST */}
-           {type === "boxed-list" && (
+      {type === "boxed-list" && (
   <>
     <h4 className="section-heading">{section.heading}</h4>
 
     {(() => {
       const isMobile = window.innerWidth < 768;
-
-      // Show only first 4 items on mobile unless showMore = true
       const itemsToShow =
         isMobile && !showMore ? section.list.slice(0, 4) : section.list;
 
@@ -77,15 +75,17 @@ const ElectroTechnicalPage = ({ data }) => {
               <div key={i} className="col-6 col-md-3" data-aos="zoom-in">
                 <div
                   className="p-3 shadow-sm rounded text-center fw-semibold"
-                  style={{ backgroundColor: "#f0f8ff" }}
+                  style={{ backgroundColor: "#e3f2ffff" }}  // ⭐ YOUR BACKGROUND COLOR KEPT
                 >
-                  {item}
+                  <div className="text-wrap text-break">  {/* ⭐ Bootstrap text fixing only */}
+                    {item}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Show More button only on Mobile and only if more than 4 items */}
+          {/* ⭐ Show More button for mobile only */}
           {isMobile && section.list.length > 4 && (
             <div className="text-center mt-3">
               <button

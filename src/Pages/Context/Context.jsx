@@ -52,6 +52,11 @@ export const businesses = [
     title: "Environmental Solutions",
     description: "Innovative solutions for environmental monitoring and compliance.",
     image: "/assets/instruments.png"
+  },
+  {
+    title: "Calibration Services",
+    description: "Innovative solutions for environmental monitoring and compliance.",
+    image: "/assets/CalibrationServices.png"
   }
 ];
 

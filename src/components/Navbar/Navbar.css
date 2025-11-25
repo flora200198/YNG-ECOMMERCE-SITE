@@ -30,3 +30,11 @@
   stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 
   23h22'/%3e%3c/svg%3e");
 } */
+
+.active-page {
+  background-color: #ffc107;
+  color: black !important;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-weight: 600;
+}
