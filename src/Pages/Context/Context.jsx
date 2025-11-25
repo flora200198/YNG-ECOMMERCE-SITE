@@ -1434,7 +1434,86 @@ export const businessDetails = [
 
   conclusion: `Measure what matters. With YNG Infra’s Environmental Solutions, you get accurate instruments, seamless integration,
   and dependable data—keeping your operations compliant, efficient, and safe.`
+},
+{
+  slug: "calibration-services",
+  title: "Calibration Services",
+  routeLink: "/business/calibration-services",
+  icon: "bi bi-speedometer2",
+  themeClass: "text-primary",
+
+  whyNeeded: `Accurate measurements are essential for maintaining quality, safety, and regulatory compliance across every
+  industry. Over time, instruments lose accuracy due to wear, environmental conditions, and usage stress. Without calibration,
+  equipment can produce incorrect readings — leading to production errors, safety hazards, product rejection, and financial
+  losses. Calibration ensures that every instrument performs exactly as intended, maintaining trust and reliability in
+  critical operations.`,
+
+  whatItDoes: `Calibration compares the readings of an instrument against a certified standard under controlled conditions.
+  The process identifies deviations, adjusts the instrument when possible, and issues a calibration certificate showing
+  measurement accuracy. This ensures all tools and equipment deliver precise and reliable results, meeting industry
+  standards and regulatory requirements.`,
+
+  processFlow: [
+    "Inspection – Visual check of instrument condition and environmental suitability.",
+    "Pre-Calibration Reading – Measuring current instrument performance before adjustments.",
+    "Reference Comparison – Comparing readings against a standard traceable to NABL/ISO/International bodies.",
+    "Adjustment & Fine-Tuning – Correcting deviations to bring performance within acceptable tolerance.",
+    "Performance Verification – Re-testing to confirm accuracy after adjustments.",
+    "Calibration Certificate Issuance – Providing detailed accuracy data, traceability, and validity period."
+  ],
+
+  environmentBenefits: [
+    "Waste Reduction – Prevents material waste caused by inaccurate measurements.",
+    "Energy Efficiency – Optimizes processes such as motors, pumps, and HVAC systems.",
+    "Extended Equipment Life – Keeps machines running efficiently, reducing breakdowns.",
+    "Sustainable Practices – Supports quality systems that promote responsible and safe operations."
+  ],
+
+  industryBenefits: [
+    "Quality Assurance – Guarantees measurement accuracy for production, testing, and inspections.",
+    "Regulatory Compliance – Meets ISO, NABL, and customer audit requirements.",
+    "Cost Reduction – Prevents losses from rework, product rejection, or machine failure.",
+    "Operational Reliability – Ensures instruments are safe, stable, and consistent.",
+    "Customer Confidence – Boosts credibility with documented accuracy and traceability."
+  ],
+
+  purpose: [
+    "Ensures measurement accuracy for critical equipment.",
+    "Meets industry and international certification requirements (ISO, NABL, OEM).",
+    "Improves process control and product quality.",
+    "Protects equipment, users, and operations from faulty readings.",
+    "Prevents downtime by maintaining reliable tools."
+  ],
+
+  industriesNeed: [
+    "Manufacturing & Production Plants",
+    "Automotive & Aerospace",
+    "Pharma, Biotech & Healthcare",
+    "Food & Beverage Industries",
+    "Construction & Heavy Machinery",
+    "Oil & Gas / Petrochemical",
+    "Educational Labs & Research Centers",
+    "Testing Laboratories & Quality Control Units"
+  ],
+
+  yngSpecialityIntro: `At YNG Infra, we offer precision calibration services backed by certified standards, advanced
+  technology, and expert technicians. Our solutions ensure your instruments deliver accurate, reliable, and repeatable
+  measurements every time.`,
+
+  yngSpecialityPoints: [
+    "NABL-Traceable Calibration – Ensuring global-standard accuracy and documentation.",
+    "Wide Instrument Coverage – Electrical, mechanical, thermal, dimensional, and pressure instruments.",
+    "On-Site & In-Lab Calibration – Flexible service modes based on customer convenience.",
+    "Fast Turnaround Time – Minimizing downtime and productivity loss.",
+    "Digital Certificates – Secure, traceable documentation for audits and compliance.",
+    "Annual Maintenance & Reminder System – Ensuring timely re-calibration for all equipment."
+  ],
+
+  conclusion: `With YNG Infra, you gain a trusted calibration partner committed to precision, reliability, and
+  compliance. Our services ensure your instruments perform flawlessly, reduce operational risks, and strengthen your
+  quality systems.`  
 }
+
 
 ];
 
